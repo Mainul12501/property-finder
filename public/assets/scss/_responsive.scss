@@ -1,0 +1,2528 @@
+//Responsive ==>
+
+// extra Small devices 420px 
+@media (max-width: 420px) {
+    .custom-container{
+        width: 100%;
+        max-width: 100%;
+    }
+    // Home Pgae Starts Here
+    .banner-area h1{
+        font-size: 30px;
+    }
+    // ++ Verified Feature Area Starts Here ++
+    .verified-feature{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-heading{
+            margin-bottom: 20px;
+        }
+    }
+    // ++ Verified Feature Area Ends Here ++
+
+    // ++ Call Action Area Starts Here ++ 
+    .call-action{
+        padding-bottom: 24px;
+        &-banner{
+            padding: 3px 0px;
+            padding-left: 10px;
+            &-content{
+                h4{
+                    font-size: 14px;
+                }
+                p{
+                    line-height: 18px;
+                    font-size: 12px;
+                    margin-bottom: 0;
+                }
+                .white-btn{
+                    font-size: 12px;
+                }
+            } 
+            img{
+                width: 50%;
+            }
+        }
+        &-end{
+            &-image{
+                margin-bottom: 0;
+            }
+        }    
+    }
+    // ++ Call Action Area Ends Here ++ 
+
+    // ++ News Blog Starts Here ++
+    .news-blog{
+        padding-bottom: 24px;
+        &-heading{
+            padding-top: 24px;
+            margin-bottom: 8px;
+        }
+        &-content{
+            margin-top: 12px;
+            flex-direction: column;
+            &-start{
+                flex-basis: auto;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    // ++ News Blog Ends Here ++
+
+    // ++ Quick Links Starts Here ++
+    .quick-links{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-header{
+            h6{
+                font-size: 16px;
+            }
+        } 
+        &-single{
+            a{
+                font-size: 14px;
+            }
+        }
+    }
+    // ++ Quick Links Ends Here ++
+
+    // ++ Footer Starts Here ++
+    .footer{
+        padding: 16px 0px;
+        &-top{
+            flex-direction: column;
+            align-items: flex-start;
+            &-logo{
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+            &-links{
+                display: flex;
+                flex-direction: column;
+                a{
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    // ++ Footer Ends Here ++
+
+    // Home Page Ends Here
+
+    // ================= //
+
+
+
+    // Building Reviews Page Responsive Starts Here
+    // ++ House Prices Starts Here ++
+    .house-prices{
+        padding-top: 30px;
+        padding-bottom: 45px;
+        h2{
+            margin-top: 0 !important;
+            font-size: 28px;
+        }
+        p{
+            line-height: 22px;
+        }
+        &-search{
+            margin-top: 10px !important;
+            .home-search-input{
+                .form-control{
+                    font-size: 14px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+            .btn-danger{
+                font-size: 14px;
+                padding: 8px 12px !important;
+            }
+        }
+    }
+    // ++ House Prices Ends Here ++
+
+    // ++ Building Review Component Starts Here ++
+    .review-component-area{
+        padding-bottom: 24px;
+        h3{
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+    }
+    .review-component{
+        flex-direction: column;
+        &-start{
+            width: 100%;
+            .image{ 
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        &-end{
+            padding: 10px;
+            &-buttons{
+                button{
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+    // ++ Building Review Component Ends Here ++
+
+    // Building Reviews Page Responsive Ends Here
+    // ----------------------------------------- //
+
+
+
+    // Calculator Page Responsive Starts Here
+    // ++ Calc Area Starts Here ++
+    .calc-area{
+        padding-bottom: 24px;
+        &-form{
+            input{
+                min-height: 36px;
+                font-size: 14px;
+            }
+            &-text{
+                span{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-start{
+            &-single{
+                margin-bottom: 12px;
+                h6{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-end{
+            margin-top: 10px;
+            &-top{
+                margin-bottom: 10px;
+                &-bar{
+                    display: none;
+                }
+                h4{
+                    margin-bottom: 15px;
+                }
+            }
+            .calc-chart{
+                display: none;
+            }
+        }
+        .calc-navs{
+            &-btn{
+                padding: 8px;
+                font-size: 13px;
+            }
+            &-content{
+                &-single{
+                    padding: 10px 6px;
+                    &-footer{
+                        span{
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            &-bottom{
+                padding: 10px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                p{
+                    font-size: 14px;
+                    line-height: 22px;
+                    margin-bottom: 10px !important;
+                }
+                h4{
+                    font-size: 14px;
+                }
+                .red-btn-lg-outline,
+                .red-btn-lg{
+                    min-width: 185px;
+                    padding: 14px;
+                }
+            }
+        }
+    }
+    .calc-text-area{
+        margin-bottom: 24px;
+        h4{
+            margin-bottom: 10px;
+        }
+    }
+    // ++ Calc Area Ends Here ++
+    // Calculator Page Responsive Ends Here
+    //==================================//
+
+
+    // Commercial Rent Page Responsive Starts Here
+    // ++ Image Area Starts Here ++
+    .image-area{
+        margin-bottom: 24px;
+    }
+    .image-area-start-buttons .btn{
+        left: 5px;
+        &:nth-child(2){
+            left: 161px;
+        }
+    }
+    // ++ Image Area Starts Here ++
+
+    // ++ Commercial Rent Starts Here ++
+    .commercial-rent{
+        padding-bottom: 24px;
+        &-start{
+            .property-info{
+                padding-bottom: 20px;
+            }
+            .property-info-heading{
+                margin-bottom: 10px;
+                h5{
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                h4{
+                    font-size: 20px;
+                }
+            }
+        }
+        &-bottom{
+            padding: 20px 0px;
+            h4{
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+        }
+    }
+    .rent-card-sm-image{
+        width: 100%;
+    }
+    .commercial-rent-start .property-info-single{
+        margin-bottom: 6px;
+    }
+    .pannel-info{
+        padding-bottom: 20px;
+        &-single{
+            &-heading{
+                font-size: 18px !important;
+                margin-bottom: 16px !important;
+            }
+            &-content{
+                flex-direction: column;
+                &-image{
+                    align-self: center;
+                }
+                &-text{
+                    margin-left: 0 !important;
+                    margin-top: 10px;
+                    p{
+                        margin-bottom: 6px !important; 
+                    }
+                    &-company{
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+    .aminities-information{
+        padding: 20px 0px !important;
+        h5{
+            font-size: 18px !important;
+            margin-bottom: 10px !important;
+        }
+    }
+    .description-info{
+        padding: 20px 0px !important;
+        h5{
+            font-size: 18px !important;
+            margin-bottom: 10px !important;
+        }
+        p{
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
+    }
+    .reference-info{
+        padding: 20px 0px !important;
+        flex-direction: column !important;
+        &-list{
+            margin-bottom: 12px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            &-start{
+                padding-bottom: 0 !important;
+            }
+            &-end{
+                padding-bottom: 0 !important;
+                padding-left: 0 !important;
+                p{
+                    font-size: 14px !important;
+                }
+            }
+        }
+        &-end{
+            margin-left: 0 !important;
+        }
+    }
+    .property-share{
+        padding-top: 20px !important;
+        padding-bottom: 0 !important;
+        h5{
+            font-size: 14px !important;
+            margin-bottom: 18px !important;
+        }
+        &-bottom{
+            flex-wrap: wrap !important;
+            .btn{
+                margin-bottom: 10px !important; 
+            }
+        }
+    }
+    .contact-card{
+        &-heading{
+            margin-bottom: 0 !important;
+            h5{
+                margin-bottom: 0 !important;
+            }
+        }
+        &-buttons{
+            flex-wrap: wrap !important;
+            justify-content: flex-start !important;
+            .btn{
+                margin-top: 10px !important;
+                margin-right: 10px !important;
+            }
+        }
+        &-text{
+            p{
+                font-size: 14px !important;
+            }
+        }
+    }
+    .contact-card-sm .contact-card-badge{
+        bottom: 150px;
+    }
+    .contact-card .save-btn{
+        top: 2px;
+        right: 2px;
+    }
+    // ++ Commercial Rent Starts Here ++
+    // Commercial Rent Page Responsive Ends Here
+    //===========================================//
+
+
+    // Find Agent Page Responsive Starts Here
+    // ++ Agents Banner Starts Here ++
+    .agents-banner{
+        padding: 48px 0px;
+        h2{
+            font-size: 26px;
+        }
+        .find-form-input input{
+            min-height: 44px;
+            padding-left: 30px;
+            font-size: 14px;
+        }
+        .find-form-btn{
+            padding: 10px;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    .verified-agents-area{
+        padding: 20px 0px;
+        margin-bottom: 25px;
+    }
+    .verified-agents-area-title h3{
+        font-size: 24px;
+    }
+    .verified-agents{
+        max-width: 100%;
+    }
+    // ++ Agents Banner Ends Here ++
+    // Find Agent Page Responsive Ends Here
+    // ==================================== //
+
+
+    // House Prices Page Responsive Starts Here
+    .house-prices{
+        padding-bottom: 35px;
+        p{
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .btn-switch-area{
+            display: flex;
+            justify-content: center;
+        }
+        .button-switch{
+            margin-bottom: 25px;
+        }
+        .banner-form-input{
+            .input-group{
+                flex-direction: column;
+                input{
+                    width: 100%;
+                    border-radius: 3px !important;
+                    margin-bottom: 10px;
+                    padding: 12px 0px;
+                }
+                .btn-primary{
+                    width: 35%;
+                    font-size: 14px;
+                    border-radius: 3px !important;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    .house-prices-area{
+        padding-bottom: 24px;
+        h2{
+            font-size: 18px !important;
+        }
+    }
+    .price-trends{
+        padding: 20px 0px;
+        h4{
+            margin-bottom: 16px;
+        }
+    }
+    // House Prices Page Responsive Ends Here
+    // ==================================== //
+    
+
+
+    // Rent Page Responsive Starts Here
+    .rent-contents{
+        margin-bottom: 30px;
+    }
+    .properties-rent{
+        padding: 24px 0px;
+    }
+    .properties-rent-header-end{
+        margin-top: 16px;
+    }
+    .rent-featured{
+        flex-direction: column;
+        &-start{
+            &-slider{
+                .carousel{
+                    max-width: 100%;
+                    &-item{
+                        img{
+                            max-height: 195px;
+                        }
+                    }
+                }
+            } 
+        }
+        &-mid{
+            &-buttons{
+                flex-wrap: wrap;
+                .btn{
+                    margin-top: 10px;
+                    margin-right: 5px;
+                }
+            }
+        }    
+        &-end{
+            flex-direction: column;
+        }
+        &-company{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .rent-featured-mid-buttons-single .dot-button-dropdown{
+        top: -90px;
+        padding: 0;
+        left: -35px;
+    }
+    .rent-search-bottom{
+        #priceBtnSelect,
+        #bedBathRent{
+            margin: 10px 0px;
+        }
+        .home-search-select{
+            width: 48%;
+            max-width: 48%;
+            .btn{
+                width: 100%;
+            }
+            .form-select{
+                text-align: center;
+            }
+        }
+        .search-btn{
+            padding: 20px !important;
+            font-size: 12px;
+            width: 100%;
+        }
+        .rent-search-button{
+            flex: auto;
+            margin-left: 13px;
+        }
+    }
+    // Rent Page Responsive Ends Here
+
+    // New Projects Page Responsive Starts Here
+    .project-search{
+        padding-bottom: 15px;
+    }
+    .page-intro-content h2{
+        font-size: 22px;
+    }
+    .new-projects-card{
+        a{
+            flex-direction: column;
+        }
+        &-image{
+            width: 100%;
+            padding-right: 0;
+        }
+        &-logo{
+            right: 0px;
+        }
+        &-tag{
+            top: 6px;
+            right: 6px;
+        }
+        &-bottom{
+            margin-top: 10px;
+            position: unset;
+        }
+    }
+    .project-search-form{
+        flex-direction: column;
+        &-start{
+            border: none;
+        }
+        &-dropdown{
+            width: 100%;
+            border: 1px solid #ced4da !important;
+            margin-bottom: 10px;
+            .btn{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        input{
+            margin: 10px 0px;
+            border: 1px solid #ced4da !important;
+        }
+        .btn{
+            width: 100%;
+        }
+    }
+    .project-search-form-start svg{
+        top: 35px;
+    }
+    .project-search-form-start{
+        width: 100%;
+    }
+    // New Projects Page Responsive Ends Here
+}
+
+// Extra (350px - 420px)
+@media only screen and (min-width: 350px) and (max-width: 420px){
+
+    // Home Page Starts Here
+
+    // ++ Call Action Area Starts Here ++ 
+    .social-links-main{
+        justify-content: flex-start;
+        a{
+            margin-right: 12px;
+        }
+    }
+    .call-action-banner-content{
+        .white-btn{
+            margin-top: 12px;
+        }
+    } 
+    // ++ Call Action Area Ends Here ++ 
+
+    // Home Page Ends Here
+}
+// Max 991px
+@media (max-width: 991px){
+    // Blog Details Page Starts Here
+
+    // ++ Breadcrumb Area Starts Here ++
+    .breadcrumb-area-blog{
+        margin-bottom: 16px !important;
+    }
+    // ++ Breadcrumb Area Ends Here ++
+
+    // ++ Blog Details Starts Here ++
+    .blogs-area{
+        padding-bottom: 30px;
+    }
+    .blog-details{
+        padding-bottom: 24px;
+        &-title{
+            font-size: 23px;
+        }
+        &-text{
+            font-size: 14px;
+            line-height: 22px;
+        }
+        &-heading{
+            font-size: 17px;
+        }
+    }
+    // ++ Blog Details Ends Here ++
+
+    // Blog Details Page Ends Here
+
+    // ================= //
+
+    // Calculator Resposnive Starts Here
+    .calc-breadcrumb-area{
+        margin-bottom: 0 !important;
+    }
+    // ++ Page Intro Starts Here ++
+    .calc-page-intro{
+        margin-bottom: 24px;
+        h2{
+            font-size: 26px !important;
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    // ++ Page Intro Ends Here ++
+    // Calculator Resposnive Ends Here
+    .rent-contents{
+        margin-bottom: 30px;
+    }
+} 
+// Min 1201px
+@media only screen and (min-width: 1201px) and (max-width: 1300px){
+    .commercial-rent-start .reference-info-list-start p{
+        font-size: 14px !important;
+    }
+    .property-share{
+        &-bottom{
+            flex-wrap: wrap !important;
+            .btn{
+                margin-bottom: 10px !important; 
+            }
+        }
+    }
+    .contact-card{
+        &-buttons{
+            flex-wrap: wrap !important;
+            justify-content: flex-start !important;
+            .btn{
+                margin-top: 10px !important;
+                margin-right: 10px !important;
+            }
+        }
+    }
+    .contact-card-badge{
+        bottom: 0px;
+        top: 55px;
+    }
+    .contact-card .save-btn{
+        top: 2px;
+        right: 2px;
+    }
+}
+// Min 360px
+@media (min-width: 360px){
+    .contact-card-sm .contact-card-badge{
+        top: 10px;
+    }
+}
+
+// Small devices 420px - 574px 
+@media only screen and (min-width: 420px) and (max-width: 574px) {
+    // New Projects Page Responsive Starts Here
+    .page-intro-content h2{
+            font-size: 22px;
+    }
+    .new-projects-card{
+            a{
+                flex-direction: column;
+            }
+            &-image{
+                width: 100%;
+                padding-right: 0;
+            }
+            &-logo{
+                right: 0px;
+            }
+            &-tag{
+                top: 6px;
+                right: 6px;
+            }
+            &-bottom{
+                margin-top: 10px;
+                position: unset;
+            }
+    }
+    .project-search-form{
+        padding-bottom: 10px;
+        flex-direction: column;
+        &-start{
+            border: none;
+        }
+        &-dropdown{
+            width: 100%;
+            border: 1px solid #ced4da !important;
+            margin-bottom: 10px;
+            .btn{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        input{
+            margin: 10px 0px;
+            border: 1px solid #ced4da !important;
+        }
+        .btn{
+            width: 100%;
+        }
+    }
+    .project-search-form-start svg{
+        top: 35px;
+    }
+    .project-search-form-start{
+        width: 100%;
+    }
+    // New Projects Page Responsive Ends Here
+
+    .custom-container{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    // Home Pgae Starts Here
+    // ++ Verified Feature Area Starts Here ++
+    .verified-feature{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-heading{
+            margin-bottom: 20px;
+        }
+    }
+    // ++ Verified Feature Area Ends Here ++
+
+    // ++ Call Action Area Starts Here ++ 
+    .call-action{
+            padding-bottom: 24px;
+            &-banner{
+                padding: 3px 0px;
+                padding-left: 10px;
+                &-content{
+                    h4{
+                        font-size: 14px;
+                    }
+                    p{
+                        line-height: 18px;
+                        font-size: 12px;
+                        margin-bottom: 0;
+                    }
+                    .white-btn{
+                        font-size: 13px;
+                        margin-top: 12px;
+                    }
+                } 
+                img{
+                    width: 50%;
+                }
+            }
+            &-end{
+                &-image{
+                    margin-bottom: 0;
+                }
+            } 
+            .social-links-heading{
+                margin: 5px 0px;
+            }
+            .social-links-main{
+                justify-content: flex-start;
+                a{
+                    margin-right: 12px;
+                }
+            }  
+    }
+    // ++ Call Action Area Ends Here ++ 
+
+    // ++ News Blog Starts Here ++
+    .news-blog{
+        padding-bottom: 24px;
+        &-heading{
+            padding-top: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    // ++ News Blog Ends Here ++
+
+    // ++ Quick Links Starts Here ++
+    .quick-links{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-header{
+            h6{
+                font-size: 16px;
+            }
+        } 
+        &-single{
+            a{
+                font-size: 14px;
+            }
+        }
+    }
+    // ++ Quick Links Ends Here ++
+
+    // ++ Footer Starts Here ++
+    .footer{
+        padding: 16px 0px;
+        &-top{
+            flex-direction: column;
+            align-items: flex-start;
+            &-logo{
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+            &-links{
+                display: flex;
+                flex-direction: column;
+                a{
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    // ++ Footer Ends Here ++
+
+    // Home Page Ends Here
+
+    // ------------------ //
+
+
+    // Building Reviews Page Responsive Starts Here
+    // ++ House Prices Starts Here ++
+    .house-prices{
+        padding-top: 30px;
+        padding-bottom: 45px;
+        h2{
+            margin-top: 0 !important;
+            font-size: 28px;
+        }
+        p{
+            max-width: 350px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 22px;
+        }
+        &-search{
+            margin-top: 10px !important;
+            .home-search-input{
+                .form-control{
+                    font-size: 14px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+            .btn-danger{
+                font-size: 14px;
+                padding: 8px 12px !important;
+            }
+        }
+    }
+    // ++ House Prices Ends Here ++
+
+    // ++ Building Review Component Starts Here ++
+        .review-component-area{
+            padding-bottom: 24px;
+            h3{
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+        .review-component{
+            flex-direction: column;
+            &-start{
+                width: 100%;
+                .image{ 
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            &-end{
+                padding: 10px;
+                &-buttons{
+                    button{
+                        margin-left: 6px;
+                    }
+                }
+            }
+        }
+    // ++ Building Review Component Ends Here ++
+    // Building Reviews Page Responsive Ends Here
+    // ----------------------------------------- //
+
+
+    // Calculator Page Responsive Starts Here
+    // ++ Calc Area Starts Here ++
+    .calc-area{
+        padding-bottom: 24px;
+        &-form{
+            input{
+                min-height: 36px;
+                font-size: 14px;
+            }
+            &-text{
+                span{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-start{
+            &-single{
+                margin-bottom: 12px;
+                h6{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-end{
+            margin-top: 10px;
+            &-top{
+                margin-bottom: 10px;
+                &-bar{
+                    display: none;
+                }
+                h4{
+                    margin-bottom: 15px;
+                }
+            }
+            .calc-chart{
+                display: none;
+            }
+        }
+        .calc-navs{
+            &-btn{
+                padding: 8px;
+                font-size: 16px;
+            }
+            &-content{
+                &-single{
+                    padding: 10px 6px;
+                    &-footer{
+                        span{
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            &-bottom{
+                padding: 10px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                p{
+                    font-size: 14px;
+                    line-height: 22px;
+                    margin-bottom: 10px !important;
+                }
+                h4{
+                    font-size: 14px;
+                }
+                .red-btn-lg-outline,
+                .red-btn-lg{
+                    min-width: 185px;
+                    padding: 14px;
+                }
+            }
+        }
+    }
+    .calc-text-area{
+        margin-bottom: 24px;
+        h4{
+            margin-bottom: 10px;
+        }
+    }
+    // ++ Calc Area Ends Here ++
+    // Calculator Page Responsive Ends Here
+    //===================================//
+
+
+    // Commercial Rent Page Responsive Starts Here
+    // ++ Image Area Starts Here ++
+    .image-area{
+        margin-bottom: 24px;
+        &-end{
+            &-sm{
+                &-image{
+                    a{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .image-area-start-buttons .btn{
+        left: 5px;
+        &:nth-child(2){
+            left: 168px;
+        }
+    }
+    // ++ Image Area Starts Here ++
+    // ++ Commercial Rent Starts Here ++
+    .commercial-rent{
+            padding-bottom: 24px;
+            &-start{
+                .property-info{
+                    padding-bottom: 20px;
+                }
+                .property-info-heading{
+                    margin-bottom: 10px;
+                    h5{
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                    }
+                    h4{
+                        font-size: 20px;
+                    }
+                }
+            }
+    }
+    .commercial-rent-start .property-info-single{
+            margin-bottom: 6px;
+    }
+    .pannel-info{
+            padding-bottom: 20px;
+            &-single{
+                &-heading{
+                    font-size: 18px !important;
+                    margin-bottom: 16px !important;
+                }
+                &-content{
+                    flex-direction: column;
+                    &-image{
+                        align-self: center;
+                    }
+                    &-text{
+                        margin-left: 0 !important;
+                        margin-top: 10px;
+                        p{
+                            margin-bottom: 6px !important; 
+                        }
+                        &-company{
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+    }
+    .aminities-information{
+            padding: 20px 0px !important;
+            h5{
+                font-size: 18px !important;
+                margin-bottom: 10px !important;
+            }
+    }
+    .description-info{
+            padding: 20px 0px !important;
+            h5{
+                font-size: 18px !important;
+                margin-bottom: 10px !important;
+            }
+            p{
+                font-size: 14px !important;
+                line-height: 22px !important;
+            }
+    }
+    .reference-info{
+        padding: 20px 0px !important;
+        flex-direction: column !important;
+        &-list{
+            margin-bottom: 12px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            &-start{
+                padding-bottom: 0 !important;
+            }
+            &-end{
+                padding-bottom: 0 !important;
+                padding-left: 0 !important;
+                p{
+                    font-size: 14px !important;
+                }
+            }
+        }
+        &-end{
+            margin-left: 0 !important;
+        }
+    }
+    .property-share{
+        padding-top: 20px !important;
+        padding-bottom: 0 !important;
+        h5{
+            font-size: 14px !important;
+            margin-bottom: 18px !important;
+        }
+        &-bottom{
+            flex-wrap: wrap !important;
+            .btn{
+                margin-bottom: 10px !important; 
+            }
+        }
+    }
+    .contact-card-buttons{
+        justify-content: flex-start !important;
+        .btn{
+            margin-right: 10px !important;
+        }
+    }
+    .rent-card-sm-image{
+        width: 100%;
+    }
+    .rent-card-sm{
+        width: 60%;
+    }
+     // ++ Commercial Rent Starts Here ++
+    // Commercial Rent Page Responsive Ends Here
+    //===========================================//
+
+
+    // Find Agent Page Responsive Starts Here
+    // ++ Agents Banner Starts Here ++
+    .agents-banner{
+        padding: 48px 0px;
+        h2{
+            font-size: 26px;
+        }
+    }
+    .find-form{
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .verified-agents-area{
+        padding: 20px 0px;
+        margin-bottom: 25px;
+    }
+    .verified-agents-area-title h3{
+        font-size: 24px;
+    }
+    .verified-agents{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    // ++ Agents Banner Ends Here ++
+    // Find Agent Page Responsive Ends Here
+
+    // House Prices Page Responsive Starts Here
+        .house-prices{
+            padding-bottom: 35px;
+            p{
+                font-size: 14px;
+                line-height: 22px;
+            }
+            .btn-switch-area{
+                display: flex;
+                justify-content: center;
+            }
+            .banner-form-input{
+                .input-group{
+                    input{
+                        padding: 12px 0px;
+                    }
+                    .btn-primary{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .house-prices-area{
+            padding-bottom: 24px;
+            h2{
+                font-size: 18px !important;
+            }
+        }
+        .price-trends{
+            padding: 20px 0px;
+            h4{
+                margin-bottom: 16px;
+            }
+        }
+    // House Prices Page Responsive Ends Here
+        // ==================================== //
+    
+
+
+    // Rent Page Responsive Starts Here
+    .rent-component{
+        max-width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .rent-featured{
+        flex-direction: column;
+        &-start{
+            &-slider{
+                .carousel{
+                    max-width: 100%;
+                    &-item{
+                        img{
+                            max-height: 195px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            } 
+        }
+        &-mid{
+            &-buttons{
+                flex-wrap: wrap;
+                .btn{
+                    margin-top: 10px;
+                    margin-right: 5px;
+                }
+            }
+        }    
+        &-end{
+            flex-direction: column;
+        }
+        &-company{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .rent-featured-mid-buttons-single .dot-button-dropdown{
+        top: -90px;
+        padding: 0;
+    }
+    .properties-rent{
+        padding: 24px 0px;
+    }
+    .properties-rent-header-end{
+        margin-top: 16px;
+    }
+    .rent-search-bottom{
+        #priceBtnSelect,
+        #bedBathRent{
+            margin: 10px 0px;
+        }
+        .home-search-select{
+            width: 48%;
+            max-width: 48%;
+            .btn{
+                width: 100%;
+            }
+            .form-select{
+                text-align: center;
+            }
+        }
+        .search-btn{
+            padding: 20px !important;
+            font-size: 12px;
+            width: 100%;
+        }
+        .rent-search-button{
+            flex: auto;
+            margin-left: 13px;
+        }
+    }
+    // Rent Page Responsive Ends Here
+}
+
+// Small devices 575px - 767px 
+@media (min-width: 575px) and (max-width: 767px) {
+    // New Projects Page Responsive Starts Here
+    .page-intro-content h2{
+        font-size: 22px;
+    }
+    .new-projects-card{
+            max-width: 60%;
+            margin-right: auto;
+            margin-left: auto;
+            a{
+                flex-direction: column;
+            }
+            &-image{
+                width: 100%;
+                padding-right: 0;
+            }
+            &-logo{
+                right: 0px;
+            }
+            &-tag{
+                top: 6px;
+                right: 6px;
+            }
+            &-bottom{
+                margin-top: 10px;
+                position: unset;
+            }
+    }
+    .page-intro{
+        .form-select-sm{
+            max-width: 50%;
+        }
+    }
+    .project-search-form{
+        padding-bottom: 10px;
+        flex-direction: column;
+        &-start{
+            border: none;
+        }
+        &-dropdown{
+            width: 100%;
+            border: 1px solid #ced4da !important;
+            margin-bottom: 10px;
+            .btn{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        input{
+            margin: 10px 0px;
+            border: 1px solid #ced4da !important;
+        }
+        .btn{
+            width: 100%;
+        }
+    }
+    .project-search-form-start svg{
+        top: 35px;
+    }
+    .project-search-form-start{
+        width: 100%;
+    }
+    // New Projects Page Responsive Ends Here
+
+    .custom-container{
+        width: 100%;
+        max-width: 100%;
+    }
+    // Rent Search Starts Here
+    .rent-search-bottom{
+        .rent-search-button,
+        .home-search-select{
+            margin-bottom: 10px;
+        }
+        .search-btn{
+            padding: 20px !important;
+            font-size: 14px;
+        }
+    }
+    // Rent Search Ends Here
+
+    // Home Pgae Starts Here
+    // ++ Verified Feature Area Starts Here ++
+    .verified-feature{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-heading{
+            margin-bottom: 20px;
+        }
+    }
+    .verified-listing{
+        &-image{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    // ++ Verified Feature Area Ends Here ++
+
+    // ++ Call Action Area Starts Here ++ 
+    .call-action{
+        padding-bottom: 24px;
+        &-banner{
+                padding: 3px 0px;
+                padding-left: 10px;
+                &-content{
+                    h4{
+                        font-size: 14px;
+                    }
+                    p{
+                        line-height: 18px;
+                        font-size: 12px;
+                        margin-bottom: 0;
+                    }
+                    .white-btn{
+                        font-size: 13px;
+                        margin-top: 12px;
+                    }
+                } 
+                img{
+                    width: 50%;
+                }
+        }
+        &-end{
+                &-image{
+                    margin-bottom: 0;
+                }
+        } 
+        .social-links-heading{
+                margin: 5px 0px;
+        }
+        .social-links-main{
+                justify-content: flex-start;
+                a{
+                    margin-right: 12px;
+                }
+        }  
+    }
+    // ++ Call Action Area Ends Here ++ 
+
+    // ++ News Blog Starts Here ++
+    .news-blog{
+        padding-bottom: 24px;
+        &-heading{
+            padding-top: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    // ++ News Blog Ends Here ++
+
+    // ++ Quick Links Starts Here ++
+    .quick-links{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-header{
+            h6{
+                font-size: 16px;
+            }
+        } 
+        &-single{
+            a{
+                font-size: 14px;
+            }
+        }
+    }
+    // ++ Quick Links Ends Here ++
+
+    // ++ Footer Starts Here ++
+    .footer{
+        padding: 16px 0px;
+        &-top{
+            flex-direction: column;
+            align-items: flex-start;
+            &-logo{
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+            &-links{
+                display: flex;
+                flex-direction: column;
+                a{
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    // ++ Footer Ends Here ++
+
+    // Home Page Ends Here
+    // ------------------- //
+
+
+    // Building Reviews Page Responsive Starts Here
+    // ++ House Prices Starts Here ++
+    .house-prices{
+        padding-top: 30px;
+        padding-bottom: 45px;
+        h2{
+            margin-top: 0 !important;
+            font-size: 28px;
+        }
+        p{
+            max-width: 350px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 22px;
+        }
+        &-search{
+            margin-top: 10px !important;
+            .home-search-input{
+                .form-control{
+                    font-size: 14px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+            .btn-danger{
+                font-size: 14px;
+                padding: 8px 12px !important;
+            }
+        }
+    }
+    // ++ House Prices Ends Here ++
+
+    // ++ Building Review Component Starts Here ++
+    .review-component-area{
+            padding-bottom: 24px;
+            h3{
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+    }
+    .review-component{
+            flex-direction: column;
+            &-start{
+                width: 100%;
+                .image{ 
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            &-end{
+                padding: 20px;
+                &-buttons{
+                    button{
+                        margin-left: 6px;
+                    }
+                }
+            }
+    }
+    // ++ Building Review Component Ends Here ++
+    // Building Reviews Page Responsive Ends Here
+    // ---------------------------- //
+
+
+    // Calculator Page Responsive Starts Here
+    // ++ Calc Area Starts Here ++
+    .calc-area{
+        padding-bottom: 24px;
+        &-form{
+            input{
+                min-height: 40px;
+                font-size: 14px;
+            }
+            &-text{
+                span{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-start{
+            &-single{
+                margin-bottom: 12px;
+                h6{
+                    font-size: 14px;
+                }
+            }
+        }
+        &-end{
+            margin-top: 10px;
+            &-top{
+                margin-bottom: 20px;
+                h4{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .calc-navs{
+            &-content{
+                &-single{
+                    padding: 10px 6px;
+                    &-footer{
+                        span{
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            &-bottom{
+                padding: 10px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                &-last{
+                    display: flex;
+                    align-items: center;
+                }
+                p{
+                    font-size: 14px;
+                    line-height: 22px;
+                    margin-bottom: 10px !important;
+                }
+                h4{
+                    font-size: 14px;
+                }
+                .red-btn-lg-outline,
+                .red-btn-lg{
+                    min-width: 185px;
+                    padding: 14px;
+                    margin-bottom: 0 !important;
+                }
+                .red-btn-lg{
+                    border: 2px solid transparent;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+    .calc-text-area{
+        margin-bottom: 24px;
+        h4{
+            margin-bottom: 10px;
+        }
+    }
+    // ++ Calc Area Ends Here ++
+    // Calculator Page Responsive Ends Here
+    //=====================================//
+
+
+    // Commercial Rent Page Responsive Starts Here
+    // ++ Image Area Starts Here ++
+    .image-area{
+        margin-bottom: 24px;
+        &-end{
+            &-sm{
+                &-image{
+                    a{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .image-area-start-buttons .btn{
+        left: 5px;
+        &:nth-child(2){
+            left: 168px;
+        }
+    }
+    // ++ Image Area Starts Here ++
+    // ++ Commercial Rent Starts Here ++
+    .commercial-rent{
+        padding-bottom: 24px;
+        &-start{
+            .property-info{
+                padding-bottom: 20px;
+            }
+            .property-info-heading{
+                margin-bottom: 10px;
+                h5{
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                h4{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .description-info{
+        padding: 20px 0px !important;
+        h5{
+            font-size: 18px !important;
+            margin-bottom: 10px !important;
+        }
+        p{
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
+    }
+    .reference-info{
+        padding: 20px 0px !important;
+        flex-direction: column !important;
+        &-list{
+            margin-bottom: 12px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            &-start{
+                padding-bottom: 0 !important;
+            }
+            &-end{
+                padding-bottom: 0 !important;
+                padding-left: 0 !important;
+                p{
+                    font-size: 14px !important;
+                }
+            }
+        }
+        &-end{
+            margin-left: 0 !important;
+        }
+    }
+    .property-share{
+        padding-top: 20px !important;
+        padding-bottom: 0 !important;
+        h5{
+            font-size: 14px !important;
+            margin-bottom: 18px !important;
+        }
+        &-bottom{
+            flex-wrap: wrap !important;
+            .btn{
+                margin-bottom: 10px !important; 
+            }
+        }
+    }
+    .contact-card-buttons{
+        justify-content: flex-start !important;
+        .btn{
+            margin-right: 10px !important;
+        }
+    }
+    .contact-card-text{
+        p{
+            max-width: 350px !important;
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+    }
+    .rent-card-sm-image{
+        width: 100%;
+    }
+    .rent-card-sm{
+        width: 60%;
+    }
+    // ++ Commercial Rent Starts Here ++
+    // Commercial Rent Page Responsive Ends Here
+    //===========================================//
+
+
+    // Find Agent Page Responsive Starts Here
+    // ++ Agents Banner Starts Here ++
+    .agents-banner{
+        padding: 48px 0px;
+        h2{
+            font-size: 26px;
+        }
+    }
+    .find-form{
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .verified-agents-area{
+        padding: 20px 0px;
+        margin-bottom: 25px;
+    }
+    .verified-agents-area-title h3{
+        font-size: 24px;
+    }
+    .verified-agents{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    // ++ Agents Banner Ends Here ++
+    // Find Agent Page Responsive Ends Here
+        // ================================== //
+
+
+        // House Prices Page Responsive Starts Here
+        .house-prices{
+            padding-bottom: 35px;
+            p{
+                font-size: 14px;
+                line-height: 22px;
+            }
+            .btn-switch-area{
+                display: flex;
+                justify-content: center;
+            }
+            .banner-form-input{
+                .input-group{
+                    input{
+                        padding: 12px 0px;
+                    }
+                    .btn-primary{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .house-prices-area{
+            padding-bottom: 24px;
+            h2{
+                font-size: 18px !important;
+            }
+        }
+        .price-trends{
+            padding: 20px 0px;
+            h4{
+                margin-bottom: 16px;
+            }
+        }
+    // House Prices Page Responsive Ends Here
+    // ==================================== //
+
+
+        // Rent Page Responsive Starts Here
+        .properties-rent{
+            padding: 24px 0px;
+        }
+        .properties-rent-header-end{
+            margin-top: 16px;
+        }
+        .rent-component{
+            max-width: 70%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .rent-featured{
+            flex-direction: column;
+            &-start{
+                &-slider{
+                    .carousel{
+                        max-width: 100%;
+                        &-item{
+                            img{
+                                max-height: 195px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                } 
+            }
+            &-mid{
+                &-buttons{
+                    flex-wrap: wrap;
+                    .btn{
+                        margin-top: 10px;
+                        margin-right: 5px;
+                    }
+                }
+            }    
+            &-end{
+                flex-direction: column;
+            }
+            &-company{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .rent-featured-mid-buttons-single .dot-button-dropdown{
+            top: -90px;
+            padding: 0;
+            left: -50px;
+        }
+        // Rent Page Responsive Ends Here
+}
+
+// Medium devices 768px - 991px 
+@media (min-width: 768px) and (max-width: 991px) {
+        // New Projects Page Responsive Starts Here
+        .page-intro-content h2{
+            font-size: 22px;
+        }
+        .page-intro{
+            .form-select-sm{
+                max-width: 50%;
+            }
+        }
+        .project-search-form{
+            padding-bottom: 10px;
+            flex-direction: column;
+            &-start{
+                border: none;
+            }
+            &-dropdown{
+                width: 100%;
+                border: 1px solid #ced4da !important;
+                margin-bottom: 10px;
+                .btn{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            input{
+                margin: 10px 0px;
+                border: 1px solid #ced4da !important;
+            }
+            .btn{
+                width: 100%;
+            }
+        }
+        .project-search-form-start svg{
+            top: 35px;
+        }
+        .project-search-form-start{
+            width: 100%;
+        }
+        // New Projects Page Responsive Ends Here
+
+    .custom-container{
+        width: 100%;
+        max-width: 100%;
+    }
+
+        // Rent Search Starts Here
+        .rent-search{
+            width: 87%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .rent-search-bottom{
+            justify-content: flex-start !important;
+            .search-btn{
+                padding: 22px !important;
+                font-size: 14px;
+            }
+            .home-search-select{
+                margin-right: 10px;
+                max-width: auto !important;
+                min-width: auto !important;
+            }
+        }
+        // Rent Search Ends Here
+
+    // Home Pgae Starts Here
+    // ++ Verified Feature Area Starts Here ++
+    .verified-feature{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-heading{
+            margin-bottom: 20px;
+        }
+    }
+    // ++ Verified Feature Area Ends Here ++
+
+    // ++ Call Action Area Starts Here ++ 
+    .call-action{
+        padding-bottom: 24px;
+        &-banner{
+            padding-left: 12px;
+        }
+        .social-links-heading{
+            margin: 5px 0px;
+        }
+        .social-links-main{
+            justify-content: flex-start;
+            a{
+                margin-right: 12px;
+                padding: 7px 14px;
+            }
+        }  
+    }
+    // ++ Call Action Area Ends Here ++ 
+
+    // ++ News Blog Starts Here ++
+    .news-blog{
+        padding-bottom: 24px;
+        &-heading{
+            padding-top: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    // ++ News Blog Ends Here ++
+
+    // ++ Quick Links Starts Here ++
+    .quick-links{
+        padding: 24px 0px;
+        padding-top: 0;
+        &-header{
+            h6{
+                font-size: 16px;
+            }
+        } 
+        &-single{
+            a{
+                font-size: 14px;
+            }
+        }
+    }
+    // ++ Quick Links Ends Here ++
+
+    // ++ Footer Starts Here ++
+    .footer{
+        padding: 16px 0px;
+        &-top{
+            margin-bottom: 18px;
+        }
+    }
+    // ++ Footer Ends Here ++
+
+    // Home Page Ends Here
+
+    // ------------------ //
+
+
+    // Building Reviews Page Responsive Starts Here
+    // ++ House Prices Starts Here ++
+    .house-prices{
+        padding-top: 30px;
+        padding-bottom: 45px;
+        h2{
+            margin-top: 0 !important;
+            font-size: 28px;
+        }
+        p{
+            max-width: 350px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 22px;
+        }
+        &-search{
+            margin-top: 10px !important;
+            .home-search-input{
+                .form-control{
+                    font-size: 14px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+            .btn-danger{
+                font-size: 14px;
+                padding: 8px 12px !important;
+            }
+        }
+    }
+    // ++ House Prices Ends Here ++
+
+    // ++ Building Review Component Starts Here ++
+        .review-component-area{
+            padding-bottom: 24px;
+            h3{
+                font-size: 22px;
+            }
+    }
+    // ++ Building Review Component Ends Here ++
+    // Building Reviews Page Responsive Ends Here
+    // ----------------------------------------- //
+
+
+    // Calculator Page Responsive Starts Here
+    // ++ Calc Area Starts Here ++
+    .calc-area{
+        padding-bottom: 24px;
+    }
+    .calc-text-area{
+        margin-bottom: 24px;
+        h4{
+            margin-bottom: 10px;
+        }
+    }
+    // ++ Calc Area Ends Here ++
+    // Calculator Page Responsive Ends Here
+    //====================================//
+
+
+    // Commercial Rent Page Responsive Starts Here
+    // ++ Image Area Starts Here ++
+    .image-area{
+        margin-bottom: 24px;
+        &-end{
+            &-sm{
+                &-image{
+                    a{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .image-area-start-buttons .btn{
+        left: 5px;
+        &:nth-child(2){
+            left: 168px;
+        }
+    }
+    // ++ Image Area Starts Here ++
+    .property-share{
+        padding-top: 20px !important;
+        padding-bottom: 0 !important;
+    }
+    .contact-card-buttons{
+        justify-content: flex-start !important;
+        .btn{
+            margin-right: 10px !important;
+        }
+    }
+    .contact-card-text{
+        p{
+            max-width: 350px !important;
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+    }
+    .rent-card-sm-image{
+        width: 100%;
+    }
+    // Commercial Rent Page Responsive Ends Here
+    //===========================================//
+
+
+    // Find Agent Page Responsive Starts Here
+    // ++ Agents Banner Starts Here ++
+    .find-form{
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .verified-agents-area{
+        padding: 20px 0px;
+        margin-bottom: 25px;
+    }
+    .verified-agents-area-title h3{
+        font-size: 24px;
+    }
+    .verified-agents{
+        max-width: 100%;
+    }
+    // ++ Agents Banner Ends Here ++
+    // Find Agent Page Responsive Ends Here
+    // ================================== //
+
+
+        // House Prices Page Responsive Starts Here
+        .house-prices{
+            padding-bottom: 35px;
+            p{
+                font-size: 14px;
+                line-height: 22px;
+            }
+            .btn-switch-area{
+                display: flex;
+                justify-content: center;
+            }
+            .banner-form-input{
+                .input-group{
+                    input{
+                        padding: 12px 0px;
+                    }
+                    .btn-primary{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .house-prices-area{
+            padding-bottom: 24px;
+            h2{
+                font-size: 18px !important;
+            }
+        }
+        .price-trends{
+            padding: 20px 0px;
+            h4{
+                margin-bottom: 16px;
+            }
+        }
+    // House Prices Page Responsive Ends Here
+        // ================================== //
+
+
+    // House Prices Page Responsive Starts Here
+    .banner-form{
+        max-width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    // House Prices Page Responsive Ends Here
+        // ==================================== //
+
+
+        // Rent Page Responsive Starts Here
+        .rent-component{
+            max-width: 70%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .rent-featured{
+            flex-direction: column;
+            &-start{
+                &-slider{
+                    .carousel{
+                        max-width: 100%;
+                        &-item{
+                            img{
+                                max-height: 195px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                } 
+            }
+            &-mid{
+                &-buttons{
+                    flex-wrap: wrap;
+                    .btn{
+                        margin-top: 10px;
+                        margin-right: 5px;
+                    }
+                }
+            }    
+            &-end{
+                flex-direction: column;
+            }
+            &-company{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .rent-featured-mid-buttons-single .dot-button-dropdown{
+            top: -90px;
+            padding: 0;
+            left: -50px;
+        }
+        // Rent Page Responsive Ends Here
+
+}
+
+// large devices 992px - 1200px 
+@media (min-width: 992px) and (max-width: 1200px) {
+    // New Projects Page Responsive Starts Here
+    .page-intro-content h2{
+        font-size: 28px;
+    }
+    .banner-map a{
+        padding: 8px 12px;
+    }
+    .project-search-form-end .btn{
+        padding: 18px 17px;
+    }
+    // New Projects Page Responsive Ends Here
+
+    .custom-container{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    // Rent Search Starts Here
+    .rent-search-bottom{
+        .search-btn{
+            padding: 22px !important;
+            font-size: 14px;
+        }
+    }
+    // Rent Search Ends Here
+
+    // Home Pgae Starts Here
+    // ++ Verified Feature Area Starts Here ++
+    .verified-feature{
+        padding: 30px 0px;
+        padding-top: 0;
+        &-heading{
+            margin-bottom: 24px;
+        }
+        &-row{
+            justify-content: center;
+        }
+    }
+    // ++ Verified Feature Area Ends Here ++
+
+    // ++ Call Action Area Starts Here ++ 
+    .call-action{
+        padding-bottom: 30px;
+    }
+    // ++ Call Action Area Ends Here ++ 
+
+    // ++ News Blog Starts Here ++
+    .news-blog{
+        padding-bottom: 30px;
+        &-heading{
+            padding-top: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    // ++ News Blog Ends Here ++
+
+    // ++ Quick Links Starts Here ++
+    .quick-links{
+        padding: 30px 0px;
+        padding-top: 0;
+        &-header{
+            h6{
+                font-size: 16px;
+            }
+        } 
+        &-single{
+            a{
+                font-size: 14px;
+            }
+        }
+    }
+    // ++ Quick Links Ends Here ++
+
+    // ++ Footer Starts Here ++
+    .footer{
+        padding: 18px 0px;
+    }
+    // ++ Footer Ends Here ++
+
+    // Home Page Ends Here
+    // ------------------ //
+
+
+    // Building Reviews Page Responsive Starts Here
+    // ++ House Prices Starts Here ++
+    .house-prices{
+        p{
+            max-width: 350px;
+            margin-right: auto;
+            margin-left: auto;
+            line-height: 22px;
+        }
+    }
+    // ++ House Prices Ends Here ++
+
+    // ++ Building Review Component Starts Here ++
+    .review-component-area{
+            padding-bottom: 24px;
+            h3{
+                font-size: 22px;
+            }
+    }
+    // ++ Building Review Component Ends Here ++
+    // Building Reviews Page Responsive Ends Here
+
+    // ================= //
+
+    // Calculator Resposnive Starts Here
+    .calc-breadcrumb-area{
+        margin-bottom: 0 !important;
+    }
+    // ++ Page Intro Starts Here ++
+    .calc-page-intro{
+        margin-bottom: 30px;
+        h2{
+            font-size: 26px !important;
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    // ++ Page Intro Ends Here ++
+    // ++ Calc Area Starts Here ++
+    .calc-area{
+        padding-bottom: 30px;
+    }
+    .calc-text-area{
+        margin-bottom: 30px;
+    }
+    // ++ Calc Area Ends Here ++
+    // Calculator Resposnive Ends Here
+    // ------------------------------ //
+
+
+    // Commercial Rent Page Responsive Starts Here
+    // ++ Image Area Starts Here ++
+    .image-area{
+        margin-bottom: 30px;
+    }
+    // ++ Image Area Starts Here ++
+    .property-share{
+        padding-top: 20px !important;
+        padding-bottom: 0 !important;
+        h5{
+            font-size: 14px !important;
+            margin-bottom: 18px !important;
+        }
+        &-bottom{
+            flex-wrap: wrap !important;
+            .btn{
+                margin-bottom: 10px !important; 
+            }
+        }
+    }
+    .contact-card{
+        &-buttons{
+            flex-wrap: wrap !important;
+            justify-content: flex-start !important;
+            .btn{
+                margin-top: 10px !important;
+                margin-right: 10px !important;
+            }
+        }
+    }
+    .contact-card-badge{
+        bottom: 0px;
+        top: 55px;
+    }
+    .contact-card .save-btn{
+        top: 2px;
+        right: 2px;
+    }
+    // Commercial Rent Page Responsive Ends Here
+    //===========================================//
+
+
+    // Find Agent Page Responsive Starts Here
+    // ++ Agents Banner Starts Here ++
+    .verified-agents-area{
+        margin-bottom: 40px;
+    }
+    // ++ Agents Banner Ends Here ++
+    // Find Agent Page Responsive Ends Here
+    // ================================== //
+
+
+    // House Prices Page Responsive Starts Here
+    .house-prices p{
+        font-size: 14px;
+        line-height: 22px;
+    }
+    // House Prices Page Responsive Ends Here
+    .rent-contents{
+        margin-bottom: 40px;
+        &-row{
+            flex-direction: column;
+        }
+        &-end{
+            &:nth-child(1){
+                margin-top: 30px;
+            }
+        }
+    }
+}
+@media (min-width: 1201px) and (max-width: 1297px){
+    .project-search-container{
+        max-width: 85%;
+    }
+}
+@media (min-width: 1201px) and (max-width: 1280px){
+    // New Projects Page Responsive Starts Here
+    .page-intro-content h2{
+        font-size: 28px;
+    }
+    .banner-map a{
+        padding: 8px 12px;
+    }
+    .project-search-form-end .btn{
+        padding: 18px 17px;
+    }
+    .project-search-container{
+        max-width: 85%;
+    }
+    // New Projects Page Responsive Ends Here
+    .rent-contents{
+        margin-bottom: 60px;
+        &-row{
+            flex-direction: column;
+        }
+        &-end{
+            &:nth-child(1){
+                margin-top: 30px;
+            }
+        }
+    }
+} 

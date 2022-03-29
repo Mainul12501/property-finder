@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="59" viewBox="0 0 58 59">
+    <defs>
+        <path id="a" d="M0 0l25 18.802L50 0v26a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#BCDCE5" d="M50 20L26.21 1.92a2 2 0 0 0-2.42 0L0 20v25.014h50V20z"/>
+        <path fill="#3B97BA" d="M25 0h6v40h-6z"/>
+        <path fill="#FFF" d="M31 0h6v37h-6z"/>
+        <path fill="#BCDCE5" d="M31 2h6v2h-6V2zm0 28h6v2h-6v-2zm0-4h6v2h-6v-2zm0-4h6v2h-6v-2zm0-16h6v2h-6V6zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2z"/>
+        <path fill="#9BD3DD" d="M25 4h6v2h-6V4zm0-4h6v2h-6V0zm0 36h6v2h-6v-2zm0-4h6v2h-6v-2zm0-4h6v2h-6v-2zm0-4h6v2h-6v-2zm0-16h6v2h-6V8zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2z"/>
+        <g>
+            <path fill="#9BD3DD" d="M11 8h6v28h-6z"/>
+            <path fill="#FFF" d="M17 8h10v36H17z"/>
+            <path fill="#3B97BA" d="M11 11h6v3h-6v-3zm0 24h6v3h-6v-3zm0-18h6v3h-6v-3zm0 6h6v3h-6v-3zm0 6h6v3h-6v-3z"/>
+            <path fill="#BCDCE5" d="M17 11h10v3H17v-3zm0 30h10v3H17v-3zm0-24h10v3H17v-3zm0 6h10v3H17v-3zm0 12h10v3H17v-3zm0-6h10v3H17v-3z"/>
+        </g>
+        <g transform="translate(0 20)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <use fill="#E8F4F6" xlink:href="#a"/>
+            <path fill="#D2E7ED" d="M25 18.802L11.32 28H0V0z" mask="url(#b)"/>
+        </g>
+        <circle cx="45" cy="46" r="13" fill="#FFF"/>
+    </g>
+</svg>
