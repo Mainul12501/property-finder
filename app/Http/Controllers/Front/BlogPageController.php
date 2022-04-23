@@ -105,22 +105,23 @@ class BlogPageController extends Controller
 
     public function shortProperties (Request $request)
     {
-        $allProperties = Property::where('property_ads_type_id', 1)->where('status',1)->with('subImages')->get();
-        $propertyTypeIdArray = [];
-        foreach ($allProperties as $property)
-        {
-//            $propertyTypeIdArray[] = $property->property_type_id;
-            array_push($propertyTypeIdArray,$property->property_type_id);
-        }
-        $propertyTypeIds = array_filter($propertyTypeIdArray);
-        foreach ($propertyTypeIds as $propertyTypeId)
-        {
-
-            $propertyTypes[] = PropertyType::where('id', $propertyTypeId)->with('singleProperty')->first();
-        }
 
         if ($request->from_page == 'buy')
         {
+            $allProperties = Property::where('property_ads_type_id', 1)->where('status',1)->with('subImages')->get();
+            $propertyTypeIdArray = [];
+            foreach ($allProperties as $property)
+            {
+//            $propertyTypeIdArray[] = $property->property_type_id;
+                array_push($propertyTypeIdArray,$property->property_type_id);
+            }
+            $propertyTypeIds = array_filter($propertyTypeIdArray);
+            foreach ($propertyTypeIds as $propertyTypeId)
+            {
+
+                $propertyTypes[] = PropertyType::where('id', $propertyTypeId)->with('singleProperty')->first();
+            }
+
             if ($request->sort_by == 'featured')
             {
                 $this->properties = Property::where('property_ads_type_id', 1)->where('property_promotion_type_id', 2)->where('status', 1)->with('subImages')->paginate(10);
@@ -138,8 +139,22 @@ class BlogPageController extends Controller
                 'properties'        => $this->properties,
                 'propertyTypes'    => $propertyTypes,
             ]);
-        } elseif ($request->form_page == 'rent')
+        } elseif ($request->from_page == 'rent')
         {
+            $allProperties = Property::where('property_ads_type_id', 2)->where('status',1)->with('subImages')->get();
+            $propertyTypeIdArray = [];
+            foreach ($allProperties as $property)
+            {
+//            $propertyTypeIdArray[] = $property->property_type_id;
+                array_push($propertyTypeIdArray,$property->property_type_id);
+            }
+            $propertyTypeIds = array_filter($propertyTypeIdArray);
+            foreach ($propertyTypeIds as $propertyTypeId)
+            {
+
+                $propertyTypes[] = PropertyType::where('id', $propertyTypeId)->with('singleProperty')->first();
+            }
+
             if ($request->sort_by == 'featured')
             {
                 $this->properties = Property::where('property_ads_type_id', 2)->where('property_promotion_type_id', 2)->where('status', 1)->with('subImages')->paginate(10);
@@ -157,8 +172,22 @@ class BlogPageController extends Controller
                 'properties'        => $this->properties,
                 'propertyTypes'    => $propertyTypes,
             ]);
-        } elseif ($request->form_page == 'commercial')
+        } elseif ($request->from_page == 'commercial')
         {
+            $allProperties = Property::where('property_ads_type_id', 3)->where('status',1)->with('subImages')->get();
+            $propertyTypeIdArray = [];
+            foreach ($allProperties as $property)
+            {
+//            $propertyTypeIdArray[] = $property->property_type_id;
+                array_push($propertyTypeIdArray,$property->property_type_id);
+            }
+            $propertyTypeIds = array_filter($propertyTypeIdArray);
+            foreach ($propertyTypeIds as $propertyTypeId)
+            {
+
+                $propertyTypes[] = PropertyType::where('id', $propertyTypeId)->with('singleProperty')->first();
+            }
+
             if ($request->sort_by == 'featured')
             {
                 $this->properties = Property::where('property_ads_type_id', 3)->where('property_promotion_type_id', 2)->where('status', 1)->with('subImages')->paginate(10);

@@ -11,6 +11,7 @@ use App\Models\PropertyAdsType;
 use App\Models\PropertyType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Session;
 
 class FrontPageController extends Controller
 {
@@ -20,6 +21,10 @@ class FrontPageController extends Controller
 
     public function home ()
     {
+        if (!Session::has('kaz') && !Session::has('eng'))
+        {
+            Session::put('rus', 'russia');
+        }
         return view('front.home.home',[
             'properties'    => Property::where('status', 1)->latest()->take(4)->get(),
             'latestBlogs'   => Blog::where('blog_category_id', 2)->where('status', 1)->latest()->take(5)->get(),
@@ -168,5 +173,46 @@ class FrontPageController extends Controller
             'posted_time'   => $totalDuration,
             'relatedProperties'   => Property::where('location_city', $this->property->location_city)->where('status', 1)->take(3)->get(),
         ]);
+    }
+
+    public function changeLanguage ($lanCode)
+    {
+        if ($lanCode == 'kaz')
+        {
+//            if (Session::has('rus') || Session::has('eng'))
+//            {
+                Session::forget('rus');
+                Session::forget('eng');
+//            }
+//            elseif (Session::has('eng'))
+//            {
+//                Session::forget('eng');
+//            }
+            Session::put('kaz', 'kazakistan');
+        } elseif ($lanCode == 'rus') {
+//            if (Session::has('kaz') || Session::has('eng'))
+//            {
+                Session::forget('kaz');
+                Session::forget('eng');
+//            }
+//            elseif (Session::has('eng'))
+//            {
+//                Session::forget('eng');
+//            }
+            Session::put('rus', 'Russia');
+        } elseif ($lanCode == 'eng')
+        {
+//            if (Session::has('kaz') || Session::has('rus'))
+//            {
+                Session::forget('kaz');
+                Session::forget('rus');
+//            }
+//            elseif (Session::has('rus'))
+//            {
+//                Session::forget('rus');
+//            }
+            Session::put('eng', 'English');
+        }
+        return redirect()->back();
     }
 }

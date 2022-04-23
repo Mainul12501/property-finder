@@ -15,7 +15,7 @@
                         <div class="col-lg-4">
                             <div class="home-search-input">
 {{--                                <input type="text" class="form-control" name="search_text" placeholder="City, community or building" style="min-height: 50px;">--}}
-                                <input type="text" class="form-control" name="search_text" placeholder="Город, сообщество или здание" style="min-height: 50px;">
+                                <input type="text" class="form-control" name="search_text" placeholder="{{ Session::has('eng') ? 'City, community or building' : '' }}{{ Session::has('kaz') ? 'Қала, қауымдастық немесе ғимарат' : '' }}{{ Session::has('rus') ? 'Город, сообщество или здание' : '' }}" style="min-height: 50px;">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="home-search-select" id="bedBathRent">
                                     <button type="button" class="select_btn btn price-select">
-                                        {{--Beds &amp; Baths--}}Кровати
+                                        {{--Beds &amp; Baths--}}{{ Session::has('eng') ? 'Beds & Baths' : '' }}{{ Session::has('kaz') ? 'Төсектер мен ванналар' : '' }}{{ Session::has('rus') ? 'Кровати' : '' }}
                                         <span>
                                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
@@ -52,7 +52,7 @@
                                         <div class="dropdown-wrapper-content">
                                             <div class="price-selector mt-3">
                                                 <div class="price-selector-title">
-                                                    <h4>Спальни</h4>
+                                                    <h4>{{ Session::has('eng') ? 'Bedrooms' : '' }}{{ Session::has('kaz') ? 'Жатын бөлмелер' : '' }}{{ Session::has('rus') ? 'Спальни' : '' }}</h4>
                                                 </div>
                                                 <div class="price-selector-buttons">
 {{--                                                    <button type="button" class="btn">Studio</button>--}}
@@ -69,7 +69,7 @@
                                             </div>
                                             <div class="price-selector mt-3">
                                                 <div class="price-selector-title">
-                                                    <h4>Ванные комнаты</h4>
+                                                    <h4>{{ Session::has('eng') ? 'Bathrooms' : '' }}{{ Session::has('kaz') ? 'Жуынатын бөлмелер' : '' }}{{ Session::has('rus') ? 'Ванные комнаты' : '' }}</h4>
                                                 </div>
                                                 <div class="price-selector-buttons">
                                                     <button type="button" class="btn home-bathroom-button">1</button>
@@ -102,7 +102,7 @@
                                             <div class="range-selector">
                                                 <div class="range-selector-box">
 {{--                                                    <input type="text" class="form-control" name="min_price" placeholder="Min. Price (AED)">--}}
-                                                    <input type="text" class="form-control" name="min_price" placeholder="Мин. Цена (AED)">
+                                                    <input type="text" class="form-control" name="min_price" placeholder="{{ Session::has('eng') ? 'Min. Price' : '' }}{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }} (AED)">
                                                 </div>
                                                 <div class="range-selector-divider">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -111,16 +111,16 @@
                                                 </div>
                                                 <div class="range-selector-box">
 {{--                                                    <input type="text" class="form-control" name="max_price" placeholder="Max. Price (AED)">--}}
-                                                    <input type="text" class="form-control" name="max_price" placeholder="Максимум. Цена (AED)">
+                                                    <input type="text" class="form-control" name="max_price" placeholder="{{ Session::has('eng') ? 'Max. Price' : '' }}{{ Session::has('kaz') ? 'Макс. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }} (AED)">
                                                 </div>
                                             </div>
                                             <div class="price-selector">
                                                 <div class="price-selector-title">
-                                                    <h4>Rental Period</h4>
+                                                    <h4>{{ Session::has('eng') ? 'Rental Period' : '' }}{{ Session::has('kaz') ? 'Жалға алу мерзімі' : '' }}{{ Session::has('rus') ? 'Срок аренды' : '' }}</h4>
                                                 </div>
                                                 <div class="price-selector-buttons" id="priceButtons">
-                                                    <button type="button" class="btn active" id="yearlyRent"><!--Yearly-->Ежегодно</button>
-                                                    <button type="button" class="btn" id="monthlyRent"><!--Monthly-->Ежемесячно</button>
+                                                    <button type="button" class="btn active" id="yearlyRent"><!--Yearly-->{{ Session::has('eng') ? 'Yearly' : '' }}{{ Session::has('kaz') ? 'Жыл сайын' : '' }}{{ Session::has('rus') ? 'Ежегодно' : '' }}</button>
+                                                    <button type="button" class="btn" id="monthlyRent"><!--Monthly-->{{ Session::has('eng') ? 'Monthly' : '' }}{{ Session::has('kaz') ? 'Ай сайын' : '' }}{{ Session::has('rus') ? 'Ежемесячно' : '' }}</button>
 {{--                                                    <button type="button" class="btn" id="weeklyRent">Weekly</button>--}}
 {{--                                                    <button type="button" class="btn" id="dailyRent">Daily</button>--}}
                                                 </div>
@@ -144,7 +144,7 @@
 
                                 <div class="rent-search-button">
                                     <button type="submit" class="btn search-btn fw-bold text-uppercase py-4">
-                                        Находить
+                                        {{ Session::has('eng') ? 'Find' : '' }}{{ Session::has('kaz') ? 'Табу' : '' }}{{ Session::has('rus') ? 'Находить' : '' }}
                                     </button>
                                 </div>
                             </div>
@@ -163,9 +163,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="properties-rent-top">
-                        <h4>Недвижимость на продажу </h4>
+                        <h4>{{ Session::has('eng') ? 'property for sale' : '' }}{{ Session::has('kaz') ? 'сатылатын мүлік' : '' }}{{ Session::has('rus') ? 'Недвижимость на продажу' : '' }}</h4>
 {{--                        <p class="mb-0">47705 results</p>--}}
-                        <p class="mb-0">{!! count($properties) !!} <!--results-->Результаты</p>
+                        <p class="mb-0">{!! count($properties) !!} <!--results-->{{ Session::has('eng') ? 'results' : '' }}{{ Session::has('kaz') ? 'нәтижелер' : '' }}{{ Session::has('rus') ? 'Результаты' : '' }}</p>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -186,19 +186,17 @@
 {{--                            </button>--}}
                         </div>
                         <div class="properties-rent-header-end">
-                            <form action="" class="d-flex align-items-center">
-                                <p class="me-2">Сортировать по:</p>
+                            <form action="{{ route('short-properties') }}" class="d-flex align-items-center" method="post" id="sortForm">
+                                <p class="me-2">{{ Session::has('eng') ? 'Sort By' : '' }}{{ Session::has('kaz') ? 'Бойынша сұрыптау' : '' }}{{ Session::has('rus') ? 'Сортировать по' : '' }}:</p>
                                 <div>
-                                    <form action="{{ route('short-properties') }}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="from_page" value="buy" />
-                                        <select name="sort_by" class="form-select">
-                                            <option value="featured"><!--Featured-->Избранное</option>
-                                            <option value="new"><!--Newest-->Новейшие</option>
-                                            <option value="low"><!--Price(Low)-->Цена(Низкая)</option>
-                                            <option value="high"><!--Price(High)-->Цена (высокая)</option>
-                                        </select>
-                                    </form>
+                                    @csrf
+                                    <input type="hidden" name="from_page" value="buy" />
+                                    <select name="sort_by" class="form-select">
+                                        <option value="featured"><!--Featured-->{{ Session::has('eng') ? 'Featured' : '' }}{{ Session::has('kaz') ? 'Таңдаулы' : '' }}{{ Session::has('rus') ? 'Избранное' : '' }}</option>
+                                        <option value="new"><!--Newest-->{{ Session::has('eng') ? 'Newest' : '' }}{{ Session::has('kaz') ? 'Ең жаңасы' : '' }}{{ Session::has('rus') ? 'Новейшие' : '' }}</option>
+                                        <option value="low"><!--Price(Low)-->{{ Session::has('eng') ? 'Price(Low)' : '' }}{{ Session::has('kaz') ? 'Бағасы (төмен)' : '' }}{{ Session::has('rus') ? 'Цена(Низкая)' : '' }}</option>
+                                        <option value="high"><!--Price(High)-->{{ Session::has('eng') ? 'Price(High)' : '' }}{{ Session::has('kaz') ? 'Бағасы (жоғары)' : '' }}{{ Session::has('rus') ? 'Цена (высокая)' : '' }}</option>
+                                    </select>
                                 </div>
                             </form>
                         </div>
@@ -225,10 +223,10 @@
                             <div class="d-flex justify-content-end">
                                 <div class="properties-rent-options-bottom">
                                     <div>
-                                        <button type="button" class="btn" id="showAllBtn">{{--Show All--}}Показать все</button>
+                                        <button type="button" class="btn" id="showAllBtn">{{--Show All--}}{{ Session::has('eng') ? 'Show All' : '' }}{{ Session::has('kaz') ? 'Барлығын көрсету' : '' }}{{ Session::has('rus') ? 'Показать все' : '' }}</button>
                                     </div>
                                     <div>
-                                        <button type="button" class="btn" id="showlessBtn" style="display: none;">{{--Show less--}}Показывай меньше</button>
+                                        <button type="button" class="btn" id="showlessBtn" style="display: none;">{{--Show less--}}{{ Session::has('eng') ? 'Show less' : '' }}{{ Session::has('kaz') ? 'Азырақ көрсету' : '' }}{{ Session::has('rus') ? 'Показывай меньше' : '' }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +287,7 @@
                                         </div>
                                         @if($property->is_verified == 1)
                                             <div class="rent-featured-start-badge">
-                                                <span class="text-uppercase">проверено</span>
+                                                <span class="text-uppercase">{{ Session::has('eng') ? 'verified' : '' }}{{ Session::has('kaz') ? 'тексерілді' : '' }}{{ Session::has('rus') ? 'проверено' : '' }}</span>
                                             </div>
                                         @endif
                                         @if($property->panoramic_360_view != null)
@@ -330,7 +328,7 @@
                                                     </p>
                                                 </div>
                                                 <div class="rent-featured-mid-amenities-single">
-                                                    <p>{!! $property->property_size !!} кв.фут</p>
+                                                    <p>{!! $property->property_size !!} {{ Session::has('eng') ? 'square feet' : '' }}{{ Session::has('kaz') ? 'шаршы фут' : '' }}{{ Session::has('rus') ? 'кв.фут' : '' }}</p>
                                                 </div>
                                             </div>
                                             <div class="rent-featured-mid-location">
@@ -350,7 +348,7 @@
                                                         <span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#007ea8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                                           </span>
-                                                        Call
+                                                        {{ Session::has('eng') ? 'Call' : '' }}{{ Session::has('kaz') ? 'Қоңырау' : '' }}{{ Session::has('rus') ? 'вызов' : '' }}
                                                     </button>
                                                 </div>
                                                 <div class="rent-featured-mid-buttons-single">
@@ -360,7 +358,7 @@
                                                           <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
                                                         </svg>
                                                       </span>
-                                                        Email
+                                                        {{ Session::has('eng') ? 'Email' : '' }}{{ Session::has('kaz') ? 'пошта' : '' }}{{ Session::has('rus') ? 'Эл. адрес' : '' }}
                                                     </button>
                                                 </div>
                                                 <div class="rent-featured-mid-buttons-single">
@@ -457,7 +455,7 @@
                 </div>
                 <div class="col-lg-3 ps-lg-4">
                     <div class="rent-contents-end">
-                        <h5>{{--Popular searches--}}Популярные запросы</h5>
+                        <h5>{{--Popular searches--}}{{ Session::has('eng') ? 'Popular searches' : '' }}{{ Session::has('kaz') ? 'Танымал іздеулер' : '' }}{{ Session::has('rus') ? 'Популярные запросы' : '' }}</h5>
                         @foreach($popularSearches as $search)
                             <div class="rent-contents-end-links">
                                 <a href="{{ url('/search-results?search_text='.$search->search_text.'&property_ads_type_id='.$search->property_ads_type_id.'&property_type_id='.$search->property_type_id.'&bedrooms='.$search->bedrooms.'&bathrooms='.$search->bathrooms.'&min_price='.$search->min_price.'&max_price='.$search->max_price.'&property_size='.$search->property_size.'&is_furnished='.$search->is_furnished) }}">{{ $search->search_text }}</a>
@@ -480,7 +478,7 @@
 {{--                        </div>--}}
                     </div>
                     <div class="rent-contents-end">
-                        <h5>популярные поисковые запросы</h5>
+                        <h5>{{ Session::has('eng') ? 'Trending Searches' : '' }}{{ Session::has('kaz') ? 'танымал іздеу терминдері' : '' }}{{ Session::has('rus') ? 'популярные поисковые запросы' : '' }}</h5>
                         @foreach($trendingSearches as $search)
                             <div class="rent-contents-end-links">
                                 <a href="{{ url('/search-results?search_text='.$search->search_text.'&property_ads_type_id='.$search->property_ads_type_id.'&property_type_id='.$search->property_type_id.'&bedrooms='.$search->bedrooms.'&bathrooms='.$search->bathrooms.'&min_price='.$search->min_price.'&max_price='.$search->max_price.'&property_size='.$search->property_size.'&is_furnished='.$search->is_furnished) }}">{{ $search->search_text }}</a>
@@ -503,9 +501,9 @@
 {{--                        </div>--}}
                     </div>
                     <div class="rent-contents-end border-bottom">
-                        <h5>Недвижимость на продажу</h5>
+                        <h5>{{ Session::has('eng') ? 'Property for sale' : '' }}{{ Session::has('kaz') ? 'собственность на продажу' : '' }}{{ Session::has('rus') ? 'Недвижимость на продажу' : '' }}</h5>
                         <div class="rent-contents-end-links">
-                            <a href="{{ route('buy-page') }}">Недвижимость на продажу</a>
+                            <a href="{{ route('buy-page') }}">{{ Session::has('eng') ? 'Property for sale' : '' }}{{ Session::has('kaz') ? 'собственность на продажу' : '' }}{{ Session::has('rus') ? 'Недвижимость на продажу' : '' }}</a>
                         </div>
                     </div>
                 </div>
@@ -557,5 +555,10 @@
             document.getElementById('whatsapp'+propertyId).click();
         }
 
+    </script>
+    <script>
+        $('select[name="sort_by"]').on('change', function () {
+            document.getElementById('sortForm').submit();
+        });
     </script>
 @endsection

@@ -246,6 +246,19 @@
                         </a>
                     </li>
                 @endcan
+                @can('site-settings-module')
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/site-settings') || request()->is('admin/site-settings/*') ? 'active' : '' }}" href="{{ route('admin.site-settings.index') }}">
+{{--                            <i class="fa-fw fas fa-key nav-icon">--}}
+{{--                            </i>--}}
+                            <i class="fa-solid fa-rectangle-ad"></i> &nbsp;
+                            <p>
+{{--                                {{ trans('global.change_password') }}--}}
+                                Site Settings
+                            </p>
+                        </a>
+                    </li>
+                @endcan
 
 
                 @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))

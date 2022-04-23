@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-
+    company details
 @endsection
 
 @section('body')
@@ -21,15 +21,15 @@
                                     <h4 class="font-weight-light">{{ $company->name }}</h4>
                                 </div>
                                 <div class="row ms-5 mt-4 ms-0">
-                                    <div class="col-4 ps-0">СОТРУДНИКИ:</div>
+                                    <div class="col-4 ps-0">{{ Session::has('kaz') ? 'ҚЫЗМЕТКЕРЛЕР' : '' }}{{ Session::has('rus') ? 'СОТРУДНИКИ' : '' }}{{ Session::has('eng') ? 'СОТРУДНИКИ' : '' }}:</div>
                                     <div class="col-8">
-                                        <a href="">{{ count($company->agents) }} Агенты</a>
+                                        <a href="">{{ count($company->agents) }} {{ Session::has('kaz') ? 'Агенттер' : '' }}{{ Session::has('rus') ? 'Агенты' : '' }}{{ Session::has('eng') ? 'Agents' : '' }}</a>
                                     </div>
                                 </div>
                                 <div class="row ms-5 mt-2 ms-0">
-                                    <div class="col-4 ps-0">АКТИВНЫЕ ОБЪЯВЛЕНИЯ:</div>
+                                    <div class="col-4 ps-0">{{ Session::has('kaz') ? 'БЕЛСЕНДІ ЖАРНАМАЛАР' : '' }}{{ Session::has('rus') ? 'АКТИВНЫЕ ОБЪЯВЛЕНИЯ' : '' }}{{ Session::has('eng') ? 'ACTIVE ADS' : '' }}:</div>
                                     <div class="col-8">
-                                        <a href="">{{ count($company->properties) }} Характеристики</a>
+                                        <a href="">{{ count($company->properties) }} {{ Session::has('kaz') ? 'Сипаттамалары' : '' }}{{ Session::has('rus') ? 'Характеристики' : '' }}{{ Session::has('eng') ? 'Characteristics' : '' }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                         <div class="col-md-6">
                                             <div class="row mt-2">
                                                 <div class="col-md-6">
-                                                    <span class="text-secondary">ОРН:</span>
+                                                    <span class="text-secondary">{{ Session::has('kaz') ? 'ORN' : '' }}{{ Session::has('rus') ? 'ОРН' : '' }}{{ Session::has('eng') ? 'ORN' : '' }}:</span>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <a href=""> {{ $company->orn }}</a>
@@ -50,7 +50,7 @@
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="col-md-6">
-                                                    <span class="text-secondary">Головной офис:</span>
+                                                    <span class="text-secondary">{{ Session::has('kaz') ? 'Бас кеңсе' : '' }}{{ Session::has('rus') ? 'Головной офис' : '' }}{{ Session::has('eng') ? 'Head office' : '' }}:</span>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <span>{{ $company->head_office_area }}, {{ $company->head_office_city }}, {{ $company->head_office_state }}</span>
@@ -61,7 +61,7 @@
                                         <div class="col-md-6">
                                             <div class="row mt-2">
                                                 <div class="col-md-3">
-                                                    <span class="text-secondary">ОБЛАСТИ:</span>
+                                                    <span class="text-secondary">{{ Session::has('kaz') ? 'АЙМАҚТАР' : '' }}{{ Session::has('rus') ? 'ОБЛАСТИ' : '' }}{{ Session::has('eng') ? 'AREAS' : '' }}:</span>
                                                 </div>
                                                 <div class="col-md-9"> {{ $company->head_office_city }}</div>
                                             </div>
@@ -79,15 +79,15 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card card-body">
-                        <h6 class="text-uppercase">Свяжитесь с этим Брокером</h6>
+                        <h6 class="text-uppercase">{{ Session::has('kaz') ? 'Осы Брокерге хабарласыңыз' : '' }}{{ Session::has('rus') ? 'Свяжитесь с этим Брокером' : '' }}{{ Session::has('eng') ? 'Contact this Broker' : '' }}</h6>
                         <div class="row d-grid px-4 mt-4">
                             <a href="tel:{{ $company->phone }}" class="btn btn-orange-type col-12 text-white py-2">
-                                <i class="fa-solid fa-phone"></i> <span class="text-capitalize">Вызов агента</span>
+                                <i class="fa-solid fa-phone"></i> <span class="text-capitalize">{{ Session::has('kaz') ? 'Агент қоңырауы' : '' }}{{ Session::has('rus') ? 'Вызов агента' : '' }}{{ Session::has('eng') ? 'Call' : '' }}</span>
                             </a>
                         </div>
                         <div class="row d-grid px-4 mt-2 pb-5">
                             <a href="mailto:{{ $company->email }}" class="btn btn-orange-type col-12 text-white py-2">
-                                <i class="fa-solid fa-envelope"></i> <span class="text-capitalize">Агент электронной почты</span>
+                                <i class="fa-solid fa-envelope"></i> <span class="text-capitalize">{{ Session::has('kaz') ? 'Электрондық пошта агенті' : '' }}{{ Session::has('rus') ? 'Агент электронной почты' : '' }}{{ Session::has('eng') ? 'Email' : '' }}</span>
                             </a>
                         </div>
                     </div>
@@ -103,8 +103,8 @@
                         <div>
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{--our agents--}}наши агенты ({{ count($company->agents) }})</button>
-                                    <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">{{--My Properties--}}Мои свойства ({{ count($company->properties) }})</button>
+                                    <button class="nav-link " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{--our agents--}}{{ Session::has('kaz') ? 'агенттер' : '' }}{{ Session::has('rus') ? 'наши агенты' : '' }}{{ Session::has('eng') ? 'our agents' : '' }} ({{ count($company->agents) }})</button>
+                                    <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">{{--My Properties--}}{{ Session::has('kaz') ? 'қасиеттерім' : '' }}{{ Session::has('rus') ? 'Мои свойства' : '' }}{{ Session::has('eng') ? 'My properties' : '' }} ({{ count($company->properties) }})</button>
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">
@@ -127,7 +127,7 @@
                                                 <div class="col-md-10">
                                                     <div class="row mt-4">
                                                         <div class="col-md-3">
-                                                            <span>Компания</span>
+                                                            <span>{{ Session::has('kaz') ? 'Компания' : '' }}{{ Session::has('rus') ? 'Компания' : '' }}{{ Session::has('eng') ? 'Company' : '' }}</span>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <h6>{{ $company->name }}</h6>
@@ -135,7 +135,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-3">
-                                                            <span>Национальность</span>
+                                                            <span>{{ Session::has('kaz') ? 'Ұлты' : '' }}{{ Session::has('rus') ? 'Национальность' : '' }}{{ Session::has('eng') ? 'Nationality' : '' }}</span>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <h6>{{ $agent->nationality }}</h6>
@@ -143,7 +143,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-3">
-                                                            <span>Языки</span>
+                                                            <span>{{ Session::has('kaz') ? 'Тілдер' : '' }}{{ Session::has('rus') ? 'Языки' : '' }}{{ Session::has('eng') ? 'Languages' : '' }}</span>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <h6>{{ $agent->languages }}</h6>
@@ -152,10 +152,10 @@
                                                     <div class="row mt-4">
                                                         <div class="col-md-12">
                                                             <a href="tel:{{ $agent->phone }}" class="btn border">
-                                                                <i class="fa-solid fa-phone"></i> Вызов
+                                                                <i class="fa-solid fa-phone"></i> {{ Session::has('kaz') ? 'Қоңырау' : '' }}{{ Session::has('rus') ? 'Вызов' : '' }}{{ Session::has('eng') ? 'Call' : '' }}
                                                             </a>
                                                             <a href="mailto:{{ $agent->email }}" class="btn border">
-                                                                <i class="fa-solid fa-envelope"></i> Эл. адрес
+                                                                <i class="fa-solid fa-envelope"></i> {{ Session::has('kaz') ? 'пошт' : '' }}{{ Session::has('rus') ? 'Эл. адрес' : '' }}{{ Session::has('eng') ? 'Email' : '' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -177,21 +177,21 @@
                                         <div class="row mb-3">
                                             <div class="col-md-10">
                                                 <div>
-                                                    <form action="" method="post">
-                                                        @csrf
-                                                        <div class="form-group row" style="width: 400px">
-                                                            <label for="" class="col-md-3 mt-2">Sort By:</label>
-                                                            <div class="col-md-9">
-                                                                <select name="" id="" class="form-control">
-                                                                    <option value="featured">Featured</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
+{{--                                                    <form action="" method="post">--}}
+{{--                                                        @csrf--}}
+{{--                                                        <div class="form-group row" style="width: 400px">--}}
+{{--                                                            <label for="" class="col-md-3 mt-2">Sort By:</label>--}}
+{{--                                                            <div class="col-md-9">--}}
+{{--                                                                <select name="" id="" class="form-control">--}}
+{{--                                                                    <option value="featured">Featured</option>--}}
+{{--                                                                </select>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
 
-                                                    </form>
+{{--                                                    </form>--}}
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">Общая недвижимость: {{ count($company->properties) }}</div>
+                                            <div class="col-md-2">{{ Session::has('kaz') ? 'Жалпы меншік' : '' }}{{ Session::has('rus') ? 'Общая недвижимость' : '' }}{{ Session::has('eng') ? 'Properties' : '' }}: {{ count($company->properties) }}</div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
@@ -235,7 +235,7 @@
                                                                 </div>
                                                                 @if($property->is_verified == 1)
                                                                     <div class="rent-featured-start-badge">
-                                                                        <span class="text-uppercase">проверено</span>
+                                                                        <span class="text-uppercase">{{ Session::has('kaz') ? 'тексерілді' : '' }}{{ Session::has('rus') ? 'проверено' : '' }}{{ Session::has('eng') ? 'verified' : '' }}</span>
                                                                     </div>
                                                                 @endif
                                                                 <div class="rent-featured-start-icon">
@@ -288,7 +288,7 @@
                                                                           <span>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#007ea8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                                                           </span>
-                                                                                Вызов
+                                                                                {{ Session::has('kaz') ? 'Қоңырау' : '' }}{{ Session::has('rus') ? 'Вызов' : '' }}{{ Session::has('eng') ? 'Call' : '' }}
                                                                             </button>
                                                                         </div>
                                                                         <div class="rent-featured-mid-buttons-single">
@@ -298,7 +298,7 @@
                                                                               <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
                                                                             </svg>
                                                                           </span>
-                                                                                Эл. адрес
+                                                                                {{ Session::has('kaz') ? 'пошт' : '' }}{{ Session::has('rus') ? 'Эл. адрес' : '' }}{{ Session::has('eng') ? 'Email' : '' }}
                                                                             </button>
                                                                         </div>
                                                                         <div class="rent-featured-mid-buttons-single">

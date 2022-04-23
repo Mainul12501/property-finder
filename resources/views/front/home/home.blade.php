@@ -6,22 +6,21 @@
 
 @section('body')
     <!-- Banner Starts Here -->
-    <section class="banner-area" style="background-image: url({!! asset('/') !!}assets/images/banner/01.jpg);">
+    <section class="banner-area" style="background-image: url({!! isset($siteSetting)? asset($siteSetting->site_banner) : asset('./assets/images/banner/01.jpg') !!});">
         <div class="container custom-container">
             <div class="row justify-content-center">
-                <h1 class="text-center mb-5">Найдите свой будущий дом</h1>
-                <div class="col-lg-12" style="z-index: 2;">
-                    <form action="{{ route('home-page-search') }}" class="home-search" method="get">
-
+                <h1 class="text-center mb-5">{{ Session::has('kaz') ? 'Болашақ үйіңізді табыңыз' : '' }}{{ Session::has('rus') ? 'Найдите свой будущий дом' : '' }}{{ Session::has('eng') ? 'Find your future home' : '' }}</h1>
+                <div class="col-lg-12 home-search" style="z-index: 2;">
+                    <form action="{{ route('home-page-search') }}" class="" method="get"> <!-- incase add this class: home-search-->
                         <div class="home-search-top" id="bannerButton">
-                            <button type="button" class="btn active" id="rentBtn">Аренда</button>
-                            <button type="button" class="btn" id="buyBtn">Купить</button>
+                            <button type="button" class="btn active" id="rentBtn">{{ Session::has('kaz') ? 'Жалға алу' : '' }}{{ Session::has('rus') ? 'Аренда' : '' }}{{ Session::has('eng') ? 'Rent' : '' }}</button>
+                            <button type="button" class="btn" id="buyBtn">{{ Session::has('kaz') ? 'Сатып' : '' }}{{ Session::has('rus') ? 'Купить' : '' }}{{ Session::has('eng') ? 'Buy' : '' }}</button>
                         </div>
                         <!-- Banner Components Starts Here -->
-                        <div class="banner-components mb-2">
-                            <div class="home-search-input" id="homeSearchInputTop">
+                        <div class="row position-relative"> <!-- incase add this class: banner-components mb-2-->
+                            <div class="home-search-input col-sm-5" id="homeSearchInputTop">
 {{--                                <input type="text" class="form-control" name="search_text" required placeholder="City, community or building">--}}
-                                <input type="text" class="form-control" name="search_text" required placeholder="Город, сообщество или здание">
+                                <input type="text" class="form-control" name="search_text" required placeholder="{{ Session::has('kaz') ? 'Қала, қауымдастық немесе ғимарат' : '' }}{{ Session::has('rus') ? 'Город, сообщество или здание' : '' }}{{ Session::has('eng') ? 'City, community or building' : '' }}">
                                 <input type="hidden" id="reqType" name="req_type" value="rent">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -29,17 +28,18 @@
                                     </svg>
                                 </span>
                             </div>
-                            <div class="home-search-select">
+                            <div class="home-search-select col-sm-2 col-4 home-search-m-t">
                                 <select class="form-select property-select" name="property_type_id">
-                                    <option disabled><--- Select a Property Type ---></option>
+                                    <option disabled>{{ Session::has('kaz') ? '<--- Меншік түрін таңдаңыз --->' : '' }}{{ Session::has('rus') ? '<--- Выберите тип недвижимости --->' : '' }}{{ Session::has('eng') ? '<--- Select property type --->' : '' }}</option>
                                     @foreach($propertyTypes as $propertyType)
                                         <option value="{{ $propertyType->id }}">{{ $propertyType->type_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="home-search-select" style="display: none;" >
+{{--                            price div start  --}}
+                            <div class="home-search-select col-sm-2 col-4 home-search-m-t" style="display: none;" >
                                 <button class="select_btn btn price-select form-control ms-0" type="button" style="min-width: 115px; margin-left: 4px;" id="price1st">
-                                    Цена
+                                    {{ Session::has('kaz') ? 'Бағасы' : '' }}{{ Session::has('rus') ? 'Цена' : '' }}{{ Session::has('eng') ? 'Price' : '' }}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                     </svg>
@@ -48,8 +48,8 @@
                                     <div class="dropdown-wrapper-content">
                                         <div class="range-selector">
                                             <div class="range-selector-box">
-{{--                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="Min. Price (AED)">--}}
-                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="Мин. Цена (AED)">
+                                                {{--                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="Min. Price (AED)">--}}
+                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} (AED)">
                                             </div>
                                             <div class="range-selector-divider">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -57,17 +57,17 @@
                                                 </svg>
                                             </div>
                                             <div class="range-selector-box">
-                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="Максимум. Цена (AED)">
-{{--                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="Max. Price (AED)">--}}
+                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} (AED)">
+                                                {{--                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="Max. Price (AED)">--}}
                                             </div>
                                         </div>
                                         <div class="price-selector">
                                             <div class="price-selector-title">
-                                                <h4>Срок аренды</h4>
+                                                <h4>{{ Session::has('kaz') ? 'Жалдау мерзімі' : '' }}{{ Session::has('rus') ? 'Срок аренды' : '' }}{{ Session::has('eng') ? 'Rental Period' : '' }}</h4>
                                             </div>
                                             <div class="price-selector-buttons" id="">
-                                                <button type="button" class="btn active" id="monthly">Ежемесячно</button>
-                                                <button type="button" class="btn" id="yearly">Ежегодно</button>
+                                                <button type="button" class="btn active" id="monthly">{{ Session::has('kaz') ? 'Ай' : '' }}{{ Session::has('rus') ? 'Ежемесячно' : '' }}{{ Session::has('eng') ? 'Monthly' : '' }}</button>
+                                                <button type="button" class="btn" id="yearly">{{ Session::has('kaz') ? 'жыл' : '' }}{{ Session::has('rus') ? 'Ежегодно' : '' }}{{ Session::has('eng') ? 'Annually' : '' }}</button>
                                                 <input type="hidden" name="rental_period" id="rentalPeriod">
                                             </div>
                                         </div>
@@ -76,10 +76,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="home-search-select"  id="bedBath">
+{{--                            price div end--}}
+{{--                            bed bath start--}}
+                            <div class="home-search-select col-sm-2 col-4 home-search-m-t" id="bedBath" style="">
                                 <button class="select_btn btn price-select form-control" type="button" >
 {{--                                    Кровати и ванны--}}
-                                    Кровати
+                                    {{ Session::has('kaz') ? 'Төсектер' : '' }}{{ Session::has('rus') ? 'Кровати' : '' }}{{ Session::has('eng') ? 'Beds' : '' }}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                     </svg>
@@ -88,7 +90,7 @@
                                     <div class="dropdown-wrapper-content">
                                         <div class="price-selector mt-3">
                                             <div class="price-selector-title">
-                                                <h4>Спальни</h4>
+                                                <h4>{{ Session::has('kaz') ? 'Жатын бөлмелер' : '' }}{{ Session::has('rus') ? 'Спальни' : '' }}{{ Session::has('eng') ? 'Bedrooms' : '' }}</h4>
                                             </div>
                                             <div class="price-selector-buttons">
 {{--                                                <button type="button" class="btn peice-selector-button">Студия</button>--}}
@@ -105,7 +107,7 @@
                                         </div>
                                         <div class="price-selector mt-3">
                                             <div class="price-selector-title">
-                                                <h4>Ванные комнаты</h4>
+                                                <h4>{{ Session::has('kaz') ? 'Жуынатын бөлмелер' : '' }}{{ Session::has('rus') ? 'Ванные комнаты' : '' }}{{ Session::has('eng') ? 'Bathrooms' : '' }}</h4>
                                             </div>
                                             <div class="price-selector-buttons">
                                                 <button type="button" class="btn home-bathroom-button">1</button>
@@ -124,9 +126,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="home-search-select">
+{{--                            bed bath end--}}
+{{--                            price div start--}}
+                            <div class="home-search-select col-sm-2 col-4 home-search-m-t" id="price2ndDiv">
                                 <button class="select_btn btn price-select form-control" type="button" id="price2nd">
-                                    Price
+                                    <!--Price-->{{ Session::has('kaz') ? 'Бағасы' : '' }}{{ Session::has('rus') ? 'Цена' : '' }}{{ Session::has('eng') ? 'Price' : '' }}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                     </svg>
@@ -135,7 +139,7 @@
                                     <div class="dropdown-wrapper-content">
                                         <div class="range-selector">
                                             <div class="range-selector-box">
-                                                <input type="number" name="min_price" id="minPrice2Input" class="form-control" placeholder="Мин. Цена (AED)">
+                                                <input type="number" name="min_price" id="minPrice2Input" class="form-control" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} (AED)">
                                             </div>
                                             <div class="range-selector-divider">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -143,16 +147,16 @@
                                                 </svg>
                                             </div>
                                             <div class="range-selector-box">
-                                                <input type="text" name="max_price" id="maxPrice2Input" class="form-control" placeholder="Максимум. Цена (AED)">
+                                                <input type="text" name="max_price" id="maxPrice2Input" class="form-control" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} (AED)">
                                             </div>
                                         </div>
                                         <div class="price-selector">
                                             <div class="price-selector-title">
-                                                <h4>Срок аренды</h4>
+                                                <h4>{{ Session::has('kaz') ? 'Жалдау мерзімі' : '' }}{{ Session::has('rus') ? 'Срок аренды' : '' }}{{ Session::has('eng') ? 'Rental period' : '' }}</h4>
                                             </div>
                                             <div class="price-selector-buttons" id="">
-                                                <button type="button" class="btn active" id="yearly2">Ежегодно</button>
-                                                <button type="button" class="btn" id="monthly2">Ежемесячно</button>
+                                                <button type="button" class="btn active" id="yearly2">{{ Session::has('kaz') ? 'жыл' : '' }}{{ Session::has('rus') ? 'Ежегодно' : '' }}{{ Session::has('eng') ? 'Annually' : '' }}</button>
+                                                <button type="button" class="btn" id="monthly2">{{ Session::has('kaz') ? 'ай' : '' }}{{ Session::has('rus') ? 'Ежемесячно' : '' }}{{ Session::has('eng') ? 'Monthly' : '' }}</button>
 {{--                                                <button type="button" class="btn" id="weekly">Weekly</button>--}}
 {{--                                                <button type="button" class="btn" id="daily">Daily</button>--}}
                                             </div>
@@ -162,9 +166,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="home-search-select" style="display: none;"  id="areaSelect">
+{{--                            price div end--}}
+{{--                            size div start--}}
+                            <div class="home-search-select col-sm-2 col-4 home-search-m-t" style="display: none;"  id="areaSelect">
                                 <button class="select_btn btn price-select form-control" type="button">
-                                    Площадь (кв. фут)
+                                    {{ Session::has('kaz') ? 'Шаршы' : '' }}{{ Session::has('rus') ? 'Площадь' : '' }}{{ Session::has('eng') ? 'Square' : '' }} (кв. фут)
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                     </svg>
@@ -174,7 +180,7 @@
                                         <div class="range-selector">
                                             <div class="range-selector-box">
 {{--                                                <input type="number" class="form-control" name="min_size" id="minArea1" placeholder="Min. Area">--}}
-                                                <input type="number" class="form-control" name="min_size" id="minArea1" placeholder="Мин. Площадь">
+                                                <input type="number" class="form-control" name="min_size" id="minArea1" placeholder="{{ Session::has('kaz') ? 'Мин. Шаршы' : '' }}{{ Session::has('rus') ? 'Мин. Площадь' : '' }}{{ Session::has('eng') ? 'Min. Size' : '' }}">
                                             </div>
                                             <div class="range-selector-divider">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -183,7 +189,7 @@
                                             </div>
                                             <div class="range-selector-box">
 {{--                                                <input type="number" class="form-control" name="max_size" id="maxArea1" placeholder="Max. Area">--}}
-                                                <input type="number" class="form-control" name="max_size" id="maxArea1" placeholder="Максимум. Площадь">
+                                                <input type="number" class="form-control" name="max_size" id="maxArea1" placeholder="{{ Session::has('kaz') ? 'Максималды' : '' }}{{ Session::has('rus') ? 'Максимум. Площадь' : '' }}{{ Session::has('eng') ? 'Max Size' : '' }}">
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +197,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="home-search-button">
+{{--                            size div end--}}
+                            <div class="home-search-button col-sm-1" id="homeSearchSubmitBtn">
                                 <button type="submit" class="btn search-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -201,16 +208,16 @@
                         </div>
                         <!-- Banner Components Ends Here -->
                         <!-- Banner Components Second Starts Here -->
-                        <div class="banner-components-second my-3" id="homeInput" style="display: none;">
-                            <div class="home-search-select">
+                        <div class=" my-3 row" id="homeInput" style="display: none;"> <!-- incase - add this class : banner-components-second -->
+                            <div class=" col-sm-6 col-md-2 col-6">
                                 <select class="form-select property-select" name="is_furnished" id="allFurnishing">
-                                    <option value="1" selected>{{--All furnishings--}}Вся мебель</option>
-                                    <option value="0">{{--Not furnished--}}Без мебели</option>
+                                    <option value="1" selected>{{--All furnishings--}}{{ Session::has('kaz') ? 'Барлық жиһаз' : '' }}{{ Session::has('rus') ? 'Вся мебель' : '' }}{{ Session::has('eng') ? 'All furnishings' : '' }}</option>
+                                    <option value="0">{{--Not furnished--}}{{ Session::has('kaz') ? 'Жиһазсыз' : '' }}{{ Session::has('rus') ? 'Без мебели' : '' }}{{ Session::has('eng') ? 'Not furnished' : '' }}</option>
                                 </select>
-                            </div>
-                            <div class="home-search-select">
-                                <button class="select_btn btn price-select" type="button" id="area">
-                                    Площадь (кв. фут)
+                            </div>   <!-- incase - add this class : home-search-select -->
+                            <div class=" col-sm-6 col-md-3 col-6">
+                                <button class="select_btn btn price-select" type="button" id="area" style="width: 100%;">
+                                    {{ Session::has('kaz') ? 'Ауданы (шаршы фут)' : '' }}{{ Session::has('rus') ? 'Площадь (кв. фут)' : '' }}{{ Session::has('eng') ? 'Area (square feet)' : '' }}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
                                     </svg>
@@ -219,7 +226,7 @@
                                     <div class="dropdown-wrapper-content">
                                         <div class="range-selector">
                                             <div class="range-selector-box">
-                                                <input type="number" class="form-control" name="min_size" id="minArea2" placeholder="Мин. Площадь">
+                                                <input type="number" class="form-control" name="min_size" id="minArea2" placeholder="{{ Session::has('kaz') ? 'Мин. Шаршы' : '' }}{{ Session::has('rus') ? 'Мин. Площадь' : '' }}{{ Session::has('eng') ? 'Min. Size' : '' }}">
                                             </div>
                                             <div class="range-selector-divider">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -227,14 +234,14 @@
                                                 </svg>
                                             </div>
                                             <div class="range-selector-box">
-                                                <input type="text" class="form-control" name="max_size" id="maxArea2" placeholder="Максимум. Площадь">
+                                                <input type="text" class="form-control" name="max_size" id="maxArea2" placeholder="{{ Session::has('kaz') ? 'Максималды. Шаршы' : '' }}{{ Session::has('rus') ? 'Максимум. Площадь' : '' }}{{ Session::has('eng') ? 'Max. Size' : '' }}">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="dropdown-wrapper-footer">
                                     </div>
                                 </div>
-                            </div>
+                            </div>  <!-- incase - add this class : home-search-select -->
 {{--                            aminities--}}
 {{--                            <div class="home-search-select">--}}
 {{--                                <button class="select_btn btn price-select" type="button" id="amenities">--}}
@@ -292,8 +299,10 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-                            <div class="home-search-input me-0" id="placeholder">
-                                <input type="text" class="form-control" name="extra_content" placeholder="ключевые слова: напр. пляжный чиллер бесплатно">
+
+{{--                            2nd search text box div--}}
+                            <div class="home-search-input me-0 col-sm-12 col-md-7 home-search-m-t" id="placeholder">
+                                <input type="text" class="form-control" name="extra_content" placeholder="{{ Session::has('kaz') ? 'кілт сөздер: мысалы. жағажай салқындатқышы тегін' : '' }}{{ Session::has('rus') ? 'ключевые слова: напр. пляжный чиллер бесплатно' : '' }}{{ Session::has('eng') ? 'keywords: e.g. beach, chiller free' : '' }}">
 {{--                                <input type="text" class="form-control" name="extra_content" placeholder="keywords: e.g. beach, chiller free">--}}
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -303,18 +312,18 @@
                             </div>
                         </div>
                         <!-- Banner Components Second Ends Here -->
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-lg-12">
                                 <div class="d-flex align-items-center justify-content-between flex-wrap">
                                     <div class="form-check" >
                                         <input class="form-check-input" type="checkbox" value="" id="checkBox" >
                                         <label class="form-check-label" >
-                                            Показать только коммерческую недвижимость
+                                            {{ Session::has('kaz') ? 'Тек коммерциялық мүлікті көрсетіңіз' : '' }}{{ Session::has('rus') ? 'Показать только коммерческую недвижимость' : '' }}{{ Session::has('eng') ? 'Show commercial properties only' : '' }}
                                         </label>
                                     </div>
                                     <div>
                                         <button class="show-btn" type="button" id="showButton">
-                                            Показать больше параметров поиска
+                                            {{ Session::has('kaz') ? 'Қосымша іздеу опцияларын көрсету' : '' }}{{ Session::has('rus') ? 'Показать больше параметров поиска' : '' }}{{ Session::has('eng') ? 'Show more search options' : '' }}
                                             <span>
                                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -322,7 +331,7 @@
                                             </span>
                                         </button>
                                         <button class="show-btn" type="button" id="lessButton" style="display: none;">
-                                            Показать меньше параметров поиска
+                                            {{ Session::has('kaz') ? 'Іздеу опцияларын азырақ көрсету' : '' }}{{ Session::has('rus') ? 'Показать меньше параметров поиска' : '' }}{{ Session::has('eng') ? 'Show less search options' : '' }}
                                             <span>
                                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
@@ -349,7 +358,7 @@
                 <div class="col-lg-12">
                     <div class="verified-feature-heading">
                         <h4>
-                            <span>Рекомендуемые объекты в Казахстане</span>
+                            <span>{{ Session::has('kaz') ? 'Қазақстандағы таңдаулы мүліктер' : '' }}{{ Session::has('rus') ? 'Рекомендуемые объекты в Казахстане' : '' }}{{ Session::has('eng') ? 'Recommended properties in Kazakhstan' : '' }}</span>
                         </h4>
                     </div>
                 </div>
@@ -370,7 +379,7 @@
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
                                                         <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
                                                     </svg>
-                                                    Проверенный список
+                                                    {{ Session::has('kaz') ? 'Расталған тізім' : '' }}{{ Session::has('rus') ? 'Проверенный список' : '' }}{{ Session::has('eng') ? 'Verified List' : '' }}
                                                 </p>
                                             </div>
                                         @endif
@@ -422,9 +431,9 @@
                 <div class="col-lg-8 col-md-8 mb-4 mb-lg-0 mb-lg-0">
                     <div class="call-action-banner">
                         <div class="call-action-banner-content">
-                            <h4>Agent Hub: Расширяйте свою аудиторию, продвигайте свой бренд</h4>
+                            <h4>{{ Session::has('kaz') ? 'Агент хабы: аудиторияңызды кеңейтіңіз, брендіңізді насихаттаңыз' : '' }}{{ Session::has('rus') ? 'Агент Хаб: Расширяйте свою аудиторию, продвигайте свой бренд' : '' }}{{ Session::has('eng') ? 'Agent Hub: Grow your audience, boost your brand' : '' }}</h4>
                             <p>
-                                Для агентов по недвижимости, которые хотят получить максимальную отдачу от своего присутствия на Property Finder
+                                {{ Session::has('kaz') ? 'Property Finder-те қатысу мүмкіндігін барынша пайдаланғысы келетін жылжымайтын мүлік агенттері үшін' : '' }}{{ Session::has('rus') ? 'Для агентов по недвижимости, которые хотят получить максимальную отдачу от своего присутствия на Property Finder' : '' }}{{ Session::has('eng') ? 'For real estate agents who want to make the most out of their presence on Property Finder' : '' }}
                             </p>
 {{--                            <a href="" class="white-btn">Go to Agent Hub</a>--}}
                         </div>
@@ -440,7 +449,7 @@
                         </div>
                         <div class="social-links">
                             <div class="social-links-heading">
-                                <p>{{--Follow us--}}Подписывайтесь на нас</p>
+                                <p>{{--Follow us--}}{{ Session::has('kaz') ? 'бізге жазылыңыздар' : '' }}{{ Session::has('rus') ? 'Подписывайтесь на нас' : '' }}{{ Session::has('eng') ? 'follow us' : '' }}</p>
                             </div>
                             <div class="social-links-main">
                                 <a href="" class="social-links-main-one">
@@ -472,7 +481,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="news-blog-heading">
-                        <h5>Новости из блога</h5>
+                        <h5>{{ Session::has('kaz') ? 'Блогтағы жаңалықтар' : '' }}{{ Session::has('rus') ? 'Новости из блога' : '' }}{{ Session::has('eng') ? 'News from the blog' : '' }}</h5>
                     </div>
                     @foreach($latestBlogs as $latestBlog)
                         <div class="news-blog-content">
@@ -496,7 +505,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 mb-2 mb-lg-0">
                     <div class="quick-links-header">
-                        <h6>ПОПУЛЯРНЫЕ ПОИСКИ</h6>
+                        <h6>{{ Session::has('kaz') ? 'Танымал Іздеу' : '' }}{{ Session::has('rus') ? 'ПОПУЛЯРНЫЕ ПОИСКИ' : '' }}{{ Session::has('eng') ? 'POPULAR SEARCH' : '' }}</h6>
                     </div>
                     @foreach($popularSearches as $search)
                         <div class="quick-links-single">
@@ -512,7 +521,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 mb-2 mb-lg-0">
                     <div class="quick-links-header">
-                        <h6>АКТУАЛЬНЫЕ ПОИСКИ</h6>
+                        <h6>{{ Session::has('kaz') ? 'Нақты Іздеу' : '' }}{{ Session::has('rus') ? 'АКТУАЛЬНЫЕ ПОИСКИ' : '' }}{{ Session::has('eng') ? 'TRENDING SEARCHES' : '' }}</h6>
                     </div>
                     @foreach($trendingSearches as $search)
                         <div class="quick-links-single">

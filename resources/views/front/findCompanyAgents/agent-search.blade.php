@@ -11,7 +11,7 @@
     <section class="verified-agents-area" id="">
         <div class="container custom-container">
             <div class="verified-agents-area-title">
-                <h3>результат поиска</h3>
+                <h3>{{ Session::has('eng') ? 'search results' : '' }}{{ Session::has('kaz') ? 'іздеу нәтижелері' : '' }}{{ Session::has('rus') ? 'результат поиска' : '' }}</h3>
             </div>
             <div class="row justify-content-center justify-content-md-start justify-content-lg-start">
                 @if(count($agents)>0)
@@ -34,7 +34,7 @@
                                     <div class="verified-agents-body">
                                         <div class="verified-agents-body-item">
                                             <div class="verified-agents-body-item-start">
-                                                <span>НАЦИОНАЛЬНОСТЬ:</span>
+                                                <span>{ Session::has('eng') ? 'Nation' : '' }}{{ Session::has('kaz') ? 'ҰЛТЫ' : '' }}{{ Session::has('rus') ? 'НАЦИОНАЛЬНОСТЬ' : '' }}:</span>
                                             </div>
                                             <div class="verified-agents-body-item-end">
                                                 <p>{{ $agent->nationality }}</p>
@@ -42,7 +42,7 @@
                                         </div>
                                         <div class="verified-agents-body-item">
                                             <div class="verified-agents-body-item-start">
-                                                <span>ЯЗЫКИ:</span>
+                                                <span>{{ Session::has('eng') ? 'LANGUAGES' : '' }}{{ Session::has('kaz') ? 'ТІЛДЕР' : '' }}{{ Session::has('rus') ? 'ЯЗЫКИ' : '' }}:</span>
                                             </div>
                                             <div class="verified-agents-body-item-end">
                                                 <p>{{ $agent->languages }}</p>
@@ -59,7 +59,7 @@
                                                     <h5>{{ $rentCount }}</h5>
                                                 </div>
                                                 <div>
-                                                    <p>в аренду</p>
+                                                    <p>{{ Session::has('eng') ? 'for rent' : '' }}{{ Session::has('kaz') ? 'жалға беріледі' : '' }}{{ Session::has('rus') ? 'в аренду' : '' }}</p>
                                                 </div>
                                             </div>
                                             <div class="verified-agents-footer-item-single">
@@ -70,7 +70,7 @@
                                                     <h5>{{ $buyCount }}</h5>
                                                 </div>
                                                 <div>
-                                                    <p>на продажу</p>
+                                                    <p>{{ Session::has('eng') ? 'for sale' : '' }}{{ Session::has('kaz') ? 'сатуға арналған' : '' }}{{ Session::has('rus') ? 'на продажу' : '' }}</p>
                                                 </div>
                                             </div>
                                             <div class="verified-agents-footer-item-single">
@@ -81,7 +81,7 @@
                                                     <h5>{{ $commercialCount }}</h5>
                                                 </div>
                                                 <div>
-                                                    <p>коммерческий</p>
+                                                    <p>{{ Session::has('eng') ? 'commercial' : '' }}{{ Session::has('kaz') ? 'коммерциялық' : '' }}{{ Session::has('rus') ? 'коммерческий' : '' }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                         </div>
                     @endforeach
                 @else
-                    <span>Sorry... No agents found.</span>
+                    <span>{{ Session::has('eng') ? 'Sorry... No agents found.' : '' }}{{ Session::has('kaz') ? 'Кешіріңіз... Агенттер табылмады.' : '' }}{{ Session::has('rus') ? 'Извините... Агенты не найдены.' : '' }}</span>
                 @endif
             </div>
             @if(count($agents)> 11)

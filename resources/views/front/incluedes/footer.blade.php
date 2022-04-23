@@ -9,10 +9,10 @@
                         </a>
                     </div>
                     <div class="footer-top-links">
-                        <a href="javascript:void(0)">О нас</a>
-                        <a href="javascript:void(0)">Условия</a>
-                        <a href="javascript:void(0)">Политика конфиденциальности</a>
-                        <a href="javascript:void(0)">Логин клиента</a>
+                        <a href="javascript:void(0)">{{ Session::has('eng') ? 'About us' : '' }}{{ Session::has('kaz') ? 'Біз туралы' : '' }}{{ Session::has('rus') ? 'О нас' : '' }}</a>
+                        <a href="javascript:void(0)">{{ Session::has('eng') ? 'Terms' : '' }}{{ Session::has('kaz') ? 'Шарттар' : '' }}{{ Session::has('rus') ? 'Условия' : '' }}</a>
+                        <a href="javascript:void(0)">{{ Session::has('eng') ? 'Privacy policy' : '' }}{{ Session::has('kaz') ? 'Құпиялылық саясаты' : '' }}{{ Session::has('rus') ? 'Политика конфиденциальности' : '' }}</a>
+                        <a href="javascript:void(0)">{{ Session::has('eng') ? 'Client login' : '' }}{{ Session::has('kaz') ? 'Клиенттің кіруі' : '' }}{{ Session::has('rus') ? 'Логин клиента' : '' }}</a>
 {{--                        <a href="javascript:void(0)">Careers</a>--}}
 {{--                        <a href="javascript:void(0)">Agent Hub</a>--}}
                     </div>

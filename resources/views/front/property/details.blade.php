@@ -13,7 +13,7 @@
                     <div class="second-breadcrumb-area">
                         <div class="second-breadcrumb-area-start">
 
-                            <a href="javascript:void(0)">Характеристики</a>
+                            <a href="javascript:void(0)">{{ Session::has('eng') ? 'Characteristics' : '' }}{{ Session::has('kaz') ? 'Сипаттамалары' : '' }}{{ Session::has('rus') ? 'Характеристики' : '' }}</a>
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                             </span>
@@ -21,7 +21,7 @@
 
                         </div>
                         <div class="second-breadcrumb-area-end">
-                            <p>Свойства для {{ $property->propertyAdsType->type_name }} в {{ $property->location_city }}</p>
+                            <p>{{ Session::has('eng') ? 'properties' : '' }}{{ Session::has('kaz') ? 'үшін сипаттар' : '' }}{{ Session::has('rus') ? 'Свойства для' : '' }} {{ $property->propertyAdsType->type_name }}  {{ $property->location_city }}</p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
     <section class="image-area">
         <div class="container custom-container">
             <div class="row">
-                <div class="col-lg-8 col-md-8 pe-lg-0 pe-md-0 mb-3 mb-lg-0">
+                <div class="col-lg-8 col-md-8 col-8 pe-lg-0 pe-md-0 mb-3 mb-lg-0">
                     <div class="gallerys">
                         <div class="image-area-start">
 {{--                            <a href="{{ asset($property->main_image) }}" class="d-block" target="_blank">--}}
@@ -53,7 +53,7 @@
                                     <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                                   </svg>
                                 </span>
-                                Показывать {{ count($property->subImages) }} фотографии
+                                {{ Session::has('eng') ? 'Show' : '' }}{{ Session::has('kaz') ? 'Көрсету' : '' }}{{ Session::has('rus') ? 'Показывать' : '' }} {{ count($property->subImages) }} {{ Session::has('eng') ? 'Photo' : '' }}{{ Session::has('kaz') ? 'Фото' : '' }}{{ Session::has('rus') ? 'фотографии' : '' }}
                             </button>
                             <button class="btn" type="button" id="productDetailsMapView">
                                 <span>
@@ -62,7 +62,7 @@
                                     <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                   </svg>
                                 </span>
-                                Посмотреть на карте
+                                {{ Session::has('eng') ? 'View on map' : '' }}{{ Session::has('kaz') ? 'Картадан қарау' : '' }}{{ Session::has('rus') ? 'Посмотреть на карте' : '' }}
                             </button>
                         </div>
                         <!-- light box start -->
@@ -76,16 +76,16 @@
                         <!-- light box end -->
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-4">
                     <div class="image-area-end">
                         <div class="row">
                             @foreach($property->subImages as $firstSubImageKey => $firstSubImage)
                                 @if($firstSubImageKey == 0 || $firstSubImageKey == 1)
-                                    <div class="col-lg-12" style="{{ $firstSubImageKey == 0 ? 'margin-bottom: 15px;': '' }}">
+                                    <div class="col-12" style="{{ $firstSubImageKey == 0 ? 'margin-bottom: 15px;': '' }}">
                                         <div class="gallerys">
                                             <div class="image-area-end-sm-image">
         {{--                                        <a href="{{ asset('/') }}assets/images/details/02.jpg" class="d-block" target="_blank">--}}
-                                                    <img src="{{ asset($firstSubImage->big_img_url) }}" alt="{{ $property->property_title }}" class="img-fluid detailsBigImg" style="height: 250px; width: 100%">
+                                                    <img src="{{ asset($firstSubImage->big_img_url) }}" alt="{{ $property->property_title }}" class="img-fluid detailsBigImg" style="max-height: 250px; width: 100%;">
         {{--                                        </a>--}}
                                             </div>
                                         </div>
@@ -130,7 +130,7 @@
                                                     <defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>property</title><path class="cls-1" d="M119.2,111.86V3.66H57.86V41l-3.65-2.9V2.68A2.89,2.89,0,0,1,55.05.87h0A2.92,2.92,0,0,1,57.13,0h62.8A2.92,2.92,0,0,1,122,.86l.13.14a2.9,2.9,0,0,1,.74,1.94V31.15h0v80.71H104V87.1a1.67,1.67,0,0,0-1.67-1.67H90.44v30.09h32.44v-3.66ZM7.74,115.51V79.74a6.18,6.18,0,0,1-4.27.2A5.08,5.08,0,0,1,1.12,78.3,5.2,5.2,0,0,1,0,75.64a6.72,6.72,0,0,1,1.61-5h0a1.67,1.67,0,0,1,.23-.23l38.38-30a1.38,1.38,0,0,1,1.81-.07l38.47,29.9h0l.17.15a6.34,6.34,0,0,1,1.79,5.84,5.39,5.39,0,0,1-3.4,3.82,5.9,5.9,0,0,1-4.57-.3v35.59H70.77V78.18c0-.68-26.39-21.54-29.3-23.81-3.09,2.35-30,23-30,23.91v37.24ZM41.33,79.2A14.75,14.75,0,0,1,56,93.89v15.65H26.64V93.89A14.73,14.73,0,0,1,41.33,79.2Zm1.27,2.62V93.93H53.46v0A12.17,12.17,0,0,0,42.6,81.82Zm0,14.66V107H53.46V96.48ZM40.05,107V96.48H29.2V107Zm0-13.06V81.82A12.18,12.18,0,0,0,29.2,93.89v0ZM23.94,112.32H58.71v2.55H23.94v-2.55ZM66.68,12.87h9.85a.29.29,0,0,1,.28.28v11.4a.28.28,0,0,1-.28.27H66.68a.27.27,0,0,1-.28-.27V13.15a.28.28,0,0,1,.28-.28Zm33.86,0h9.85a.29.29,0,0,1,.28.28v11.4a.28.28,0,0,1-.28.27h-9.85a.28.28,0,0,1-.28-.27V13.15a.29.29,0,0,1,.28-.28Zm-16.93,0h9.85a.29.29,0,0,1,.28.28v11.4a.28.28,0,0,1-.28.27H83.61a.27.27,0,0,1-.28-.27V13.15a.28.28,0,0,1,.28-.28ZM66.68,35.76h9.85a.28.28,0,0,1,.28.27v11.4a.29.29,0,0,1-.28.28H66.68a.28.28,0,0,1-.28-.28V36a.27.27,0,0,1,.28-.27Zm33.86,0h9.85a.28.28,0,0,1,.28.27v11.4a.29.29,0,0,1-.28.28h-9.85a.29.29,0,0,1-.28-.28V36a.28.28,0,0,1,.28-.27Zm-16.93,0h9.85a.28.28,0,0,1,.28.27v11.4a.29.29,0,0,1-.28.28H83.61a.28.28,0,0,1-.28-.28V36a.27.27,0,0,1,.28-.27Zm16.93,22.88h9.85a.29.29,0,0,1,.28.28V70.31a.29.29,0,0,1-.28.28h-9.85a.29.29,0,0,1-.28-.28V58.92a.29.29,0,0,1,.28-.28Zm-16.93,0h9.85a.29.29,0,0,1,.28.28V70.31a.29.29,0,0,1-.28.28h-3V66.82l-7.11-5.64V58.92a.28.28,0,0,1,.28-.28Z"/>
                                                   </svg>
                                                 </span>
-                                                Тип недвижимости:
+                                                {{ Session::has('eng') ? 'ownership' : '' }}{{ Session::has('kaz') ? 'Меншік түрі' : '' }}{{ Session::has('rus') ? 'Тип недвижимости' : '' }}:
                                             </p>
                                         </div>
                                         <div class="property-info-single-end">
@@ -146,7 +146,7 @@
 {{--                                                  </svg>--}}
                                                     <img src="{{ asset('/') }}assets/images/property/icon/bed.png" alt="">
                                                 </span>
-                                                Спальни:
+                                                {{ Session::has('eng') ? 'Bedrooms' : '' }}{{ Session::has('kaz') ? 'Жатын бөлмелер' : '' }}{{ Session::has('rus') ? 'Спальни' : '' }}:
                                             </p>
                                         </div>
                                         <div class="property-info-single-end">
@@ -161,7 +161,7 @@
                                                 <span>
                                                   <img src="{{ asset('/') }}assets/images/details/icon/size.png" alt="Icon">
                                                 </span>
-                                                Размер недвижимости:
+                                                {{ Session::has('eng') ? 'size' : '' }}{{ Session::has('kaz') ? 'өлшемі' : '' }}{{ Session::has('rus') ? 'Размер недвижимости' : '' }}:
                                             </p>
                                         </div>
                                         <div class="property-info-single-end">
@@ -174,7 +174,7 @@
                                                 <span>
                                                   <img src="{{ asset('/') }}assets/images/property/icon/bathtub.png" alt="Icon">
                                                 </span>
-                                                Ванные комнаты:
+                                                {{ Session::has('eng') ? 'Bathrooms' : '' }}{{ Session::has('kaz') ? 'Жуынатын бөлмелер' : '' }}{{ Session::has('rus') ? 'Ванные комнаты' : '' }}:
                                             </p>
                                         </div>
                                         <div class="property-info-single-end">
@@ -188,12 +188,12 @@
                             <div class="row">
                                 <div class="col-lg-6 mb-4 mb-lg-0">
                                     <div class="pannel-info-single">
-                                        <h5 class="pannel-info-single-heading">Место нахождения</h5>
+                                        <h5 class="pannel-info-single-heading">{{ Session::has('eng') ? 'Location' : '' }}{{ Session::has('kaz') ? 'Орналасқан жері' : '' }}{{ Session::has('rus') ? 'Место нахождения' : '' }}</h5>
                                         <div class="pannel-info-single-content">
                                             <div class="pannel-info-single-content-image">
                                                 <img src="{{ asset('/') }}assets/images/details/icon/map.svg" alt="Icon">
                                                 <div class="pannel-info-single-button">
-                                                    <button type="button" class="btn btn-outline-info modal-btn-to-click" data-bs-toggle="modal" data-bs-target="#mapModal">карта</button>
+                                                    <button type="button" class="btn btn-outline-info modal-btn-to-click" data-bs-toggle="modal" data-bs-target="#mapModal">{{ Session::has('eng') ? 'map' : '' }}{{ Session::has('kaz') ? 'карта' : '' }}{{ Session::has('rus') ? 'карта' : '' }}</button>
                                                 </div>
                                             </div>
                                             <div class="pannel-info-single-content-text">
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="pannel-info-single">
-                                        <h5 class="pannel-info-single-heading">Агент</h5>
+                                        <h5 class="pannel-info-single-heading">{{ Session::has('eng') ? 'Agent' : '' }}{{ Session::has('kaz') ? 'Агент' : '' }}{{ Session::has('rus') ? 'Агент' : '' }}</h5>
                                         <div class="pannel-info-single-content">
                                             <div class="pannel-info-single-content-image">
                                                 <a href="" class="d-inline-block">
@@ -223,7 +223,7 @@
                                                         </div>
                                                         <div>
                                                             <p class="mb-0">{{ $property->agent->position }} at {{ $property->agent->company->name }}</p>
-                                                            <a href="">({{ count($property->agent->properties) }} характеристики)</a>
+                                                            <a href="">({{ count($property->agent->properties) }} {{ Session::has('eng') ? 'Properties' : '' }}{{ Session::has('kaz') ? 'сипаттамалары' : '' }}{{ Session::has('rus') ? 'характеристики' : '' }})</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -245,7 +245,7 @@
 {{--                        </div>--}}
                         <div class="description-info" style="border-bottom: 1px solid #e4e4e4; padding: 26px 0px;">
                             <div>
-                                <h5>Description</h5>
+                                <h5>{{ Session::has('eng') ? 'Description' : '' }}{{ Session::has('kaz') ? 'Сипаттама' : '' }}{{ Session::has('rus') ? 'Описание' : '' }}</h5>
                             </div>
 {{--                            <div></div>--}}
                             <div class="text-container">
@@ -291,7 +291,7 @@
 {{--                                </div>--}}
                                 <div class="reference-info-list">
                                     <div class="reference-info-list-start">
-                                        <p>Брокер ОРН:</p>
+                                        <p>{{ Session::has('eng') ? 'Broker ORN' : '' }}{{ Session::has('kaz') ? 'Брокер ORN' : '' }}{{ Session::has('rus') ? 'Брокер ОРН' : '' }}:</p>
                                     </div>
                                     <div class="reference-info-list-end">
                                         <p>{{ $property->company->orn }}</p>
@@ -299,18 +299,18 @@
                                 </div>
                                 <div class="reference-info-list">
                                     <div class="reference-info-list-start pb-0">
-                                        <p>Перечислено:</p>
+                                        <p>{{ Session::has('eng') ? 'Listed' : '' }}{{ Session::has('kaz') ? 'Тізімге енгізілген' : '' }}{{ Session::has('rus') ? 'Перечислено' : '' }}:</p>
                                     </div>
                                     <div class="reference-info-list-end pb-0">
 
-                                        <p>{{ $posted_time }} дней назад</p>
+                                        <p>{{ $posted_time }} {{ Session::has('eng') ? 'days ago' : '' }}{{ Session::has('kaz') ? 'күн бұрын' : '' }}{{ Session::has('rus') ? 'дней назад' : '' }}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="reference-info-end">
                                 <div class="reference-info-list">
                                     <div class="reference-info-list-start">
-                                        <p>Агент БРН:</p>
+                                        <p>{{ Session::has('eng') ? 'Agent BRN' : '' }}{{ Session::has('kaz') ? 'BRN агенті' : '' }}{{ Session::has('rus') ? 'Агент БРН' : '' }}:</p>
                                     </div>
                                     <div class="reference-info-list-end">
                                         <p>{{ $property->agent->license_number }}</p>
@@ -318,57 +318,59 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="property-share" style="padding: 26px 0px;">
-                            <h5>Нравится это свойство? Вернитесь к нему позже, легко.</h5>
-                            <div class="property-share-bottom">
-                                <button type="button" class="btn">
-                                      <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                                        </svg>
-                                      </span>
-                                    Сохранить в избранное
-                                </button>
-                                <span class="or-share">or share</span>
-                                <a href="" class="btn">
-                                      <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4267b2" class="bi bi-facebook" viewBox="0 0 16 16">
-                                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                                        </svg>
-                                      </span>
-                                    Фейсбук
-                                </a>
-                                <a href="" class="btn">
-                                      <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e60019" class="bi bi-pinterest" viewBox="0 0 16 16">
-                                          <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
-                                        </svg>
-                                      </span>
-                                    Пинтерест
-                                </a>
-                                <a href="" class="btn">
-                                      <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1da1f3" class="bi bi-twitter" viewBox="0 0 16 16">
-                                          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                                        </svg>
-                                      </span>
-                                    Твиттер
-                                </a>
-                                <button type="button" class="btn">
-                                      <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef5e4e" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
-                                        </svg>
-                                      </span>
-                                    Эл. адрес
-                                </button>
-                            </div>
-                        </div>
+{{--                        property share div start--}}
+{{--                        <div class="property-share" style="padding: 26px 0px;">--}}
+{{--                            <h5>Нравится это свойство? Вернитесь к нему позже, легко.</h5>--}}
+{{--                            <div class="property-share-bottom">--}}
+{{--                                <button type="button" class="btn">--}}
+{{--                                      <span>--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">--}}
+{{--                                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>--}}
+{{--                                        </svg>--}}
+{{--                                      </span>--}}
+{{--                                    Сохранить в избранное--}}
+{{--                                </button>--}}
+{{--                                <span class="or-share">or share</span>--}}
+{{--                                <a href="" class="btn">--}}
+{{--                                      <span>--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4267b2" class="bi bi-facebook" viewBox="0 0 16 16">--}}
+{{--                                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>--}}
+{{--                                        </svg>--}}
+{{--                                      </span>--}}
+{{--                                    Фейсбук--}}
+{{--                                </a>--}}
+{{--                                <a href="" class="btn">--}}
+{{--                                      <span>--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e60019" class="bi bi-pinterest" viewBox="0 0 16 16">--}}
+{{--                                          <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>--}}
+{{--                                        </svg>--}}
+{{--                                      </span>--}}
+{{--                                    Пинтерест--}}
+{{--                                </a>--}}
+{{--                                <a href="" class="btn">--}}
+{{--                                      <span>--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1da1f3" class="bi bi-twitter" viewBox="0 0 16 16">--}}
+{{--                                          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>--}}
+{{--                                        </svg>--}}
+{{--                                      </span>--}}
+{{--                                    Твиттер--}}
+{{--                                </a>--}}
+{{--                                <button type="button" class="btn">--}}
+{{--                                      <span>--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef5e4e" class="bi bi-envelope-fill" viewBox="0 0 16 16">--}}
+{{--                                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>--}}
+{{--                                        </svg>--}}
+{{--                                      </span>--}}
+{{--                                    Эл. адрес--}}
+{{--                                </button>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        property share div ends--}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <!-- Contact Card Starts Here -->
-                    <div class="contact-card">
+                    <div class="contact-card" id="bigContactCard">
                         <div class="contact-card-heading">
                             <h5>{{ $property->rent_charge_per_year != null ? number_format($property->rent_charge_per_year).' AED / yearly' : number_format($property->property_price).' AED' }} </h5>
 {{--                            <button type="button" class="btn" id="dotBtn">--}}
@@ -403,52 +405,52 @@
 {{--                            </div>--}}
                         </div>
                         <div class="contact-card-buttons">
-                            <button class="btn" type="button" onclick="call({{ $property->id }})" style="background-color: #ef5e4e;">
+                            <button class="btn mx-auto" type="button" onclick="call({{ $property->id }})" style="background-color: #ef5e4e;">
                                     <span>
                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                                       </svg>
                                     </span>
-                                Вызов
+                                <span class="hide-me-on-small-screen">{{ Session::has('eng') ? 'Call' : '' }}{{ Session::has('kaz') ? 'Қоңырау' : '' }}{{ Session::has('rus') ? 'Вызов' : '' }}</span>
                             </button>
-                            <button class="btn" type="button" onclick="mail({{ $property->id }})" style="background-color: #ef5e4e;">
+                            <button class="btn mx-auto" type="button" onclick="mail({{ $property->id }})" style="background-color: #ef5e4e;">
                                     <span>
                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
                                         <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path>
                                       </svg>
                                     </span>
-                                Эл. адрес
+                                <span class="hide-me-on-small-screen">{{ Session::has('eng') ? 'Email' : '' }}{{ Session::has('kaz') ? 'пошта' : '' }}{{ Session::has('rus') ? 'Эл. адрес' : '' }}</span>
                             </button>
-                            <button class="btn" type="button" onclick="whatsapp({{ $property->id }})" style="background-color: #25d366;">
+                            <button class="btn mx-auto" type="button" onclick="whatsapp({{ $property->id }})" style="background-color: #25d366;">
                                     <span>
                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                                       </svg>
                                     </span>
-                                WhatsApp
+                                <span class="hide-me-on-small-screen">WhatsApp</span>
                             </button>
                         </div>
                         @if($property->is_verified == 1)
                             <div class="contact-card-text">
                                 <p class="text-center">
-                                    Property Finder проверил точность и подлинность этого списка.
+                                    {{ Session::has('eng') ? 'Property Finder checked the accuracy and authenticity of this list.' : '' }}{{ Session::has('kaz') ? 'Property Finder бұл тізімнің дәлдігі мен шынайылығын тексерді.' : '' }}{{ Session::has('rus') ? 'Property Finder проверил точность и подлинность этого списка.' : '' }}
                                 </p>
                             </div>
                         @endif
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn save-btn">
-                                    <span>
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
-                                      </svg>
-                                    </span>
-                                Сохранить в избранное
-                            </button>
-                        </div>
+{{--                        <div class="d-flex justify-content-center">--}}
+{{--                            <button type="button" class="btn save-btn">--}}
+{{--                                    <span>--}}
+{{--                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">--}}
+{{--                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>--}}
+{{--                                      </svg>--}}
+{{--                                    </span>--}}
+{{--                                {{ Session::has('eng') ? 'Save to Favorites' : '' }}{{ Session::has('kaz') ? 'Таңдаулыларға сақтаңыз' : '' }}{{ Session::has('rus') ? 'Сохранить в избранное' : '' }}--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
                         @if($property->is_verified == 1)
                             <div class="contact-card-badge">
                                 <div class="custom-badge">
-                                    <span class="text-uppercase">Verified</span>
+                                    <span class="text-uppercase">{{ Session::has('eng') ? 'Verified' : '' }}{{ Session::has('kaz') ? 'Тексерілді' : '' }}{{ Session::has('rus') ? 'Verified' : '' }}</span>
                                 </div>
                             </div>
                         @endif
@@ -508,7 +510,7 @@
                                             <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                                           </svg>
                                         </span>
-                                    Вызов
+                                    <span class="hide-me-on-small-screen">{{ Session::has('eng') ? 'Call' : '' }}{{ Session::has('kaz') ? 'Қоңырау' : '' }}{{ Session::has('rus') ? 'Вызов' : '' }}</span>
                                 </button>
                                 <button class="btn" onclick="mail({{ $property->id }})" type="button" style="background-color: #ef5e4e;">
                                         <span>
@@ -516,7 +518,7 @@
                                             <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path>
                                           </svg>
                                         </span>
-                                    Эл. адрес
+                                    <span class="hide-me-on-small-screen">{{ Session::has('eng') ? 'Email' : '' }}{{ Session::has('kaz') ? 'пошта' : '' }}{{ Session::has('rus') ? 'Эл. адрес' : '' }}</span>
                                 </button>
                                 <button class="btn" onclick="whatsapp({{ $property->id }})" type="button" style="background-color: #25d366;">
                                         <span>
@@ -524,13 +526,13 @@
                                             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                                           </svg>
                                         </span>
-                                    WhatsApp
+                                    <span class="hide-me-on-small-screen">WhatsApp</span>
                                 </button>
                             </div>
                             @if($property->is_verified == 1)
                                 <div class="contact-card-badge">
                                     <div class="custom-badge">
-                                        <span class="text-uppercase">проверено</span>
+                                        <span class="text-uppercase">{{ Session::has('eng') ? 'checked' : '' }}{{ Session::has('kaz') ? 'тексерілді' : '' }}{{ Session::has('rus') ? 'проверено' : '' }}</span>
                                     </div>
                                 </div>
                             @endif
@@ -553,18 +555,18 @@
     <!-- Commercial Rent Bottom Starts Here -->
     <section class="commercial-rent-bottom">
         <div class="container custom-container">
-            <h4>Больше доступно в том же районе</h4>
+            <h4>{{ Session::has('eng') ? 'More available in that area' : '' }}{{ Session::has('kaz') ? 'Сол аймақта көбірек қолжетімді' : '' }}{{ Session::has('rus') ? 'Больше доступно в том же районе' : '' }}</h4>
             <div class="row">
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <div class="row">
                         @foreach($relatedProperties as $relatedProperty)
-                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <a href="" class="d-inline-block">
-                                <div class="rent-card-sm">
-                                    <div class="rent-card-sm-image">
-                                        <img src="{{ asset($relatedProperty->main_image) }}" alt="Card-image" class="img-fluid">
+                        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                            <a href="" class=""> <!--d-inline-block-->
+                                <div class=" card"> <!--rent-card-sm-->
+                                    <div class=""> <!--rent-card-sm-image-->
+                                        <img src="{{ asset($relatedProperty->main_image) }}" alt="Card-image" class="card-img-top" style="max-height: 170px;">
                                     </div>
-                                    <div class="rent-card-sm-bottom">
+                                    <div class="rent-card-sm-bottom card-body">
                                         <p class="rent-card-sm-subtitle">{{ $relatedProperty->propertyType->type_name }}</p>
                                         <p class="rent-card-sm-title">{{ $property->rent_charge_per_year != null ? number_format($property->rent_charge_per_year).' AED / yearly' : number_format($property->property_price).' AED' }}</p>
                                         <p class="rent-card-sm-details">
@@ -601,7 +603,7 @@
                                         @if($relatedProperty->is_verified == 1)
                                             <div class="rent-card-sm-badge">
                                                 <div class="custom-badge">
-                                                    <span class="text-uppercase">проверено</span>
+                                                    <span class="text-uppercase">{{ Session::has('eng') ? 'checked' : '' }}{{ Session::has('kaz') ? 'тексерілді' : '' }}{{ Session::has('rus') ? 'проверено' : '' }}</span>
                                                 </div>
                                             </div>
                                         @endif
@@ -701,23 +703,23 @@
                             </div>
                         </div>
                         <div class="newsletter-area-text">
-                            <h6 class="text-center mb-0">Не пропустите!</h6>
-                            <p class="text-center mb-0">Получайте уведомления о новых свойствах для</p>
+                            <h6 class="text-center mb-0">{{ Session::has('eng') ? 'Do not miss it!' : '' }}{{ Session::has('kaz') ? 'Жіберіп алма!' : '' }}{{ Session::has('rus') ? 'Не пропустите!' : '' }}</h6>
+                            <p class="text-center mb-0">{{ Session::has('eng') ? 'Get notifications about new properties' : '' }}{{ Session::has('kaz') ? 'Жаңа сипаттар туралы хабарландыру алыңыз' : '' }}{{ Session::has('rus') ? 'Получайте уведомления о новых свойствах для' : '' }}</p>
                             <h6 class="text-center mb-0">{{ $property->company->name }}</h6>
                         </div>
                         <form action="" class="newsletter-area-form">
                             <div class="row g-2">
                                 <form action="" method="post">
                                     <div class="col-lg-8">
-                                        <input type="email" class="form-control" placeholder="Email" style="font-size: 13px;">
+                                        <input type="email" class="form-control" placeholder="{{ Session::has('eng') ? 'Email' : '' }}{{ Session::has('kaz') ? 'Электрондық пошта' : '' }}{{ Session::has('rus') ? 'Эл. адрес' : '' }}" style="font-size: 13px;">
                                     </div>
                                     <div class="col-lg-4">
-                                        <button class="btn border text-danger fw-bold" type="submit" style="font-size: 13px;">Сообщите мне</button>
+                                        <button class="btn border text-danger fw-bold" type="submit" style="font-size: 13px;">{{ Session::has('eng') ? 'Notify me' : '' }}{{ Session::has('kaz') ? 'Маған айт' : '' }}{{ Session::has('rus') ? 'Сообщите мне' : '' }}</button>
                                     </div>
                                 </form>
                             </div>
                         </form>
-                        <p class="newsletter-area-alert text-danger">Пожалуйста, введите адрес электронной почты</p>
+                        <p class="newsletter-area-alert text-danger">{{ Session::has('eng') ? 'Enter your email address' : '' }}{{ Session::has('kaz') ? 'Электрондық пошта мекенжайын енгізіңіз' : '' }}{{ Session::has('rus') ? 'Пожалуйста, введите адрес электронной почты' : '' }}</p>
                     </div>
                 </div>
             </div>

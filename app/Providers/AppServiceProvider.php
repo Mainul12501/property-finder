@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\PropertyAdsType;
 use App\Models\PropertyType;
 use App\Models\search;
+use App\Models\SiteSetting;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -40,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
         });
         View::composer(['front.buy.buy', 'front.rent.rent', 'front.commercial.commercial', 'front.home.home','front.search.search'], function ($view){
             $view->with('trendingSearches', search::orderBy('id', 'DESC')->take(5)->get());
+        });
+        View::composer(['front.incluedes.header', 'front.home.home'], function ($view){
+            $view->with('siteSetting', SiteSetting::orderBy('id', 'DESC')->first());
         });
     }
 }

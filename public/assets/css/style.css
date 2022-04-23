@@ -2190,13 +2190,13 @@ header .nav-link.active {
 }
 
 .banner-components .home-search-select {
-  max-width: 100%;
+  /*max-width: 100%;*/
   margin-right: 12px;
 }
 
 .banner-components .home-search-input {
-  margin-right: 12px;
-  min-width: 55.5%;
+  /*margin-right: 12px;*/
+  /*min-width: 55.5%;*/
 }
 
 .filter-modal-content {
@@ -2637,7 +2637,7 @@ header .nav-link.active {
 }
 
 .home-search-select .form-select {
-  min-width: 105px;
+  /*min-width: 105px;*/
 }
 
 .home-search-select .price-select {
@@ -2645,7 +2645,7 @@ header .nav-link.active {
 }
 
 .home-search-select .property-select {
-  min-width: 130px;
+  /*min-width: 130px;*/
 }
 
 .home-search .form-select,
@@ -2677,7 +2677,7 @@ header .nav-link.active {
 
 .home-search-select {
   position: relative;
-  max-width: 130px;
+  /*max-width: 130px;*/
 }
 
 .home-search-select .dropdown-wrapper {
@@ -6536,13 +6536,45 @@ select:focus {
         display: none;
     }
 }
-@media screen and (min-width: 1201px) and (max-width: 1451px){
+@media screen and (min-width: 1200px) and (max-width: 1451px){
     #propertyPriceMenu {
         display: none;
     }
 }
+@media screen and (min-width: 991px) and (max-width: 1441px){
+    .hide-me-on-small-screen {
+        display: none;
+    }
+}
+@media screen and (min-width: 1199px) and (max-width: 1215px){
+    #blogMenu {
+        display: none;
+    }
+}
+@media screen and (max-width: 992px){
+    #bigContactCard {
+        display: none;
+    }
+}
+@media screen and  (max-width: 576px){
+    #homeSearchInputTop {
+        width: 80%;
+        padding-right: 0px;
+    }
+    #homeSearchSubmitBtn {
+        position: absolute;
+        left: 80%;
+    }
+    .home-search-m-t {
+        margin-top: 10px;
+    }
+}
 .active-bg {
     background-color: cornflowerblue;
+}
+
+.w-full {
+    width: 100%!important;
 }
 /*# sourceMappingURL=style.css.map */
 

@@ -8,16 +8,16 @@
     <!-- Agents Banner Starts Here -->
     <section class="agents-banner" style="background-image: url(assets/images/banner/04.jpg);">
         <div class="container custom-container">
-            <h2 class="text-center">Отличные агенты находят отличные объекты.</h2>
+            <h2 class="text-center">{{ Session::has('eng') ? 'Great agents find great properties.' : '' }}{{ Session::has('kaz') ? 'Ұлы агенттер керемет қасиеттерді табады.' : '' }}{{ Session::has('rus') ? 'Отличные агенты находят отличные объекты.' : '' }}</h2>
             <div class="row justify-content-center my-4">
                 <div class="col-lg-4">
                     <div class="d-flex justify-content-center">
                         <div class="button-switch" style="background-color: black;">
                             <div class="button-switch-start">
-                                <button type="button" class="btn switecher-btn switecher-btn-active" id="agents">АГЕНТЫ</button>
+                                <button type="button" class="btn switecher-btn switecher-btn-active" id="agents">{{ Session::has('eng') ? 'Agents' : '' }}{{ Session::has('kaz') ? 'АГЕНТТЕР' : '' }}{{ Session::has('rus') ? 'АГЕНТЫ' : '' }}</button>
                             </div>
                             <div class="button-switch-end">
-                                <button type="button" class="btn switecher-btn" id="companies">КОМПАНИИ</button>
+                                <button type="button" class="btn switecher-btn" id="companies">{{ Session::has('eng') ? 'Companies' : '' }}{{ Session::has('kaz') ? 'КОМПАНИЯЛАР' : '' }}{{ Session::has('rus') ? 'КОМПАНИИ' : '' }}</button>
                             </div>
                         </div>
                     </div>
@@ -28,17 +28,17 @@
                     <form action="{{ route('agent-company-search') }}" class="find-form" method="get" id="agentCompanySearchForm">
                         <div class="find-form-input">
 {{--                            <input type="text" class="form-control" placeholder="Enter location or agent name">--}}
-                            <input type="text" class="form-control" name="search_text" placeholder="Введите местоположение или имя агента">
+                            <input type="text" class="form-control" name="search_text" placeholder="{{ Session::has('eng') ? 'Enter a location or agent name' : '' }}{{ Session::has('kaz') ? 'Орналасқан жерді немесе агент атын енгізіңіз' : '' }}{{ Session::has('rus') ? 'Введите местоположение или имя агента' : '' }}">
                             <input type="hidden" name="search_type" id="searchType" value="agent">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
                             </svg>
-                            <button type="submit" class="btn find-form-btn" id="agentSearchBtn">Находить</button>
+                            <button type="submit" class="btn find-form-btn" id="agentSearchBtn">{{ Session::has('eng') ? 'Find' : '' }}{{ Session::has('kaz') ? 'Табу' : '' }}{{ Session::has('rus') ? 'Находить' : '' }}</button>
                         </div>
                         <div class="row g-2">
                             <div class="col-lg-4">
                                 <select class="form-select form-select-sm" id="service" name="property_ads_type_id">
-                                    <option selected disabled>Требуется услуга</option>
+                                    <option selected disabled>{{ Session::has('eng') ? 'Service needed' : '' }}{{ Session::has('kaz') ? 'Қызмет қажет' : '' }}{{ Session::has('rus') ? 'Требуется услуга' : '' }}</option>
                                     @foreach($propertyAdsTypes as $propertyAdsType)
                                         <option value="{{ $propertyAdsType->id }}">{{ $propertyAdsType->type_name }}</option>
                                     @endforeach
@@ -54,7 +54,7 @@
 {{--                                    <option value="3">Three</option>--}}
 {{--                                </select>--}}
                                 <select id="language" name="language" class="form-select form-select-sm">
-                                    <option value="" selected disabled>Выберите язык</option>
+                                    <option value="" selected disabled>{{ Session::has('eng') ? 'Select Language' : '' }}{{ Session::has('kaz') ? 'Тілді таңдаңыз' : '' }}{{ Session::has('rus') ? 'Выберите язык' : '' }}</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
                                     <option value="Albania">Albania</option>
@@ -309,7 +309,7 @@
 {{--                                    <option value="3">Three</option>--}}
 {{--                                </select>--}}
                                 <select id="nationality" name="nationality" class="form-select form-select-sm">
-                                    <option value="" selected disabled>Выберите страну</option>
+                                    <option value="" selected disabled>{{ Session::has('eng') ? 'Select Nationality' : '' }}{{ Session::has('kaz') ? 'Елді таңдаңыз' : '' }}{{ Session::has('rus') ? 'Выберите страну' : '' }}</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
                                     <option value="Albania">Albania</option>
@@ -569,7 +569,7 @@
     <section class="verified-agents-area" id="agentSection">
         <div class="container custom-container">
             <div class="verified-agents-area-title">
-                <h3>проверенные агенты</h3>
+                <h3>{{ Session::has('eng') ? 'Verified Agents' : '' }}{{ Session::has('kaz') ? 'сенімді агенттер' : '' }}{{ Session::has('rus') ? 'проверенные агенты' : '' }}</h3>
             </div>
             <div class="row justify-content-center justify-content-md-start justify-content-lg-start">
                 @foreach($agents as $agent)
@@ -591,7 +591,7 @@
                                 <div class="verified-agents-body">
                                     <div class="verified-agents-body-item">
                                         <div class="verified-agents-body-item-start">
-                                            <span>НАЦИОНАЛЬНОСТЬ:</span>
+                                            <span>{{ Session::has('eng') ? 'NATION' : '' }}{{ Session::has('kaz') ? 'ҰЛТЫ' : '' }}{{ Session::has('rus') ? 'НАЦИОНАЛЬНОСТЬ' : '' }}:</span>
                                         </div>
                                         <div class="verified-agents-body-item-end">
                                             <p>{{ $agent->nationality }}</p>
@@ -599,7 +599,7 @@
                                     </div>
                                     <div class="verified-agents-body-item">
                                         <div class="verified-agents-body-item-start">
-                                            <span>ЯЗЫКИ:</span>
+                                            <span>{{ Session::has('eng') ? 'LANGUAGES' : '' }}{{ Session::has('kaz') ? 'ТІЛДЕР' : '' }}{{ Session::has('rus') ? 'ЯЗЫКИ' : '' }}:</span>
                                         </div>
                                         <div class="verified-agents-body-item-end">
                                             <p>{{ $agent->languages }}</p>
@@ -616,7 +616,7 @@
                                                 <h5>{{ $rentCount }}</h5>
                                             </div>
                                             <div>
-                                                <p>в аренду</p>
+                                                <p>{{ Session::has('eng') ? 'for rent' : '' }}{{ Session::has('kaz') ? 'жалға беріледі' : '' }}{{ Session::has('rus') ? 'в аренду' : '' }}</p>
                                             </div>
                                         </div>
                                         <div class="verified-agents-footer-item-single">
@@ -627,7 +627,7 @@
                                                 <h5>{{ $buyCount }}</h5>
                                             </div>
                                             <div>
-                                                <p>на продажу</p>
+                                                <p>{{ Session::has('eng') ? 'for sale' : '' }}{{ Session::has('kaz') ? 'сатуға арналған' : '' }}{{ Session::has('rus') ? 'на продажу' : '' }}</p>
                                             </div>
                                         </div>
                                         <div class="verified-agents-footer-item-single">
@@ -638,7 +638,7 @@
                                                 <h5>{{ $commercialCount }}</h5>
                                             </div>
                                             <div>
-                                                <p>коммерческий</p>
+                                                <p>{{ Session::has('eng') ? 'commercial' : '' }}{{ Session::has('kaz') ? 'коммерциялық' : '' }}{{ Session::has('rus') ? 'коммерческий' : '' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -662,7 +662,7 @@
     <section class="verified-agents-area" id="broker" style="display: none;">
         <div class="container custom-container">
             <div class="verified-agents-area-title">
-                <h3>Справочник брокеров</h3>
+                <h3>{{ Session::has('eng') ? 'Brokers Directory' : '' }}{{ Session::has('kaz') ? 'Брокерлер анықтамалығы' : '' }}{{ Session::has('rus') ? 'Справочник брокеров' : '' }}</h3>
             </div>
             <div class="row justify-content-center justify-content-md-start justify-content-lg-start">
                 @foreach($companies as $company)
@@ -676,12 +676,12 @@
                                 </div>
                                 <div class="verified-agents-info" style="margin-bottom: 10px;">
                                     <h5>{{ $company->name }}</h5>
-                                    <p>{{ count($company->agents) }} АГЕНТЫ</p>
+                                    <p>{{ count($company->agents) }} {{ Session::has('eng') ? 'AGENTS' : '' }}{{ Session::has('kaz') ? 'АГЕНТТЕР' : '' }}{{ Session::has('rus') ? 'АГЕНТЫ' : '' }}</p>
                                 </div>
                                 <div class="verified-agents-body ps-0">
                                     <div class="verified-agents-body-item flex-column align-items-center">
                                         <div class="verified-agents-body-item-start flex-grow-0 flex-shrink-0" style="flex-basis: 0;">
-                                            <span>HEAD OFFICE</span>
+                                            <span>{{ Session::has('eng') ? 'HEAD OFFICE' : '' }}{{ Session::has('kaz') ? 'БАСТЫ офис' : '' }}{{ Session::has('rus') ? 'ГЛАВНЫЙ ОФИС' : '' }}</span>
                                         </div>
                                         <div class="verified-agents-body-item-end flex-grow-0">
                                             <p class="px-2">{{ $company->head_office_state }}</p>
@@ -698,7 +698,7 @@
                                                 <h5>{{ $companyRentCount }}</h5>
                                             </div>
                                             <div>
-                                                <p>в аренду</p>
+                                                <p>{{ Session::has('eng') ? 'for rent' : '' }}{{ Session::has('kaz') ? 'жалға беріледі' : '' }}{{ Session::has('rus') ? 'в аренду' : '' }}</p>
                                             </div>
                                         </div>
                                         <div class="verified-agents-footer-item-single">
@@ -709,7 +709,7 @@
                                                 <h5>{{ $companyBuyCount }}</h5>
                                             </div>
                                             <div>
-                                                <p>на продажу</p>
+                                                <p>{{ Session::has('eng') ? 'for sale' : '' }}{{ Session::has('kaz') ? 'сатуға арналған' : '' }}{{ Session::has('rus') ? 'на продажу' : '' }}</p>
                                             </div>
                                         </div>
                                         <div class="verified-agents-footer-item-single">
@@ -720,7 +720,7 @@
                                                 <h5>{{ $companyRentCount }}</h5>
                                             </div>
                                             <div>
-                                                <p>коммерческий</p>
+                                                <p>{{ Session::has('eng') ? 'commercial' : '' }}{{ Session::has('kaz') ? 'коммерциялық' : '' }}{{ Session::has('rus') ? 'коммерческий' : '' }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -32,3 +32,25 @@ Route::get('/search-results', 'SearchController@homeSearch')->name('home-page-se
 Route::get('/search-agent-company', 'SearchController@agentSearch')->name('agent-company-search'); // search agent
 Route::get('/search-project', 'SearchController@projectSearch')->name('project-search'); // search project
 
+Route::get('/language-change/{name}', 'FrontPageController@changeLanguage')->name('language-change'); // Language Change
+
+Route::get('/curl', function (){
+    $client = new \GuzzleHttp\Client();
+    $endpoint   = 'http://api.positionstack.com/v1/forward';
+    $access_key = 'ba578946c9f29b8c64ae391f903d5dc1';
+    $query = 'dhaka';
+    $limit = 1;
+    $response = $client->request('GET', $endpoint, ['query' => [
+        'access_key' => $access_key,
+        'query' => $query,
+        'limit' => $limit,
+    ]]);
+     $statusCode = $response->getStatusCode();
+     $content = json_decode($response->getBody(), true);
+//    return json_decode(json_encode($content));
+//    return $content->data->latitude;
+    return $content['data'][0];
+//    return $content['data'][0]['longitude'];
+//    return print_r($content);
+});
+

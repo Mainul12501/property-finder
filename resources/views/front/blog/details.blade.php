@@ -103,7 +103,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-area-content" style="padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #e5e5e5;">
                         <div class="breadcrumb-area-content-start">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="{{ url('/') }}">{{ Session::has('kaz') ? 'үй' : '' }}{{ Session::has('rus') ? 'Дом' : '' }}{{ Session::has('eng') ? 'House' : '' }}</a>
                         </div>
                         <div class="breadcrumb-area-content-icon">
                             <span>
@@ -130,7 +130,7 @@
                 <div class="col-lg-8">
                     <div class="blog-details">
                         <h5 class="blog-details-title">{{ $blog->blog_title }}</h5>
-                        <p class="blog-details-date">This article was published on {{ $blog->created_at->format('M-d, Y') }}</p>
+                        <p class="blog-details-date">{{ Session::has('kaz') ? 'Бұл мақала жарияланды' : '' }}{{ Session::has('rus') ? 'Эта статья была опубликована на' : '' }}{{ Session::has('eng') ? 'This article was published on' : '' }} {{ $blog->created_at->format('M-d, Y') }}</p>
                         <div class="blog-details-content" style="overflow: hidden">
                             {!! $blog->content !!}
                         </div>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="popular-posts mb-4">
                         <div class="popular-posts-heading">
-                            <h4 class="mb-0">POPULAR POSTS</h4>
+                            <h4 class="mb-0">{{ Session::has('kaz') ? 'Танымал ПОСТТАР' : '' }}{{ Session::has('rus') ? 'ПОПУЛЯРНЫЕ ПОСТЫ' : '' }}{{ Session::has('eng') ? 'POPULAR POSTS' : '' }}</h4>
                         </div>
                         @foreach($popularBlogs as $popularBlog)
                             <div class="popular-posts-single">
@@ -174,7 +174,7 @@
                     </div>
                     <div class="popular-posts mb-4">
                         <div class="popular-posts-heading">
-                            <h4 class="mb-0">LATEST POSTS</h4>
+                            <h4 class="mb-0">{{ Session::has('kaz') ? 'СОҢҒЫ ПОСТТАР' : '' }}{{ Session::has('rus') ? 'ПОСЛЕДНИЕ ПОСТЫ' : '' }}{{ Session::has('eng') ? 'LATEST POSTS' : '' }}</h4>
                         </div>
                         @foreach($latestBlogs as $latestBlog)
                             <div class="popular-posts-single">

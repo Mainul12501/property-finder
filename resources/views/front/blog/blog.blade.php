@@ -168,7 +168,7 @@
                             @endif
                         @else
                             <div style="min-height: 400px">
-                                <h5 class="text-capitalize  mt-5">К сожалению, информация не найдена....</h5>
+                                <h5 class="text-capitalize  mt-5">{{ Session::has('kaz') ? 'Кешіріңіз, ақпарат табылмады....' : '' }}{{ Session::has('rus') ? 'К сожалению, информация не найдена....' : '' }}{{ Session::has('eng') ? 'Sorry, no information found....' : '' }}</h5>
                             </div>
                         @endif
                     </div>
@@ -193,7 +193,7 @@
                         </div>
                         <div class="popular-posts mb-4">
                             <div class="popular-posts-heading">
-                                <h4 class="mb-0">ПОПУЛЯРНЫЕ ПОСТЫ</h4>
+                                <h4 class="mb-0">{{ Session::has('kaz') ? 'ТАНЫМАЛ ПОСТТАР' : '' }}{{ Session::has('rus') ? 'ПОПУЛЯРНЫЕ ПОСТЫ' : '' }}{{ Session::has('eng') ? 'POPULAR POSTS' : '' }}</h4>
                             </div>
                             @if(count($popularBlogs)>0)
                                 @foreach($popularBlogs as $popularBlog)
@@ -209,12 +209,12 @@
                                     </div>
                                 @endforeach
                             @else
-                                <span>Информация не найдена</span>
+                                <span>{{ Session::has('kaz') ? 'Ақпарат табылмады' : '' }}{{ Session::has('rus') ? 'Информация не найдена' : '' }}{{ Session::has('eng') ? 'Information not found' : '' }}</span>
                             @endif
                         </div>
                         <div class="popular-posts mb-4">
                             <div class="popular-posts-heading">
-                                <h4 class="mb-0">ПОСЛЕДНИЕ СООБЩЕНИЯ</h4>
+                                <h4 class="mb-0">{{ Session::has('kaz') ? 'СОҢҒЫ ХАБАРЛАР' : '' }}{{ Session::has('rus') ? 'ПОСЛЕДНИЕ СООБЩЕНИЯ' : '' }}{{ Session::has('eng') ? 'LAST MESSAGES' : '' }}</h4>
                             </div>
                             @if(count($latestBlogs)>0)
                                 @foreach($latestBlogs as $latestBlog)
@@ -230,7 +230,7 @@
                                     </div>
                                 @endforeach
                             @else
-                                <span>Информация не найдена</span>
+                                <span>{{ Session::has('kaz') ? 'Ақпарат табылмады' : '' }}{{ Session::has('rus') ? 'Информация не найдена' : '' }}{{ Session::has('eng') ? 'Information not found' : '' }}</span>
                             @endif
                         </div>
     {{--                    <div class="stay-touch">--}}

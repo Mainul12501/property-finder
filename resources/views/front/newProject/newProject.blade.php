@@ -24,13 +24,13 @@
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
                                     </svg>
 {{--                                    <input type="text" placeholder="Search by location, developer" name="search_text" class="form-control">--}}
-                                    <input type="text" placeholder="Поиск по местоположению, разработчику" name="search_text" class="form-control">
+                                    <input type="text" placeholder="{{ Session::has('eng') ? 'Location, search by developer' : '' }}{{ Session::has('kaz') ? 'Орналасу, әзірлеуші ​​бойынша іздеу' : '' }}{{ Session::has('rus') ? 'Поиск по местоположению, разработчику' : '' }}" name="search_text" class="form-control">
                                 </div>
                                 <div class="project-search-form-dropdown">
                                     <button type="button" class="filter-btn btn">
                                         <div class="filter-btn-start">
                                             <div>
-                                                <p>{{--Project type--}}Тип проекта</p>
+                                                <p>{{--Project type--}}{{ Session::has('eng') ? 'Project type' : '' }}{{ Session::has('kaz') ? 'Жоба түрі' : '' }}{{ Session::has('rus') ? 'Тип проекта' : '' }}</p>
                                                 <h6 class="d-flex">Any</h6>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                     <button type="button" class="filter-btn btn">
                                         <div class="filter-btn-start">
                                             <div>
-                                                <p><!--Bedrooms-->Спальни</p>
+                                                <p><!--Bedrooms-->{{ Session::has('eng') ? 'Bedrooms' : '' }}{{ Session::has('kaz') ? 'Жатын' : '' }}{{ Session::has('rus') ? 'Спальни' : '' }}</p>
                                                 <h6 class="d-flex">Any</h6>
                                                 <input type="hidden" name="badrooms" id="bedrooms">
                                             </div>
@@ -130,7 +130,7 @@
                                     <button type="button" class="filter-btn btn">
                                         <div class="filter-btn-start">
                                             <div>
-                                                <p>{{--Possession date--}}Дата владения</p>
+                                                <p>{{--Possession date--}}{{ Session::has('eng') ? 'Possession date' : '' }}{{ Session::has('kaz') ? 'Иелену күні' : '' }}{{ Session::has('rus') ? 'Дата владения' : '' }}</p>
                                                 <h6 class="d-flex">Any</h6>
                                                 <input type="hidden" name="is_completed" id="isCompleted">
                                             </div>
@@ -157,7 +157,7 @@
                                     <button type="button" class="filter-btn btn border-end-0">
                                         <div class="filter-btn-start">
                                             <div>
-                                                <p>{{--Starting price--}}Стартовая цена (AED)</p>
+                                                <p>{{--Starting price--}}{{ Session::has('eng') ? 'Starting price' : '' }}{{ Session::has('kaz') ? 'бастапқы баға' : '' }}{{ Session::has('rus') ? 'Стартовая цена' : '' }} (AED)</p>
                                                 <h6 class="d-flex">Any</h6>
                                             </div>
                                         </div>
@@ -209,7 +209,7 @@
                                     </div>
                                 </div>
                                 <div class="project-search-form-end">
-                                    <button type="submit" class="btn" id="submitBtn"><!--find-->найти</button>
+                                    <button type="submit" class="btn" id="submitBtn"><!--find-->{{ Session::has('eng') ? 'find' : '' }}{{ Session::has('kaz') ? 'табу' : '' }}{{ Session::has('rus') ? 'найти' : '' }}</button>
                                 </div>
                             </form>
                         </div>
@@ -426,7 +426,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-area-content">
                         <div class="breadcrumb-area-content-start">
-                            <a href="{{ route('new-projects-page') }}">New projects</a>
+                            <a href="{{ route('new-projects-page') }}">{{ Session::has('eng') ? 'New projects' : '' }}{{ Session::has('kaz') ? 'Жаңа жобалар' : '' }}{{ Session::has('rus') ? 'Новые проекты' : '' }}</a>
                         </div>
                         <div class="breadcrumb-area-content-icon">
                           <span>
@@ -451,7 +451,7 @@
             <div class="row">
                 <div class="col-lg-9 new-project-intro-area mb-4 mb-lg-0">
                     <div class="page-intro-content mb-4">
-                        <h2>Нашел {{ $totalProperties }} новые проекты</h2>
+                        <h2>{{ Session::has('eng') ? 'Found' : '' }}{{ Session::has('kaz') ? 'Табылды' : '' }}{{ Session::has('rus') ? 'Нашел' : '' }} {{ $totalProperties }} {{ Session::has('eng') ? 'new projects' : '' }}{{ Session::has('kaz') ? 'жаңа жобалар' : '' }}{{ Session::has('rus') ? 'новые проекты' : '' }}</h2>
                     </div>
 
 
@@ -493,7 +493,7 @@
                                         </div>
                                         <div class="new-projects-card-info-top-item-info">
 {{--                                            <span>476 units:</span>--}}
-                                            <h6>{{ $property->bedrooms }} bedrooms</h6>
+                                            <h6>{{ $property->bedrooms }} {{ Session::has('eng') ? 'bedrooms' : '' }}{{ Session::has('kaz') ? 'жатын' : '' }}{{ Session::has('rus') ? 'спальни' : '' }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -516,7 +516,7 @@
                     @if(count($properties) > 10)
                         <div class="pagination-area flex-wrap">
                         <div class="pagination-area-start">
-                            <p>Showing {{ $properties->firstItem().'-'.$properties->lastItem() }} of {{ $properties->total() }} results</p>
+                            <p>Showing {{ $properties->firstItem().'-'.$properties->lastItem() }} of {{ $properties->total() }} {{ Session::has('eng') ? 'results' : '' }}{{ Session::has('kaz') ? 'нәтижелер' : '' }}{{ Session::has('rus') ? 'полученные' : '' }}</p>
                         </div>
                         <div class="pagination-area-end">
 {{--                            <a href="" class="active">1</a>--}}
@@ -540,23 +540,23 @@
                     <form action="" class="form-sort mb-4">
                         <div class="row g-2">
                             <div class="col-lg-4">
-                                <p>Sort by:</p>
+{{--                                <p>Sort by:</p>--}}
                             </div>
                             <div class="col-lg-8">
                                 <form action="" method="">
                                     @csrf
-                                    <select class="form-select form-select-sm">
-                                        <option selected value="">Featured</option>
-                                        <option value="1">Premium</option>
-                                        <option value="2">Bedroom (least)</option>
-                                        <option value="3">Bedroom (most)</option>
-                                    </select>
+{{--                                    <select class="form-select form-select-sm">--}}
+{{--                                        <option selected value="">Featured</option>--}}
+{{--                                        <option value="1">Premium</option>--}}
+{{--                                        <option value="2">Bedroom (least)</option>--}}
+{{--                                        <option value="3">Bedroom (most)</option>--}}
+{{--                                    </select>--}}
                                 </form>
                             </div>
                         </div>
                     </form>
                     <div class="banner-map" style="background-image: url(assets/images/banner/map.svg);">
-                        <a href="" class="modal-btn-to-click" data-bs-toggle="modal" data-bs-target="#mapModal">View on map</a>
+                        <a href="" class="modal-btn-to-click" data-bs-toggle="modal" data-bs-target="#mapModal">{{ Session::has('eng') ? 'View on map' : '' }}{{ Session::has('kaz') ? 'Картадан қарау' : '' }}{{ Session::has('rus') ? 'Посмотреть на карте' : '' }}</a>
                     </div>
                 </div>
             </div>

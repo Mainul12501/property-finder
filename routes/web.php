@@ -102,6 +102,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('seo', 'SeoController');
     Route::get('seo/del/{id}', 'SeoController@del')->name('seo.delete');
     Route::get('seo/status/{id}', 'SeoController@status')->name('seo.status');
+
+//    Site settings Management
+    Route::resource('site-settings', 'SiteSettingsController');
+    Route::get('site-settings/del/{id}', 'SiteSettingsController@del')->name('site-settings.delete');
+    Route::get('site-settings/status/{id}', 'SiteSettingsController@status')->name('site-settings.status');
 });
 
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {

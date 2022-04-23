@@ -12,6 +12,15 @@
     <!-- Website Title Ends Here -->
     @yield('default-seo-head')
     @yield('front-seo-head')
+        @if(Session::has('kaz'))
+            <style>
+                @media screen and (min-width: 1451px) and (max-width: 1476px){
+                    #propertyPriceMenu {
+                        display: none;
+                    }
+                }
+            </style>
+        @endif
 </head>
 
 <body>
