@@ -253,7 +253,7 @@
                                             <div class="carousel-inner">
                                                 @foreach($property->subImages as $arrayKey => $subImage)
                                                     <div class="carousel-item {{ $arrayKey == 0 ? 'active' : '' }}">
-                                                        <img src="{{ asset($subImage->big_img_url) }}" class="d-block w-100" style="min-width: 275px; height: 200px;" alt="{{ $property->property_title }}">
+                                                        <img src="{{ asset($subImage->big_img_url) }}" class="d-block w-100" style="min-width: 275px; max-height: 200px;" alt="{{ $property->property_title }}">
                                                     </div>
                                                 @endforeach
                                                 {{--                                                <div class="carousel-item">--}}
