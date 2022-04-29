@@ -21,6 +21,19 @@
                 }
             </style>
         @endif
+        <style>
+            @media screen and (max-width: 685px){
+                #priceIdRent {
+                    min-width: unset!important;
+                }
+            }
+
+            @media only screen and (min-width: 420px) and (max-width: 574px) {
+                .price-selector-buttons .btn {
+                    width: unset!important;
+                }
+            }
+        </style>
 </head>
 
 <body>

@@ -102,7 +102,7 @@
                                             <div class="range-selector">
                                                 <div class="range-selector-box">
 {{--                                                    <input type="text" class="form-control" name="min_price" placeholder="Min. Price (AED)">--}}
-                                                    <input type="text" class="form-control" name="min_price" placeholder="{{ Session::has('eng') ? 'Min. Price' : '' }}{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }} (AED)">
+                                                    <input type="text" class="form-control" name="min_price" placeholder="{{ Session::has('eng') ? 'Min. Price' : '' }}{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                                 </div>
                                                 <div class="range-selector-divider">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -111,7 +111,7 @@
                                                 </div>
                                                 <div class="range-selector-box">
 {{--                                                    <input type="text" class="form-control" name="max_price" placeholder="Max. Price (AED)">--}}
-                                                    <input type="text" class="form-control" name="max_price" placeholder="{{ Session::has('eng') ? 'Max. Price' : '' }}{{ Session::has('kaz') ? 'Макс. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }} (AED)">
+                                                    <input type="text" class="form-control" name="max_price" placeholder="{{ Session::has('eng') ? 'Max. Price' : '' }}{{ Session::has('kaz') ? 'Макс. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                                 </div>
                                             </div>
                                             <div class="price-selector">
@@ -304,7 +304,7 @@
                                     <div class="rent-featured-end">
                                         <div class="rent-featured-mid">
                                             <div class="rent-featured-mid-title">
-                                                <h4>{{ number_format($property->property_price) }} AED</h4>
+                                                <h4>{{ number_format($property->property_price) }} {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</h4>
                                                 <h5>{{ $property->property_title }}</h5>
                                             </div>
                                             <div class="rent-featured-mid-amenities">
@@ -514,6 +514,8 @@
 
 
 @endsection
+
+
 
 @section('front-js')
     <script>

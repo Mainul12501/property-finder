@@ -49,7 +49,7 @@
                                         <div class="range-selector">
                                             <div class="range-selector-box">
                                                 {{--                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="Min. Price (AED)">--}}
-                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} (AED)">
+                                                <input type="number" class="form-control" id="minPrice1Input" name="min_price" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                             </div>
                                             <div class="range-selector-divider">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -57,7 +57,7 @@
                                                 </svg>
                                             </div>
                                             <div class="range-selector-box">
-                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} (AED)">
+                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                                 {{--                                                <input type="number" class="form-control" id="maxPrice1Input" name="max_price" placeholder="Max. Price (AED)">--}}
                                             </div>
                                         </div>
@@ -139,7 +139,7 @@
                                     <div class="dropdown-wrapper-content">
                                         <div class="range-selector">
                                             <div class="range-selector-box">
-                                                <input type="number" name="min_price" id="minPrice2Input" class="form-control" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} (AED)">
+                                                <input type="number" name="min_price" id="minPrice2Input" class="form-control" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                             </div>
                                             <div class="range-selector-divider">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -147,7 +147,7 @@
                                                 </svg>
                                             </div>
                                             <div class="range-selector-box">
-                                                <input type="text" name="max_price" id="maxPrice2Input" class="form-control" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} (AED)">
+                                                <input type="text" name="max_price" id="maxPrice2Input" class="form-control" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                             </div>
                                         </div>
                                         <div class="price-selector">
@@ -409,7 +409,7 @@
                                                     <p class="mb-0">{{ $property->propertyType->type_name }}</p>
                                                 </div>
                                                 <div class="verified-listing-footer-info">
-                                                    <strong>{{ $property->property_ads_type_id == 1 ? $property->property_price.' AED' : $property->rent_charge_per_year. ' AED/year' }} </strong>
+                                                    <strong>{{ $property->property_ads_type_id == 1 ? $property->property_price.' '. (Session::has('kaz') ? 'Tenge' : 'AED') : $property->rent_charge_per_year.' '. (Session::has('kaz') ? 'Tenge' : 'AED') .'/year' }} </strong>
                                                 </div>
                                             </div>
                                         </div>
@@ -542,6 +542,21 @@
         </div>
     </section>
     <!-- Quick Links Ends Here -->
+@endsection
+
+@section('front-css')
+    <style>
+        @media screen and (max-width: 685px){
+            .home-search-select .dropdown-wrapper {
+                min-width: 290px!important;
+            }
+        }
+        /*@media screen and (max-width: 574px) and (max-width: 700px){*/
+        /*    .dropdown-wrapper-bed {*/
+                /*min-width: 390px!important;*/
+            /*}*/
+        /*}*/
+    </style>
 @endsection
 
 @section('front-js')

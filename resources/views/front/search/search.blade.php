@@ -102,7 +102,7 @@
                                             <div class="range-selector">
                                                 <div class="range-selector-box">
                                                     {{--                                                    <input type="text" class="form-control" name="min_price" placeholder="Min. Price (AED)">--}}
-                                                    <input type="text" class="form-control" name="min_price" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} (AED)">
+                                                    <input type="text" class="form-control" name="min_price" placeholder="{{ Session::has('kaz') ? 'Мин. Бағасы' : '' }}{{ Session::has('rus') ? 'Мин. Цена' : '' }}{{ Session::has('eng') ? 'Min. Price' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                                 </div>
                                                 <div class="range-selector-divider">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -111,7 +111,7 @@
                                                 </div>
                                                 <div class="range-selector-box">
                                                     {{--                                                    <input type="text" class="form-control" name="max_price" placeholder="Max. Price (AED)">--}}
-                                                    <input type="text" class="form-control" name="max_price" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} (AED)">
+                                                    <input type="text" class="form-control" name="max_price" placeholder="{{ Session::has('kaz') ? 'Максималды. Бағасы' : '' }}{{ Session::has('rus') ? 'Максимум. Цена' : '' }}{{ Session::has('eng') ? 'Max. Price' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})">
                                                 </div>
                                             </div>
                                             <div class="price-selector">
@@ -309,7 +309,7 @@
                                         <div class="rent-featured-end">
                                             <div class="rent-featured-mid">
                                                 <div class="rent-featured-mid-title">
-                                                    <h4>{{ number_format($property->property_price) }} AED</h4>
+                                                    <h4>{{ number_format($property->property_price) }} {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</h4>
                                                     <h5>{{ $property->property_title }}</h5>
                                                 </div>
                                                 <div class="rent-featured-mid-amenities">
@@ -376,42 +376,7 @@
                                                             WhatsApp
                                                         </button>
                                                     </div>
-                                                    {{--                                                favourite icon start--}}
-                                                    {{--                                                <div class="rent-featured-mid-buttons-single">--}}
-                                                    {{--                                                    <button type="button" class="btn">--}}
-                                                    {{--                                                      <span class="me-0">--}}
-                                                    {{--                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">--}}
-                                                    {{--                                                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>--}}
-                                                    {{--                                                        </svg>--}}
-                                                    {{--                                                      </span>--}}
-                                                    {{--                                                    </button>--}}
-                                                    {{--                                                </div>--}}
-                                                    {{--                                                favourite icon end--}}
-                                                    {{--                                                share report icon start--}}
-                                                    {{--                                                <div class="rent-featured-mid-buttons-single">--}}
-                                                    {{--                                                    <button type="button" class="btn" id="dotButton2">--}}
-                                                    {{--                                                      <span class="me-0">--}}
-                                                    {{--                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">--}}
-                                                    {{--                                                          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>--}}
-                                                    {{--                                                        </svg>--}}
-                                                    {{--                                                      </span>--}}
-                                                    {{--                                                    </button>--}}
-                                                    {{--                                                    <div class="dot-button-dropdown" id="dotButtonDropdown2" style="display: none;">--}}
-                                                    {{--                                                        <button type="button" class="btn dot-button-dropdown-button">--}}
-                                                    {{--                                                            <svg height="24" viewBox="0 0 24 24" width="24" fill="none">--}}
-                                                    {{--                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0135 4.5C10.0135 4.22386 9.78968 4 9.51354 4H8.25L8.04346 4.00521C5.78547 4.11932 4 6.09457 4 8.5V15.5L4.00488 15.7175C4.11189 18.0955 5.96457 20 8.25 20H15.75L15.9565 19.9948C18.2145 19.8807 20 17.9054 20 15.5V14.6072L19.9919 14.5173C19.9496 14.2841 19.7455 14.1072 19.5 14.1072C19.2239 14.1072 19 14.3311 19 14.6072V15.5L18.9952 15.6927C18.9021 17.5422 17.4779 19 15.75 19H8.25L8.07238 18.9948C6.36667 18.8956 5 17.3753 5 15.5V8.5L5.00483 8.30731C5.09786 6.45778 6.52213 5 8.25 5H9.51354L9.60341 4.99194C9.83666 4.94961 10.0135 4.74546 10.0135 4.5ZM16.4945 4.54821C16.664 4.37067 16.9329 4.34515 17.1308 4.47559L17.2014 4.53183L19.7383 6.95378C19.8942 7.03844 20 7.2036 20 7.39348L19.9999 7.40557C20.0024 7.51329 19.9704 7.62165 19.9039 7.71247L19.8418 7.78256L17.1979 10.2584C16.9964 10.4472 16.6799 10.4368 16.4912 10.2352C16.3234 10.0561 16.313 9.78617 16.4543 9.59583L16.5144 9.52852L18.2589 7.89348H15.5076C12.9522 7.89348 10.755 9.68821 10.6412 12.7917L10.6365 13.0462V14.855C10.6365 15.1311 10.4127 15.355 10.1365 15.355C9.89108 15.355 9.68693 15.1781 9.6446 14.9449L9.63654 14.855V13.0462C9.63654 9.28028 12.2425 6.99879 15.2941 6.89703L15.5076 6.89348H18.2273L16.5109 5.25512C16.3333 5.08562 16.3078 4.81672 16.4383 4.61878L16.4945 4.54821Z" fill="currentColor"></path>--}}
-                                                    {{--                                                            </svg>--}}
-                                                    {{--                                                            <span>Share</span>--}}
-                                                    {{--                                                        </button>--}}
-                                                    {{--                                                        <button type="button" class="btn dot-button-dropdown-button">--}}
-                                                    {{--                                                            <svg height="24" viewBox="0 0 24 24" width="24">--}}
-                                                    {{--                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.98311 20C7.98311 20.5523 6.86761 21 5.49156 21C4.11551 21 3 20.5523 3 20C3 19.5162 3.85598 19.1127 4.99325 19.02V5H11.0228C11.2537 3.85888 12.2591 3 13.4645 3H17.9493L21 7.5L17.9493 12H11.9198C11.6889 13.1411 10.6834 14 9.47805 14H5.98987V19.02C7.12714 19.1127 7.98311 19.5162 7.98311 20ZM17.4219 11L19.7947 7.5L17.4219 4H13.4645C12.6389 4 11.9696 4.67157 11.9696 5.5V11H17.4219ZM10.973 6H5.98987V13H9.47805C10.3037 13 10.973 12.3284 10.973 11.5V6Z" fill="currentColor"></path>--}}
-                                                    {{--                                                            </svg>--}}
-                                                    {{--                                                            <span>Report</span>--}}
-                                                    {{--                                                        </button>--}}
-                                                    {{--                                                    </div>--}}
-                                                    {{--                                                </div>--}}
-                                                    {{--                                                share report icon end--}}
+
                                                 </div>
 
                                             </div>

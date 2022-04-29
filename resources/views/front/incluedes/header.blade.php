@@ -4,7 +4,7 @@
         <div class="container custom-container">
             <!-- Logo Starts Here -->
             <a class="navbar-brand" href="{{ route('home-page') }}">
-                <img src="{{ isset($siteSetting)? asset($siteSetting->site_logo) : asset('./assets/images/logomain.png') }}" alt="Logo" class="img-fluid">
+                <img src="{{ isset($siteSetting)? asset($siteSetting->site_logo) : asset('./assets/images/logo_main.png') }}" alt="Logo" class="img-fluid">
             </a>
             <!-- Logo Ends Here -->
             <!-- Mobile Menu Starts Here -->

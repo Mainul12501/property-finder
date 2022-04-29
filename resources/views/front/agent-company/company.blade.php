@@ -245,7 +245,7 @@
                                                             <div class="rent-featured-end">
                                                                 <div class="rent-featured-mid">
                                                                     <div class="rent-featured-mid-title">
-                                                                        <h4>{{ $property->rent_charge_per_year != null ? $property->rent_charge_per_year.' AED/year' : $property->property_price.'AED' }} </h4>
+                                                                        <h4>{{ $property->rent_charge_per_year != null ? $property->rent_charge_per_year.' '.(Session::has('kaz') ? 'Tenge' : 'AED').'/year' : $property->property_price.(Session::has('kaz') ? ' Tenge' : ' AED') }} </h4>
                                                                         <h5>{{ $property->property_title }}</h5>
                                                                     </div>
                                                                     <div class="rent-featured-mid-amenities">

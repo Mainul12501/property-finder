@@ -92,15 +92,7 @@
                                     </div>
                                 @endif
                             @endforeach
-{{--                            <div class="col-lg-12">--}}
-{{--                                <div class="gallerys">--}}
-{{--                                    <div class="image-area-end-sm-image">--}}
-{{--                                        <a href="{{ asset('/') }}assets/images/details/03.jpg" class="d-block" target="_blank">--}}
-{{--                                            <img src="{{ asset('/') }}assets/images/details/03.jpg" alt="Image" class="img-fluid">--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+
                         </div>
                     </div>
                 </div>
@@ -234,15 +226,7 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="aminities-information" style="border-bottom: 1px solid #e4e4e4; padding: 26px 0px;">--}}
-{{--                            <h5>Amenities</h5>--}}
-{{--                            <p>--}}
-{{--                            <span>--}}
-{{--                              <img src="{{ asset('/') }}assets/images/details/icon/parking-garage.png" alt="Icon">--}}
-{{--                            </span>--}}
-{{--                                Covered Parking--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
+
                         <div class="description-info" style="border-bottom: 1px solid #e4e4e4; padding: 26px 0px;">
                             <div>
                                 <h5>{{ Session::has('eng') ? 'Description' : '' }}{{ Session::has('kaz') ? 'Сипаттама' : '' }}{{ Session::has('rus') ? 'Описание' : '' }}</h5>
@@ -252,43 +236,11 @@
                                 <div class="text-justify" id="smallP">{!! $property->property_description !!}</div>
 {{--                                {!! $property->property_description !!}--}}
                             </div>
-{{--                            <p class="text-justify" id="smallP">{!! substr_replace($property->property_description,'...', 560) !!}</p>--}}
-{{--                            <div id="detailsHide" style="display: none;">--}}
-{{--                                <p class="text-justify">{!! $property->property_description !!}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="description-info-bottom">--}}
-{{--                                <button type="button" class="btn" id="readMore2">--}}
-{{--                                  <span>--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ef5e4e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>--}}
-{{--                                  </span>--}}
-{{--                                    Read more--}}
-{{--                                </button>--}}
-{{--                                <button type="button" class="btn" id="readLess2" style="display: none;">--}}
-{{--                                  <span>--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ef5e4e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>--}}
-{{--                                  </span>--}}
-{{--                                    Read less--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
+
                         </div>
                         <div class="reference-info" style="border-bottom: 1px solid #e4e4e4; padding: 26px 0px;">
                             <div class="reference-info-start">
-{{--                                <div class="reference-info-list">--}}
-{{--                                    <div class="reference-info-list-start">--}}
-{{--                                        <p>Reference:</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="reference-info-list-end">--}}
-{{--                                        <p>{{ uniqid() }}</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="reference-info-list">--}}
-{{--                                    <div class="reference-info-list-start">--}}
-{{--                                        <p>Trakheesi Permit:</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="reference-info-list-end">--}}
-{{--                                        <p>7131098800</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+
                                 <div class="reference-info-list">
                                     <div class="reference-info-list-start">
                                         <p>{{ Session::has('eng') ? 'Broker ORN' : '' }}{{ Session::has('kaz') ? 'Брокер ORN' : '' }}{{ Session::has('rus') ? 'Брокер ОРН' : '' }}:</p>
@@ -319,52 +271,7 @@
                             </div>
                         </div>
 {{--                        property share div start--}}
-{{--                        <div class="property-share" style="padding: 26px 0px;">--}}
-{{--                            <h5>Нравится это свойство? Вернитесь к нему позже, легко.</h5>--}}
-{{--                            <div class="property-share-bottom">--}}
-{{--                                <button type="button" class="btn">--}}
-{{--                                      <span>--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">--}}
-{{--                                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>--}}
-{{--                                        </svg>--}}
-{{--                                      </span>--}}
-{{--                                    Сохранить в избранное--}}
-{{--                                </button>--}}
-{{--                                <span class="or-share">or share</span>--}}
-{{--                                <a href="" class="btn">--}}
-{{--                                      <span>--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4267b2" class="bi bi-facebook" viewBox="0 0 16 16">--}}
-{{--                                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>--}}
-{{--                                        </svg>--}}
-{{--                                      </span>--}}
-{{--                                    Фейсбук--}}
-{{--                                </a>--}}
-{{--                                <a href="" class="btn">--}}
-{{--                                      <span>--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e60019" class="bi bi-pinterest" viewBox="0 0 16 16">--}}
-{{--                                          <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>--}}
-{{--                                        </svg>--}}
-{{--                                      </span>--}}
-{{--                                    Пинтерест--}}
-{{--                                </a>--}}
-{{--                                <a href="" class="btn">--}}
-{{--                                      <span>--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1da1f3" class="bi bi-twitter" viewBox="0 0 16 16">--}}
-{{--                                          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>--}}
-{{--                                        </svg>--}}
-{{--                                      </span>--}}
-{{--                                    Твиттер--}}
-{{--                                </a>--}}
-{{--                                <button type="button" class="btn">--}}
-{{--                                      <span>--}}
-{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef5e4e" class="bi bi-envelope-fill" viewBox="0 0 16 16">--}}
-{{--                                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>--}}
-{{--                                        </svg>--}}
-{{--                                      </span>--}}
-{{--                                    Эл. адрес--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+
 {{--                        property share div ends--}}
                     </div>
                 </div>
@@ -372,37 +279,8 @@
                     <!-- Contact Card Starts Here -->
                     <div class="contact-card" id="bigContactCard">
                         <div class="contact-card-heading">
-                            <h5>{{ $property->rent_charge_per_year != null ? number_format($property->rent_charge_per_year).' AED / yearly' : number_format($property->property_price).' AED' }} </h5>
-{{--                            <button type="button" class="btn" id="dotBtn">--}}
-{{--                                <span>--}}
-{{--                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">--}}
-{{--                                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path>--}}
-{{--                                  </svg>--}}
-{{--                                </span>--}}
-{{--                            </button>--}}
-{{--                            <div class="dotbtn-dropdowns" style="display: none;" id="dotbtnDropdowns">--}}
-{{--                                <div class="dotbtn-dropdowns-single active">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="dotbtn-dropdowns-single">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="dotbtn-dropdowns-single">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="dotbtn-dropdowns-single">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="dotbtn-dropdowns-single">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="dotbtn-dropdowns-single">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="dotbtn-dropdowns-single">--}}
-{{--                                    <button class="btn" type="button">AED</button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            <h5>{{ $property->rent_charge_per_year != null ? number_format($property->rent_charge_per_year).' '.(Session::has('kaz') ? 'Tenge' : 'AED').'/ yearly' : number_format($property->property_price).' '.(Session::has('kaz') ? 'Tenge' : 'AED') }} </h5>
+
                         </div>
                         <div class="contact-card-buttons">
                             <button class="btn mx-auto" type="button" onclick="call({{ $property->id }})" style="background-color: #ef5e4e;">
@@ -437,16 +315,7 @@
                                 </p>
                             </div>
                         @endif
-{{--                        <div class="d-flex justify-content-center">--}}
-{{--                            <button type="button" class="btn save-btn">--}}
-{{--                                    <span>--}}
-{{--                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">--}}
-{{--                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>--}}
-{{--                                      </svg>--}}
-{{--                                    </span>--}}
-{{--                                {{ Session::has('eng') ? 'Save to Favorites' : '' }}{{ Session::has('kaz') ? 'Таңдаулыларға сақтаңыз' : '' }}{{ Session::has('rus') ? 'Сохранить в избранное' : '' }}--}}
-{{--                            </button>--}}
-{{--                        </div>--}}
+
                         @if($property->is_verified == 1)
                             <div class="contact-card-badge">
                                 <div class="custom-badge">
@@ -456,52 +325,14 @@
                         @endif
                     </div>
                     <!-- Contact Card Ends Here -->
-{{--                    <div class="d-flex align-items-center justify-content-center mt-4">--}}
-{{--                        <a href="" class="report-btn">--}}
-{{--                              <span>--}}
-{{--                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-flag" viewBox="0 0 16 16">--}}
-{{--                                  <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z"/>--}}
-{{--                                </svg>--}}
-{{--                              </span>--}}
-{{--                            Report This Listing--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
+
 
                     <!-- Contact Card SM Starts Here -->
                     <div class="sticky-top" style="display:none;" id="scroll">
                         <div class="contact-card contact-card-sm mt-4">
                             <div class="contact-card-heading">
-                                <h5>{{ $property->rent_charge_per_year != null ? $property->rent_charge_per_year.' AED / yearly' : $property->property_price.' AED' }} </h5>
-{{--                                <button type="button" class="btn" id="dotBtn" >--}}
-{{--                                        <span>--}}
-{{--                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">--}}
-{{--                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path>--}}
-{{--                                          </svg>--}}
-{{--                                        </span>--}}
-{{--                                </button>--}}
-{{--                                <div class="dotbtn-dropdowns" style="display: none;" id="dotbtnDropdowns">--}}
-{{--                                    <div class="dotbtn-dropdowns-single active">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="dotbtn-dropdowns-single">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="dotbtn-dropdowns-single">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="dotbtn-dropdowns-single">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="dotbtn-dropdowns-single">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="dotbtn-dropdowns-single">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="dotbtn-dropdowns-single">--}}
-{{--                                        <button class="btn" type="button">AED</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <h5>{{ $property->rent_charge_per_year != null ? $property->rent_charge_per_year.' '.(Session::has('kaz') ? 'Tenge' : 'AED').'/ yearly' : $property->property_price.' '.(Session::has('kaz') ? 'Tenge' : 'AED') }} </h5>
+
                             </div>
                             <div class="contact-card-buttons pb-0 border-0 mb-0">
                                 <button class="btn" type="button" onclick="call({{ $property->id }})" style="background-color: #ef5e4e;">
@@ -568,7 +399,7 @@
                                     </div>
                                     <div class="rent-card-sm-bottom card-body">
                                         <p class="rent-card-sm-subtitle">{{ $relatedProperty->propertyType->type_name }}</p>
-                                        <p class="rent-card-sm-title">{{ $property->rent_charge_per_year != null ? number_format($property->rent_charge_per_year).' AED / yearly' : number_format($property->property_price).' AED' }}</p>
+                                        <p class="rent-card-sm-title">{{ $property->rent_charge_per_year != null ? number_format($property->rent_charge_per_year).' '.(Session::has('kaz') ? 'Tenge' : 'AED').'/ yearly' : number_format($property->property_price).' '.(Session::has('kaz') ? 'Tenge' : 'AED') }}</p>
                                         <p class="rent-card-sm-details">
                                             {{ $relatedProperty->location_area }}, {{ $relatedProperty->location_city }}, {{ $relatedProperty->location_country }}
                                         </p>
@@ -612,84 +443,6 @@
                             </a>
                         </div>
                         @endforeach
-{{--                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">--}}
-{{--                            <a href="" class="d-inline-block">--}}
-{{--                                <div class="rent-card-sm">--}}
-{{--                                    <div class="rent-card-sm-image">--}}
-{{--                                        <img src="{{ asset('/') }}assets/images/details/card/01.jpg" alt="Card-image">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rent-card-sm-bottom">--}}
-{{--                                        <p class="rent-card-sm-subtitle">Office Space</p>--}}
-{{--                                        <p class="rent-card-sm-title">135,000 AED/year</p>--}}
-{{--                                        <p class="rent-card-sm-details">--}}
-{{--                                            Mazaya Business Avenue AA1, Mazaya Business Avenue, Jumeirah Lake Towers, Dubai--}}
-{{--                                        </p>--}}
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div class="rent-card-sm-icon">--}}
-{{--                                                <p>--}}
-{{--                        <span>--}}
-{{--                          <img src="{{ asset('/') }}assets/images/details/icon/size.png" alt="Icon">--}}
-{{--                        </span>--}}
-{{--                                                    2,086 sqft--}}
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="rent-card-sm-icon">--}}
-{{--                                                <p>--}}
-{{--                        <span>--}}
-{{--                          <img src="{{ asset('/') }}assets/images/property/icon/bathtub.png" alt="Icon" class="bathtubicon">--}}
-{{--                        </span>--}}
-{{--                                                    2--}}
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="rent-card-sm-badge">--}}
-{{--                                            <div class="custom-badge">--}}
-{{--                                                <span class="text-uppercase">Verified</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-4 col-md-6">--}}
-{{--                            <a href="" class="d-inline-block">--}}
-{{--                                <div class="rent-card-sm">--}}
-{{--                                    <div class="rent-card-sm-image">--}}
-{{--                                        <img src="{{ asset('/') }}assets/images/details/card/01.jpg" alt="Card-image">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rent-card-sm-bottom">--}}
-{{--                                        <p class="rent-card-sm-subtitle">Office Space</p>--}}
-{{--                                        <p class="rent-card-sm-title">135,000 AED/year</p>--}}
-{{--                                        <p class="rent-card-sm-details">--}}
-{{--                                            Mazaya Business Avenue AA1, Mazaya Business Avenue, Jumeirah Lake Towers, Dubai--}}
-{{--                                        </p>--}}
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div class="rent-card-sm-icon">--}}
-{{--                                                <p>--}}
-{{--                        <span>--}}
-{{--                          <img src="{{ asset('/') }}assets/images/details/icon/size.png" alt="Icon">--}}
-{{--                        </span>--}}
-{{--                                                    2,086 sqft--}}
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="rent-card-sm-icon">--}}
-{{--                                                <p>--}}
-{{--                        <span>--}}
-{{--                          <img src="{{ asset('/') }}assets/images/property/icon/bathtub.png" alt="Icon" class="bathtubicon">--}}
-{{--                        </span>--}}
-{{--                                                    2--}}
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="rent-card-sm-badge">--}}
-{{--                                            <div class="custom-badge">--}}
-{{--                                                <span class="text-uppercase">Verified</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="col-lg-4 mb-3 mb-lg-0">
@@ -744,6 +497,16 @@
         <a href="mailto:{{ isset($property->agent->email) ? $property->agent->email : $property->company->email }}" id="mail{{ $property->id }}">mail</a>
         <a href="https://api.whatsapp.com/send?phone={{ isset($property->agent->whatsapp_number) ? $property->agent->whatsapp_number : $property->company->whatsapp_number }}" target="_blank" id="whatsapp{{ $property->id }}">whatsapp</a>
     </div>
+@endsection
+
+@section('front-css')
+    <style>
+        .contact-card-badge {
+            position: absolute;
+            bottom: 186px;
+            left: -6px;
+        }
+    </style>
 @endsection
 
 @section('front-js')

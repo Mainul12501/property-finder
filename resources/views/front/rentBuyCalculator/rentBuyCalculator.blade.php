@@ -62,10 +62,10 @@
                             <form action="" class="calc-area-form">
                                 <input type="text" maxlength="10" class="form-control" value="96,000" id="yearlyRentInput" onkeyup="buyRentCalculator()">
                                 <div class="calc-area-form-text">
-                                    <span>AED</span>
+                                    <span>{{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                 </div>
                             </form>
-                            <h6>8,000 AED {{ Session::has('kaz') ? 'ай сайын' : '' }}{{ Session::has('rus') ? 'ежемесячно' : '' }}{{ Session::has('eng') ? 'monthly' : '' }}</h6>
+                            <h6>8,000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }} {{ Session::has('kaz') ? 'ай сайын' : '' }}{{ Session::has('rus') ? 'ежемесячно' : '' }}{{ Session::has('eng') ? 'monthly' : '' }}</h6>
                         </div>
                         <div class="calc-area-start-single">
 {{--                            <p>How much does the property cost?</p>--}}
@@ -73,7 +73,7 @@
                             <form action="" class="calc-area-form">
                                 <input type="text" maxlength="10" class="form-control" value="1,100,000" id="propertyPrice" onkeyup="buyRentCalculator()" />
                                 <div class="calc-area-form-text">
-                                    <span>AED</span>
+                                    <span>{{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                 </div>
                             </form>
                         </div>
@@ -83,7 +83,7 @@
                             <form action="" class="calc-area-form">
                                 <input type="text" maxlength="10" class="form-control" value="220,000" id="downpayment" onkeyup="buyRentCalculator()">
                                 <div class="calc-area-form-text">
-                                    <span>AED</span>
+                                    <span>{{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                 </div>
                             </form>
                             <span class="text-danger downPaymentErrorText" style="font-size: 11px;"></span>
@@ -99,84 +99,12 @@
                                 </div>
                             </form>
                         </div>
-{{--                        <div class="calc-area-start-single">--}}
-{{--                            <p>What is the mortgage interest rate?</p>--}}
-{{--                            <form action="" class="calc-area-form">--}}
-{{--                                <input type="text" maxlength="10" class="form-control" value="2.7">--}}
-{{--                                <div class="calc-area-form-text">--}}
-{{--                                    <span>%</span>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                        <div class="calc-area-start-single">--}}
-{{--                            <p>What is the mortgage loan period?</p>--}}
-{{--                            <form action="" class="calc-area-form">--}}
-{{--                                <input type="text" maxlength="10" class="form-control" value="25">--}}
-{{--                                <div class="calc-area-form-text">--}}
-{{--                                    <span>years</span>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="calc-area-end">
                         <div class="calc-area-end-top">
                             <h4><span id="chartTitleFirst">Buying</span> is <span id="chartTitlePercent">33</span>% cheaper than <span id="chartTitleSecond">renting</span></h4>
-{{--                            <div class="calc-chart">--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>8,400</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>7,000</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>5,600</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>4,200</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>2,800</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>1,400</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-chart-single">--}}
-{{--                                    <div class="calc-chart-single-start">--}}
-{{--                                        <p>0</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="calc-chart-single-end"></div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="calc-area-end-top-bar">--}}
-{{--                                <div class="calc-area-end-top-bar-one">--}}
-{{--                                    <p>RENT MONTHLY COST</p>--}}
-{{--                                    <h4>8,101 AED</h4>--}}
-{{--                                </div>--}}
-{{--                                <div class="calc-area-end-top-bar-two">--}}
-{{--                                    <p>BUY MONTHLY COST</p>--}}
-{{--                                    <h4>5,407 AED</h4>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                             <div class="row">
                                 <div class="col-md-12">
 {{--                                    <div id="barChart"></div>--}}
@@ -206,7 +134,7 @@
                                         <div class="calc-navs-content-single">
 {{--                                            <span class="calc-navs-text">Monthly rent</span>--}}
                                             <span class="calc-navs-text">{{ Session::has('kaz') ? 'Ай сайынғы төлем' : '' }}{{ Session::has('rus') ? 'Месячная оплата' : '' }}{{ Session::has('eng') ? 'Monthly rent' : '' }}</span>
-                                            <span class="calc-navs-digit" id="rentTabMonthlyrent">8,000 AED</span>
+                                            <span class="calc-navs-digit" id="rentTabMonthlyrent">8,000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single border-top-0">
                                           <span class="calc-navs-text">{{ Session::has('kaz') ? 'Агенттік комиссия' : '' }}{{ Session::has('rus') ? 'Комиссия агента' : '' }}{{ Session::has('eng') ? 'Agent commission' : '' }}{{--Agent commission--}}
@@ -224,16 +152,16 @@
 {{--                                              </div>--}}
 {{--                                            </div>--}}
                                           </span>
-                                            <span class="calc-navs-digit" id="rentTabAgentComission">5,040 AED</span>
+                                            <span class="calc-navs-digit" id="rentTabAgentComission">5,040 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single border-top-0">
                                             <span class="calc-navs-text">{{--Ejari fee--}}{{ Session::has('kaz') ? 'Эджаридің ақысы' : '' }}{{ Session::has('rus') ? 'Плата Эджари' : '' }}{{ Session::has('eng') ? 'Ejari fee' : '' }}</span>
 
-                                            <span class="calc-navs-digit">195 AED</span>
+                                            <span class="calc-navs-digit">195 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single calc-navs-content-single-footer border-top-0">
                                             <span class="calc-navs-text">{{--Total rental cost over--}}{{ Session::has('kaz') ? 'Жалға алудың жалпы құнынан асып кетті' : '' }}{{ Session::has('rus') ? 'Общая стоимость аренды более' : '' }}{{ Session::has('eng') ? 'Total rental cost over' : '' }} <span class="durationInYears">5</span> <!--years-->{{ Session::has('kaz') ? 'жылдар' : '' }}{{ Session::has('rus') ? 'годы' : '' }}</span>
-                                            <span class="calc-navs-digit" id="rentTabTotalRentCost">486,015 AED</span>
+                                            <span class="calc-navs-digit" id="rentTabTotalRentCost">486,015 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                     </div>
                                     <div class="calc-navs-bottom">
@@ -252,161 +180,28 @@
                                     <div class="calc-navs-content">
                                         <div class="calc-navs-content-single">
                                             <span class="calc-navs-text">{{--Purchase price--}}{{ Session::has('kaz') ? 'Сатып алу бағасы' : '' }}{{ Session::has('rus') ? 'Цена покупки' : '' }}{{ Session::has('eng') ? 'Purchase price' : '' }}</span>
-                                            <span class="calc-navs-digit" id="buyTabPurchasePrice">1,100,000 AED</span>
+                                            <span class="calc-navs-digit" id="buyTabPurchasePrice">1,100,000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single border-top-0">
                                             <span class="calc-navs-text">{{--Down payment of--}}{{ Session::has('kaz') ? 'Бастапқы төлем' : '' }}{{ Session::has('rus') ? 'Первоначальный взнос 20%' : '' }}{{ Session::has('eng') ? 'Down payment of' : '' }}</span>
-                                            <span class="calc-navs-digit" id="buyTabDownPayment">220,000 AED</span>
+                                            <span class="calc-navs-digit" id="buyTabDownPayment">220,000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single border-top-0">
                                             <span class="calc-navs-text">{{--Principal amount--}}{{ Session::has('kaz') ? 'Негізгі сома' : '' }}{{ Session::has('rus') ? 'Основная сумма' : '' }}{{ Session::has('eng') ? 'Principal amount' : '' }}</span>
-                                            <span class="calc-navs-digit" id="buyTabPrincipalAmount">880,000 AED</span>
+                                            <span class="calc-navs-digit" id="buyTabPrincipalAmount">880,000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single border-top-0">
                                           <span class="calc-navs-text">{{--Buying fees--}}{{ Session::has('kaz') ? 'Сатып алу ақысы' : '' }}{{ Session::has('rus') ? 'Плата за покупку' : '' }}{{ Session::has('eng') ? 'Buying fees' : '' }}
-{{--                                            <details class="d-none d-lg-block">--}}
-{{--                                              <summary>Show breakdown</summary>--}}
-{{--                                              <div class="calc-table">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Agent fees--}}
-{{--                                                    <small data-bs-toggle="tooltip" title="Purchase price minus down payment"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16"> <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" /> </svg> </small> <div class="tooltip bs-tooltip-top" role="tooltip"> <div class="tooltip-arrow"></div> <div class="tooltip-inner"> Purchase price minus down payment </div> </div>--}}
-{{--                                                    </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>23,100 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Land department fees--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>44,580 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Registration trustee fee--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>4,200 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Mortgage valuation fee--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>3,150 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Mortgage processing fee--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>4,620 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Mortgage registration fee--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>2,200 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Knowledge fee--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>290 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0 bg-white">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p>Monthly mortgage payment--}}
-{{--                                                    <span>--}}
-{{--                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"--}}
-{{--                                                           class="bi bi-info-circle-fill" viewBox="0 0 16 16">--}}
-{{--                                                        <path--}}
-{{--                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />--}}
-{{--                                                      </svg>--}}
-{{--                                                    </span>--}}
-{{--                                                  </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p>4,038 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                              <div class="calc-table border-top-0">--}}
-{{--                                                <div class="calc-table-start">--}}
-{{--                                                  <p style="font-weight: 700; color: black;">Total buying cost over 5 years</p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="calc-table-end">--}}
-{{--                                                  <p style="font-weight: 700; color: black;">324,420 AED</p>--}}
-{{--                                                </div>--}}
-{{--                                              </div>--}}
-{{--                                            </details>--}}
                                           </span>
-                                            <span class="calc-navs-digit align-self-start" id="buyTabBuyingFees">82,140 AED</span>
+                                            <span class="calc-navs-digit align-self-start" id="buyTabBuyingFees">82,140 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single border-top-0">
                                             <span class="calc-navs-text">{{--Monthly Company payment--}}{{ Session::has('kaz') ? 'Компанияның ай сайынғы төлемі' : '' }}{{ Session::has('rus') ? 'Ежемесячный платеж компании' : '' }}{{ Session::has('eng') ? 'Monthly Company payment' : '' }}</span>
-                                            <span class="calc-navs-digit" id="buyTabCompanyMonthlyFee">4,038 AED</span>
+                                            <span class="calc-navs-digit" id="buyTabCompanyMonthlyFee">4,038 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                         <div class="calc-navs-content-single calc-navs-content-single-footer border-top-0">
                                             <span class="calc-navs-text">{{--Total buying cost over--}}{{ Session::has('kaz') ? 'Жалпы сатып алу бағасы аяқталды' : '' }}{{ Session::has('rus') ? 'Общая стоимость покупки свыше' : '' }}{{ Session::has('eng') ? 'Total buying cost over' : '' }} <span class="durationInYears"></span> <!--years-->годы</span>
-                                            <span class="calc-navs-digit">324,420 AED</span>
+                                            <span class="calc-navs-digit">324,420 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</span>
                                         </div>
                                     </div>
                                     <div class="calc-navs-bottom">

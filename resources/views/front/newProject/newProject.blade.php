@@ -52,22 +52,6 @@
                                             </div>
                                         </div>
                                         @endforeach
-{{--                                        <div class="check-box">--}}
-{{--                                            <div class="form-check">--}}
-{{--                                                <input class="form-check-input" type="checkbox" value="">--}}
-{{--                                                <label class="form-check-label">--}}
-{{--                                                    Land--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="check-box">--}}
-{{--                                            <div class="form-check">--}}
-{{--                                                <input class="form-check-input" type="checkbox" value="">--}}
-{{--                                                <label class="form-check-label">--}}
-{{--                                                    Office--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
                                     </div>
                                 </div>
                                 <div class="project-search-form-dropdown">
@@ -157,7 +141,7 @@
                                     <button type="button" class="filter-btn btn border-end-0">
                                         <div class="filter-btn-start">
                                             <div>
-                                                <p>{{--Starting price--}}{{ Session::has('eng') ? 'Starting price' : '' }}{{ Session::has('kaz') ? 'бастапқы баға' : '' }}{{ Session::has('rus') ? 'Стартовая цена' : '' }} (AED)</p>
+                                                <p>{{--Starting price--}}{{ Session::has('eng') ? 'Starting price' : '' }}{{ Session::has('kaz') ? 'бастапқы баға' : '' }}{{ Session::has('rus') ? 'Стартовая цена' : '' }} ({{ Session::has('kaz') ? 'Tenge' : 'AED' }})</p>
                                                 <h6 class="d-flex">Any</h6>
                                             </div>
                                         </div>
@@ -178,13 +162,13 @@
                                                 </button>
                                             </div>
                                             <div class="project-search-form-dropdown-area-single">
-                                                <button type="button" class="btn">250,0000 AED</button>
+                                                <button type="button" class="btn">250,0000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</button>
                                             </div>
                                             <div class="project-search-form-dropdown-area-single">
-                                                <button type="button" class="btn">500,0000 AED</button>
+                                                <button type="button" class="btn">500,0000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</button>
                                             </div>
                                             <div class="project-search-form-dropdown-area-single">
-                                                <button type="button" class="btn">750,0000 AED</button>
+                                                <button type="button" class="btn">750,0000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</button>
                                             </div>
                                         </div>
                                         <div>
@@ -197,13 +181,13 @@
                                                 </button>
                                             </div>
                                             <div class="project-search-form-dropdown-area-single">
-                                                <button type="button" class="btn">100,0000 AED</button>
+                                                <button type="button" class="btn">100,0000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</button>
                                             </div>
                                             <div class="project-search-form-dropdown-area-single">
-                                                <button type="button" class="btn">250,0000 AED</button>
+                                                <button type="button" class="btn">250,0000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</button>
                                             </div>
                                             <div class="project-search-form-dropdown-area-single">
-                                                <button type="button" class="btn">250,0000 AED</button>
+                                                <button type="button" class="btn">250,0000 {{ Session::has('kaz') ? 'Tenge' : 'AED' }}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -220,203 +204,7 @@
         </div>
     </section>
 
-{{--    <section class="project-search sticky-top bg-white d-none d-md-none d-lg-block" style="z-index: 2;">--}}
-{{--        <div class="container custom-container project-search-container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <form action="" class="project-search-form" id="newProjectsFormMd">--}}
-{{--                        <div class="project-search-form-start">--}}
-{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">--}}
-{{--                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>--}}
-{{--                            </svg>--}}
-{{--                            <input type="text" placeholder="Search by location, developer" name="search_text" class="form-control">--}}
-{{--                            <input type="text" placeholder="Поиск по местоположению, разработчику" name="search_text" class="form-control">--}}
-{{--                        </div>--}}
-{{--                        <div class="project-search-form-dropdown">--}}
-{{--                            <button type="button" class="filter-btn btn">--}}
-{{--                                <div class="filter-btn-start">--}}
-{{--                                    <div>--}}
-{{--                                        <p>Project typeТип проекта</p>--}}
-{{--                                        <h6 class="d-flex">Any</h6>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="filter-btn-end">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">--}}
-{{--                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>--}}
-{{--                                    </svg>--}}
-{{--                                </div>--}}
-{{--                            </button>--}}
-{{--                            <div class="project-search-form-dropdown-area">--}}
-{{--                                <div class="check-box">--}}
-{{--                                    <div class="form-check">--}}
-{{--                                        <input class="form-check-input" type="checkbox" value="">--}}
-{{--                                        <label class="form-check-label">--}}
-{{--                                            All--}}
-{{--                                        </label>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="check-box">--}}
-{{--                                    <div class="form-check">--}}
-{{--                                        <input class="form-check-input" type="checkbox" value="">--}}
-{{--                                        <label class="form-check-label">--}}
-{{--                                            Land--}}
-{{--                                        </label>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="check-box">--}}
-{{--                                    <div class="form-check">--}}
-{{--                                        <input class="form-check-input" type="checkbox" value="">--}}
-{{--                                        <label class="form-check-label">--}}
-{{--                                            Office--}}
-{{--                                        </label>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="project-search-form-dropdown">--}}
-{{--                            <button type="button" class="filter-btn btn">--}}
-{{--                                <div class="filter-btn-start">--}}
-{{--                                    <div>--}}
-{{--                                        <p><!--Bedrooms-->Спальни</p>--}}
-{{--                                        <h6 class="d-flex">Any</h6>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="filter-btn-end">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">--}}
-{{--                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>--}}
-{{--                                    </svg>--}}
-{{--                                </div>--}}
-{{--                            </button>--}}
-{{--                            <div class="project-search-form-dropdown-area project-search-form-dropdown-area-bed">--}}
-{{--                                <div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">--}}
-{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">--}}
-{{--                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>--}}
-{{--                                            </svg>--}}
-{{--                                            No min.--}}
-{{--                                        </button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">Studio</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">1 Bedroom</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">2 Bedrooms</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">--}}
-{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">--}}
-{{--                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>--}}
-{{--                                            </svg>--}}
-{{--                                            No max.--}}
-{{--                                        </button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">Studio</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">1 Bedroom</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">2 Bedrooms</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="project-search-form-dropdown">--}}
-{{--                            <button type="button" class="filter-btn btn">--}}
-{{--                                <div class="filter-btn-start">--}}
-{{--                                    <div>--}}
-{{--                                        <p>Possession dateДата владения</p>--}}
-{{--                                        <h6 class="d-flex">Any</h6>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="filter-btn-end">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">--}}
-{{--                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>--}}
-{{--                                    </svg>--}}
-{{--                                </div>--}}
-{{--                            </button>--}}
-{{--                            <div class="project-search-form-dropdown-area project-search-form-dropdown-area-date">--}}
-{{--                                <div class="project-search-form-dropdown-area-date-single">--}}
-{{--                                    <button type="button" class="btn">Completed</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="project-search-form-dropdown-area-date-single">--}}
-{{--                                    <button type="button" class="btn">From 2022</button>--}}
-{{--                                </div>--}}
-{{--                                <div class="project-search-form-dropdown-area-date-single">--}}
-{{--                                    <button type="button" class="btn">From 2023</button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="project-search-form-dropdown">--}}
-{{--                            <button type="button" class="filter-btn btn border-end-0">--}}
-{{--                                <div class="filter-btn-start">--}}
-{{--                                    <div>--}}
-{{--                                        <p>Starting priceСтартовая цена (AED)</p>--}}
-{{--                                        <h6 class="d-flex">Any</h6>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="filter-btn-end">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">--}}
-{{--                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>--}}
-{{--                                    </svg>--}}
-{{--                                </div>--}}
-{{--                            </button>--}}
-{{--                            <div class="project-search-form-dropdown-area project-search-form-dropdown-area-bed project-search-form-dropdown-area-price">--}}
-{{--                                <div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">--}}
-{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">--}}
-{{--                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>--}}
-{{--                                            </svg>--}}
-{{--                                            No min.--}}
-{{--                                        </button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">50,0000 AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">100,0000 AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">150,0000 AED</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">--}}
-{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">--}}
-{{--                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>--}}
-{{--                                            </svg>--}}
-{{--                                            No max.--}}
-{{--                                        </button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">200,0000 AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">250,0000 AED</button>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="project-search-form-dropdown-area-single">--}}
-{{--                                        <button type="button" class="btn">300,0000 AED</button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="project-search-form-end">--}}
-{{--                            <button type="submit" class="btn" id="submitBtnMd"><!--find-->найти</button>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+
     <!-- Project Search Ends Here -->
 
     <!-- Breadcrumb Starts Here -->
