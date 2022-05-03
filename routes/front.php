@@ -48,12 +48,13 @@ Route::get('/pass', function (){
 //     $statusCode = $response->getStatusCode();
 //     $content = json_decode($response->getBody(), true);
 
-    
+
 //    return json_decode(json_encode($content));
 //    return $content->data->latitude;
 //    return $content['data'][0];
 //    return $content['data'][0]['longitude'];
 //    return print_r($content);
+    return request('buyer-blogs');
     return bcrypt('12345678');
 });
 
