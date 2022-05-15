@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
             {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            Add Blog Category
+            {{-- Add Blog Category --}}
+            {{ isset($propertyType) ? trans('global.update') : trans('global.add') }} {{ trans('cruds.blogCategories.title_singular') }}
             <a href="{{ route('admin.property-types.index') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-arrow-left"></i>
             </a>
@@ -20,14 +21,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Property Type Name <sup class="text-danger">*</sup></label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.propertyType.fields.property_type_name') }}<sup class="text-danger">*</sup></label>
                                 <div  class="col-md-8">
                                     <input type="text" required name="type_name" class="form-control" value="{{ isset($propertyType) ? $propertyType->type_name : '' }}" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($propertyType) ? 'Update' : 'Add' }} Property Type">
+                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($propertyType) ? 'Update' : 'Add' }} {{ trans('cruds.propertyType.title_singular') }}">
                         </div>
                     </div>
                 </form>

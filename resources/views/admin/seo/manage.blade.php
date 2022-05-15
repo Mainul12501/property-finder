@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
 {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            All SEO Infos
+            {{-- All SEO Infos --}}
+            {{ trans('global.all') }} {{ trans('cruds.seoManagement.fields.seo_infos') }}
             <a href="{{ route('admin.seo.create') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-plus"></i>
             </a>
@@ -15,15 +16,15 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Url Type</th>
-                            <th>Static Url</th>
-                            <th>property Name</th>
-                            <th>Blog Title</th>
-                            <th>Header Content</th>
-                            <th>footer Content</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>{{ trans('cruds.seoManagement.fields.id') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.url_type') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.static_url') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.property_name') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.blog_title') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.header_content') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.footer_content') }}</th>
+                            <th>{{ trans('cruds.seoManagement.fields.status') }}</th>
+                            <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

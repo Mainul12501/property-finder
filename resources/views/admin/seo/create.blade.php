@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header">
             {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            {{ isset($seo) ? 'Update' : 'Add' }} Property SEO
+            {{ isset($seo) ? trans('global.update') : trans('global.add') }}  {{ trans('cruds.seoManagement.fields.property_seo') }}
             <a href="{{ route('admin.seo.index') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-arrow-left"></i>
             </a>
@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Static Url </label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.seoManagement.fields.static_url') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="static_url" class="form-control" value="{{ isset($seo) ? $seo->static_url : '' }}" />
                                     <span class="text-sm-center">Please write page url here.</span>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Url Type </label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.seoManagement.fields.url_type') }}</label>
                                 <div  class="col-md-8">
                                     <input type="radio" name="url_type" class="" value="default" {{ isset($seo) && $seo->url_tpe == 'default' ? 'checked' : '' }} checked/> Default
                                     <input type="radio" name="url_type" class="" value="property" {{ isset($seo) && $seo->url_tpe == 'property' ? 'checked' : '' }}/> Property Url
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Property Name </label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.seoManagement.fields.property_name') }}</label>
                                 <div  class="col-md-8">
                                     <select name="property_id" id="" class="form-control">
                                         @foreach($properties as $property)
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Blog Title </label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.seoManagement.fields.blog_title') }}</label>
                                 <div  class="col-md-8">
                                     <select name="blog_id" id="" class="form-control">
                                         @foreach($blogs as $blog)
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Status</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.seoManagement.fields.status') }}</label>
                                 <div  class="col-md-8">
                                     <label for=""><input type="radio" name="status" value="1" {{ isset($seo) && $seo->status == 1 ? 'checked' : '' }} > Published</label>
                                     <label for=""><input type="radio" name="status" value="0" {{ isset($seo) && $seo->status == 0 ? 'checked' : '' }}> Unpublished</label>
@@ -72,7 +72,7 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name" class="">Header Content</label>
+                                <label for="name" class="">{{ trans('cruds.seoManagement.fields.header_content') }}</label>
                                 <div  class="">
                                     <textarea name="header_content" class="form-control" id="" cols="30" rows="2">{{ isset($seo) ? $seo->header_content : '' }}</textarea>
                                 </div>
@@ -80,14 +80,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name" class="">Footer Content</label>
+                                <label for="name" class="">{{ trans('cruds.seoManagement.fields.footer_content') }}</label>
                                 <div  class="">
                                     <textarea name="footer_content" class="form-control" id="" cols="30" rows="2">{{ isset($seo) ? $seo->footer_content : '' }}</textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($seo) ? 'Update' : 'Add' }} SEO Content">
+                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($seo) ? 'Update' : 'Add' }} {{ trans('cruds.seoManagement.fields.seo_content') }} ">
                         </div>
                     </div>
                 </form>

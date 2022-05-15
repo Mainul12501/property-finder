@@ -3,8 +3,7 @@
 
     <div class="card">
         <div class="card-header">
-{{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            All Property Promotion Types
+            {{ trans('cruds.propertyPromotionType.title_all') }}
             <a href="{{ route('admin.property-promotion-types.create') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-plus"></i>
             </a>
@@ -15,10 +14,10 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>{{ trans('cruds.propertyPromotionType.fields.id') }}</th>
+                            <th>{{ trans('cruds.propertyPromotionType.fields.name') }}</th>
+                            <th>{{ trans('cruds.propertyPromotionType.fields.status') }}</th>
+                            <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

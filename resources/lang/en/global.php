@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'site_title'                     => 'Property Finder',
     'actions'                        => 'Actions',
     'add'                            => 'Add',
     'allRightsReserved'              => 'All rights reserved.',
@@ -238,6 +239,7 @@ return [
     'products'                       => 'Products',
     'question'                       => 'Question',
     'questions'                      => 'Questions',
+    'read_more'                      => 'Read more',
     'recipient'                      => 'Recipient',
     'redeem_time'                    => 'Redeem time',
     'registration'                   => 'Registration',
@@ -250,6 +252,7 @@ return [
     'sample_answer'                  => 'Sample answer',
     'sample_category'                => 'Sample category',
     'sample_question'                => 'Sample question',
+    'select'                         => 'Select',
     'select_all'                     => 'Select all',
     'select_crud_placeholder'        => 'Please select one of your CRUDs',
     'select_dt_placeholder'          => 'Please select one of date/time fields',

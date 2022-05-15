@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
 {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            All Blog Categories
+            {{-- All Blog Categories --}}
+            {{ trans('global.all') }} {{ trans('cruds.blogCategories.title') }}
             <a href="{{ route('admin.blog-categories.create') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-plus"></i>
             </a>
@@ -15,11 +16,11 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>{{ trans('cruds.blogCategories.fields.id') }}</th>
+                            <th>{{ trans('cruds.blogCategories.fields.name') }}</th>
+                            <th>{{ trans('cruds.blogCategories.fields.image') }}</th>
+                            <th>{{ trans('cruds.blogCategories.fields.status') }}</th>
+                            <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

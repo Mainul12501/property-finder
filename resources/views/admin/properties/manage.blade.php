@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header">
 {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            All Properties
+           {{ trans('global.all') }} {{ trans('cruds.property.title') }}
             <a href="{{ route('admin.properties.create') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-plus"></i>
             </a>
@@ -15,30 +15,30 @@
                 <table class="table table-responsive" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Company Name</th>
-                            <th>Agent Name</th>
-                            <th>Property Type</th>
-                            <th>Ads Type</th>
-                            <th>Promotion Type</th>
-                            <th>Title</th>
-                            <th>Size</th>
-                            <th>Bedrooms</th>
-                            <th>Bathrooms</th>
-                            <th>Price</th>
-                            <th>Parking</th>
-                            <th>Yearly Charge</th>
-                            <th>Rent Charge</th>
-                            <th>Interest Rate</th>
-                            <th>Location</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
-                            <th>Description</th>
-                            <th>Property Completion</th>
-                            <th>Furnished</th>
-                            <th>Image</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>{{ trans('cruds.property.fields.id') }}</th>
+                            <th>{{ trans('cruds.property.fields.company_name') }}</th>
+                            <th>{{ trans('cruds.property.fields.agent_name') }}</th>
+                            <th>{{ trans('cruds.property.fields.property_type') }}</th>
+                            <th>{{ trans('cruds.property.fields.ads_type') }}</th>
+                            <th>{{ trans('cruds.property.fields.promotion_type') }}</th>
+                            <th>{{ trans('cruds.property.fields.title') }}</th>
+                            <th>{{ trans('cruds.property.fields.size') }}</th>
+                            <th>{{ trans('cruds.property.fields.bedrooms') }}</th>
+                            <th>{{ trans('cruds.property.fields.bathrooms') }}</th>
+                            <th>{{ trans('cruds.property.fields.price') }}</th>
+                            <th>{{ trans('cruds.property.fields.parking') }}</th>
+                            <th>{{ trans('cruds.property.fields.yearly_charge') }}</th>
+                            <th>{{ trans('cruds.property.fields.rent_charge') }}</th>
+                            <th>{{ trans('cruds.property.fields.interest_rate') }}</th>
+                            <th>{{ trans('cruds.property.fields.location') }}</th>
+                            <th>{{ trans('cruds.property.fields.latitude') }}</th>
+                            <th>{{ trans('cruds.property.fields.longitude') }}</th>
+                            <th>{{ trans('cruds.property.fields.description') }}</th>
+                            <th>{{ trans('cruds.property.fields.property_completion') }}</th>
+                            <th>{{ trans('cruds.property.fields.furnished') }}</th>
+                            <th>{{ trans('cruds.property.fields.image') }}</th>
+                            <th>{{ trans('cruds.property.fields.status') }}</th>
+                            <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

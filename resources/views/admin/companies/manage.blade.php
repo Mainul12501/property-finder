@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
 {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            All Companies
+            {{-- All Companies --}}
+            {{ trans('global.all') }} {{ trans('cruds.companies.title') }}
             <a href="{{ route('admin.companies.create') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-plus"></i>
             </a>
@@ -15,17 +16,17 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Logo</th>
-                            <th>Location Area</th>
-                            <th>ORN</th>
-                            <th>About Office</th>
-                            <th>Social Links</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>{{ trans('cruds.companies.fields.id') }}</th>
+                            <th>{{ trans('cruds.companies.fields.name') }}</th>
+                            <th>{{ trans('cruds.companies.fields.email') }}</th>
+                            <th>{{ trans('cruds.companies.fields.phone_number') }}</th>
+                            <th>{{ trans('cruds.companies.fields.logo') }}</th>
+                            <th>{{ trans('cruds.companies.fields.location_area') }}</th>
+                            <th>{{ trans('cruds.companies.fields.orn') }}</th>
+                            <th>{{ trans('cruds.companies.fields.about_office') }}</th>
+                            <th>{{ trans('cruds.companies.fields.social_links') }}</th>
+                            <th>{{ trans('cruds.companies.fields.status') }}</th>
+                            <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,11 +47,11 @@
                                 </td>
                                 <td>
                                     <div>
-                                        whatsapp Number: {{ $company->whatsapp_number }}
+                                        {{ trans('cruds.companies.fields.whatsapp_number') }}: {{ $company->whatsapp_number }}
                                     </div>
                                     <div>
                                         @if(isset($company->fb_url))
-                                            Fb Profile: <a href="{{ $company->fb_url }}" target="_blank" class="btn mr-2"><i class="fa-brands fa-facebook"></i></a>
+                                        {{ trans('cruds.companies.fields.fb_profile') }}: <a href="{{ $company->fb_url }}" target="_blank" class="btn mr-2"><i class="fa-brands fa-facebook"></i></a>
                                         @endif
                                     </div>
                                 </td>

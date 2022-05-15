@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
 {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            All Companies
+            {{-- All Companies --}}
+            {{ trans('global.all') }} {{ trans('cruds.companies.title') }}
             <a href="{{ route('admin.agents.create') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-plus"></i>
             </a>
@@ -15,22 +16,22 @@
                 <table class="table table-responsive" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Company Name</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Image</th>
-                            <th>Position</th>
-                            <th>License</th>
-                            <th>Nationality</th>
-                            <th>Language</th>
-                            <th>Location</th>
+                            <th>{{ trans('cruds.agent.fields.id') }}</th>
+                            <th>{{ trans('cruds.agent.fields.company_name') }}</th>
+                            <th>{{ trans('cruds.agent.fields.name') }}</th>
+                            <th>{{ trans('cruds.agent.fields.phone') }}</th>
+                            <th>{{ trans('cruds.agent.fields.email') }}</th>
+                            <th>{{ trans('cruds.agent.fields.image') }}</th>
+                            <th>{{ trans('cruds.agent.fields.position') }}</th>
+                            <th>{{ trans('cruds.agent.fields.license') }}</th>
+                            <th>{{ trans('cruds.agent.fields.nationality') }}</th>
+                            <th>{{ trans('cruds.agent.fields.languages') }}</th>
+                            <th>{{ trans('cruds.agent.fields.location') }}</th>
                             <th>Exp. Since</th>
-                            <th>About Agent</th>
+                            <th>{{ trans('cruds.agent.fields.about_agent') }}</th>
 {{--                            <th>Social Links</th>--}}
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>{{ trans('cruds.agent.fields.status') }}</th>
+                            <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

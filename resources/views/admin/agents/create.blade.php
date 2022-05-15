@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
             {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            Add Company
+            {{-- Add Company --}}
+            {{ isset($agent) ? trans('global.update') : trans('global.add') }} {{ trans('cruds.companies.title_singular') }}
             <a href="{{ route('admin.agents.index') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-arrow-left"></i>
             </a>
@@ -20,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Company Name <sup class="text-danger">*</sup></label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.company_name') }} <sup class="text-danger">*</sup></label>
                                 <div  class="col-md-8">
                                     <select name="company_id" id="" class="form-control">
                                         <option value="" {{ isset($agent) ? '' : 'selected' }} disabled><-- select a company --></option>
@@ -33,7 +34,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Name</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_name') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="name" class="form-control" value="{{ isset($agent) ? $agent->name : '' }}" />
                                 </div>
@@ -41,7 +42,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Email</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_email') }}</label>
                                 <div  class="col-md-8">
                                     <input type="email" name="email" class="form-control" value="{{ isset($agent) ? $agent->email : '' }}" />
                                 </div>
@@ -49,7 +50,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Phone Number <sup class="text-danger">*</sup></label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_phone_number') }}<sup class="text-danger">*</sup></label>
                                 <div  class="col-md-8">
                                     <input type="number" required name="phone" class="form-control" value="{{ isset($agent) ? $agent->phone : '' }}" />
                                 </div>
@@ -57,7 +58,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Photo</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_photo') }}</label>
                                 <div  class="col-md-8">
                                     <input type="file" name="image" class="form-control-file"/>
                                     @if(isset($agent))
@@ -68,7 +69,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Position</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_position') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="position" class="form-control" value="{{ isset($agent) ? $agent->position : '' }}" />
                                 </div>
@@ -76,7 +77,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Nationality</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_nationality') }}</label>
                                 <div  class="col-md-8">
 {{--                                    <input type="text" name="nationality" class="form-control" />--}}
                                     <select id="" name="nationality" class="form-control">
@@ -331,7 +332,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Language</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_language') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" required name="languages" class="form-control" value="{{ isset($agent) ? $agent->languages : '' }}" />
                                 </div>
@@ -339,7 +340,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Location</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_location') }}</label>
                                 <div  class="col-md-8">
 {{--                                    <input type="text" required name="location" class="form-control" value="{{ isset($agent) ? $agent->location : '' }}" />--}}
                                     <textarea name="location" id="" cols="10" rows="2" class="form-control">{{ isset($agent) ? $agent->location : '' }}</textarea>
@@ -348,7 +349,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent License</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_license') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="license_number" class="form-control" value="{{ isset($agent) ? $agent->license_number : '' }}" />
                                 </div>
@@ -356,7 +357,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Experience Since</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.experience_since') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="experience_since" class="form-control" value="{{ isset($agent) ? $agent->experience_since : '' }}" />
                                 </div>
@@ -364,7 +365,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent Linkedin Url(Optional)</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_linkedin_url') }}(Optional)</label>
                                 <div  class="col-md-8">
                                     <textarea name="linkedin_profile_url" id="" cols="30" rows="2" class="form-control">{{ isset($agent) ? $agent->linkedin_profile_url : '' }}</textarea>
                                 </div>
@@ -372,7 +373,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent FB Profile (Optional)</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_fb_profile') }}(Optional)</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="fb_profile_url" class="form-control" value="{{ isset($agent) ? $agent->fb_profile_url : '' }}" />
                                 </div>
@@ -380,7 +381,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Whatsapp Number (Optional)</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.whatsapp_number') }} (Optional)</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="whatsapp_number" class="form-control" value="{{ isset($agent) ? $agent->whatsapp_number : '' }}" />
                                 </div>
@@ -388,7 +389,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Agent areas</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.agent.fields.agent_areas') }}</label>
                                 <div  class="col-md-8">
                                     <input type="text" name="agent_areas" class="form-control" value="{{ isset($agent) ? $agent->whatsapp_number : '' }}" />
                                     <span class="text-danger">Separate area with comma (,)</span>
@@ -397,14 +398,14 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="name" class="">About Agent (Optional)</label>
+                                <label for="name" class="">{{ trans('cruds.agent.fields.about_agent') }}(Optional)</label>
                                 <div  class="">
                                     <textarea name="about_agent" id="editor" cols="30" rows="2" class="form-control">{{ isset($agent) ? $agent->about_agent : '' }}</textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($agent) ? 'Update' : 'Add' }} Agent">
+                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($agent) ? 'Update' : 'Add' }} {{ trans('cruds.agent.title_singular') }}">
                         </div>
                     </div>
                 </form>

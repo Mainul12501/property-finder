@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header">
             {{--            {{ trans('global.show') }} {{ trans('cruds.asset.title') }}--}}
-            Add Blog Category
+            {{-- Add Blog Category --}}
+            {{ isset($blogCategory) ? trans('global.update') : trans('global.add') }} {{ trans('cruds.blogCategories.title_singular') }}
             <a href="{{ route('admin.blog-categories.index') }}" class="btn btn-success float-right">
                 <i class="fa-solid fa-circle-arrow-left"></i>
             </a>
@@ -20,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Category Name <sup class="text-danger">*</sup></label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.blogCategories.fields.category_name') }}<sup class="text-danger">*</sup></label>
                                 <div  class="col-md-8">
                                     <input type="text" required name="name" class="form-control" value="{{ isset($blogCategory) ? $blogCategory->name : '' }}" />
                                 </div>
@@ -28,7 +29,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="name" class="col-md-4">Category Image</label>
+                                <label for="name" class="col-md-4">{{ trans('cruds.blogCategories.fields.category_image') }}</label>
                                 <div  class="col-md-8">
                                     <input type="file" name="image" accept="image/*" />
                                     @if(isset($blogCategory))
@@ -38,7 +39,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-outline-secondary btn-block" value="Add Blog Category">
+                            <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ trans('global.add') }} {{ trans('cruds.blogCategories.title_singular') }}">
                         </div>
                     </div>
                 </form>

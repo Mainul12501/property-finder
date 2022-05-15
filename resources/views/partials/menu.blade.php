@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <span class="brand-text font-weight-light">Property Finder</span>
+        <span class="brand-text font-weight-light">{{ trans('global.site_title') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -81,8 +81,7 @@
 {{--                        </i>--}}
                         <i class="fa-solid fa-blog"></i> &nbsp;
                         <p>
-{{--                            {{ trans('cruds.assetManagement.title') }}--}}
-                            Blog Management
+                            {{ trans('cruds.blogManagement.title') }}
                             <i class="right fa fa-fw fa-angle-left nav-icon"></i>
                         </p>
                     </a>
@@ -90,13 +89,9 @@
                         @can('blog-categories')
                             <li class="nav-item">
                                 <a href="{{ route("admin.blog-categories.index") }}" class="nav-link {{ request()->is("admin/blog-categories") || request()->is("admin/blog-categories/*") ? "active" : "" }}">
-{{--                                    <i class="fa-fw nav-icon fas fa-tags">--}}
-
-{{--                                    </i>--}}
                                     <i class="fa-brands fa-microblog"></i>&nbsp;
                                     <p>
-{{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                        Blog Categories
+                                        {{ trans('cruds.blogCategories.title') }}
                                     </p>
                                 </a>
                             </li>
@@ -104,13 +99,9 @@
                         @can('blogs-section')
                             <li class="nav-item">
                                 <a href="{{ route("admin.blogs.index") }}" class="nav-link {{ request()->is("admin/blogs") || request()->is("admin/blogs/*") ? "active" : "" }}">
-{{--                                    <i class="fa-fw nav-icon fas fa-tags">--}}
-
-{{--                                    </i>--}}
                                     <i class="fa-brands fa-blogger"></i> &nbsp;
                                     <p>
-{{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                        Blogs
+                                        {{ trans('cruds.blogs.title') }}
                                     </p>
                                 </a>
                             </li>
@@ -122,13 +113,9 @@
                 @can('company-module')
                 <li class="nav-item has-treeview {{ request()->is("admin/companies*") ? "menu-open" : "" }} {{ request()->is("admin/agents*") ? "menu-open" : "" }} ">
                     <a class="nav-link nav-dropdown-toggle" href="#">
-{{--                        <i class="fa-fw nav-icon fas fa-book">--}}
-
-{{--                        </i>--}}
                         <i class="fa-solid fa-dungeon"></i> &nbsp;
                         <p>
-{{--                            {{ trans('cruds.assetManagement.title') }}--}}
-                            Company Management
+                            {{ trans('cruds.companyManagement.title') }}
                             <i class="right fa fa-fw fa-angle-left nav-icon"></i>
                         </p>
                     </a>
@@ -140,8 +127,7 @@
 
                                     </i>
                                     <p>
-{{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                        Company
+                                        {{ trans('cruds.companies.title') }}
                                     </p>
                                 </a>
                             </li>
@@ -153,8 +139,7 @@
 
                                     </i>
                                     <p>
-{{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                        Agent
+                                        {{ trans('cruds.agent.title') }}
                                     </p>
                                 </a>
                             </li>
@@ -171,8 +156,7 @@
 {{--                            </i>--}}
                             <i class="fa-solid fa-city"></i> &nbsp;
                             <p>
-                                {{--                            {{ trans('cruds.assetManagement.title') }}--}}
-                                Property Management
+                                {{ trans('cruds.propertyManagement.title') }}
                                 <i class="right fa fa-fw fa-angle-left nav-icon"></i>
                             </p>
                         </a>
@@ -184,8 +168,7 @@
 
                                         </i>
                                         <p>
-                                            {{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                            Property Type
+                                            {{ trans('cruds.propertyType.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -197,8 +180,7 @@
 
                                         </i>
                                         <p>
-                                            {{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                            Property Promotion Type
+                                            {{ trans('cruds.propertyPromotionType.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -210,8 +192,7 @@
 
                                         </i>
                                         <p>
-                                            {{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                            Property Ads Type
+                                            {{ trans('cruds.propertyAdsType.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -224,8 +205,7 @@
 {{--                                        </i>--}}
                                         <i class="fa-solid fa-building-columns"></i> &nbsp;
                                         <p>
-                                            {{--                                        {{ trans('cruds.assetCategory.title') }}--}}
-                                            Property
+                                            {{ trans('cruds.property.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -240,8 +220,7 @@
 {{--                            </i>--}}
                             <i class="fa-solid fa-rectangle-ad"></i> &nbsp;
                             <p>
-{{--                                {{ trans('global.change_password') }}--}}
-                                SEO Management
+                                {{ trans('cruds.seoManagement.title') }}
                             </p>
                         </a>
                     </li>
@@ -253,8 +232,7 @@
 {{--                            </i>--}}
                             <i class="fa-solid fa-rectangle-ad"></i> &nbsp;
                             <p>
-{{--                                {{ trans('global.change_password') }}--}}
-                                Site Settings
+                                {{ trans('cruds.siteSettings.title') }}
                             </p>
                         </a>
                     </li>
