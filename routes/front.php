@@ -34,6 +34,9 @@ Route::get('/search-project', 'SearchController@projectSearch')->name('project-s
 
 Route::get('/language-change/{name}', 'FrontPageController@changeLanguage')->name('language-change'); // Language Change
 
+Route::get('/strip-view', 'StripController@index')->name('strip-view'); // strip view test
+Route::post('/strip-post', 'StripController@store')->name('stripe.post'); // strip view test
+
 Route::get('/pass', function (){
 //    $client = new \GuzzleHttp\Client();
 //    $endpoint   = 'http://api.positionstack.com/v1/forward';

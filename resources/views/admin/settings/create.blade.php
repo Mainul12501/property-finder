@@ -66,6 +66,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="paymentOpen" class="col-md-4">{{ trans('cruds.siteSettings.fields.payment_amount') }}</label>
+                                <div class="col-md-8">
+                                    <input type="number" min="0" name="payment_amount" class="form-control" value="{{ isset($siteSetting) ? $siteSetting->payment_amount : '' }}"/>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <input type="submit" class="btn btn-outline-secondary btn-block" value="{{ isset($siteSetting) ? 'Update' : 'Add' }} {{ trans('cruds.siteSettings.fields.site_info') }}">
                         </div>

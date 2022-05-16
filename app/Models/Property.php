@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Stripe;
 
 class Property extends Model
 {
@@ -17,6 +18,7 @@ class Property extends Model
 
     public static function saveData ($request)
     {
+
         self::$property                                 = new Property();
         self::$property->company_id                     = $request->company_id;
         self::$property->agent_id                       = $request->agent_id;

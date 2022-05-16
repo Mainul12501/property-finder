@@ -722,6 +722,8 @@ return [
             'site_banner_helper' => ' ',
             'site_meta'          => 'Site Meta',
             'site_meta_helper'   => ' ',
+            'payment_amount'     => 'Payment',
+            'payment_amount_helper' => ' ',
             'created_at'         => 'Created at',
             'created_at_helper'  => ' ',
             'updated_at'         => 'Updated at',

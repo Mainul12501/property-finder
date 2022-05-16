@@ -718,6 +718,8 @@ return [
             'site_banner_helper' => ' ',
             'site_meta'          => 'Мета сайта',
             'site_meta_helper'   => ' ',
+            'payment_amount'     => 'Сумма',
+            'payment_amount_helper' => ' ',
             'created_at'         => 'Создано на',
             'created_at_helper'  => ' ',
             'updated_at'         => 'Обновлено в',

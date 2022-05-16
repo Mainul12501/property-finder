@@ -722,6 +722,8 @@ return [
             'site_banner_helper' => ' ',
             'site_meta'          => 'Сайт мета',
             'site_meta_helper'   => ' ',
+            'payment_amount'     => 'Төлем',
+            'payment_amount_helper' => ' ',
             'created_at'         => 'Құрылған',
             'created_at_helper'  => ' ',
             'updated_at'         => 'Жаңартылған',

@@ -20,6 +20,7 @@ class SiteSetting extends Model
         self::$siteSetting->site_meta               = $request->site_meta;
         self::$siteSetting->site_logo               = saveImage($request->file('site_logo'), './admin-assets/img/settings/');
         self::$siteSetting->site_banner             = saveImage($request->file('site_banner'), './admin-assets/img/settings/');
+        self::$siteSetting->payment_amount          = $request->payment_amount;
         self::$siteSetting->save();
     }
 
@@ -31,6 +32,7 @@ class SiteSetting extends Model
         self::$siteSetting->site_meta               = $request->site_meta;
         self::$siteSetting->site_logo               = saveImage($request->file('site_logo'), './admin-assets/img/settings/', self::$siteSetting->site_logo);
         self::$siteSetting->site_banner             = saveImage($request->file('site_banner'), './admin-assets/img/settings/', self::$siteSetting->site_banner);
+        self::$siteSetting->payment_amount          = $request->payment_amount;
         self::$siteSetting->save();
     }
 }

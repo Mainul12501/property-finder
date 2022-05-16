@@ -10,7 +10,9 @@ use App\Models\PropertyAdsType;
 use App\Models\PropertyPromotionType;
 use App\Models\PropertySubImage;
 use App\Models\PropertyType;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
+use Stripe;
 
 class PropertyController extends Controller
 {
@@ -22,8 +24,14 @@ class PropertyController extends Controller
      */
     public function index()
     {
+        if (auth()->id() == 1)
+        {
+            $properties = Property::all();
+        } else {
+            $properties = Property::where('agent_id', auth()->id())->get();
+        }
         return view('admin.properties.manage',[
-            'properties'    => Property::all(),
+            'properties'    => $properties,
         ]);
     }
 
@@ -40,6 +48,7 @@ class PropertyController extends Controller
             'propertyTypes' => PropertyType::where('status', 1)->get(),
             'propertyPromotionTypes' => PropertyPromotionType::where('status', 1)->get(),
             'propertyAdsTypes' => PropertyAdsType::where('status', 1)->get(),
+            'siteSetting'  => SiteSetting::first(),
         ]);
     }
 
@@ -51,8 +60,35 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        Property::saveData($request);
-        return redirect()->back()->with('message', 'property-ads-types created successfully.');
+        if ($request->payment_method_type == 'stripe')
+        {
+            Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+
+            $payment = Stripe\Charge::create ([
+
+                "amount" => SiteSetting::first()->payment_amount,
+
+                "currency" => "usd",
+
+                "source" => $request->stripeToken,
+                'receipt_email' => auth()->user()->email,
+
+            ]);
+            if ($payment->status == "succeeded")
+            {
+                Property::saveData($request);
+                return redirect()->back()->with('message', 'property created successfully.');
+            } else {
+                return redirect()->back()->with('message', 'something wrong with your payment.');
+            }
+        } elseif ($request->payment_method_type == 'free')
+        {
+            Property::saveData($request);
+            return redirect()->back()->with('message', 'property created successfully.');
+        } else {
+            Property::saveData($request);
+            return redirect()->back()->with('message', 'property created successfully.');
+        }
     }
 
     /**
